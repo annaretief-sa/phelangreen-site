@@ -82,17 +82,19 @@ header.mast{
 h1.title{font-size:clamp(2rem,5.2vw,2.8rem);letter-spacing:-.01em;margin:0 0 .35em}
 .standfirst{font-size:1.12rem;color:var(--ink-soft);max-width:56ch;margin:0}
 
-/* ---- language toggle ---- */
+/* ---- top navigation + language toggle ---- */
 .topbar{
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
-  max-width:720px;margin:0 auto;padding:12px 24px 0;
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;
+  max-width:720px;margin:0 auto;padding:14px 24px 12px;
+  border-bottom:1px solid var(--rule);
 }
-.topbar .navlinks{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.topbar .navlinks{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;flex:1 1 auto}
 .topbar .home{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--ink-faint);text-decoration:none;white-space:nowrap;
 }
 .topbar .home:hover{color:var(--green)}
+.topbar .home[aria-current="page"]{color:var(--ink);font-weight:600}
 .langbtn{
   font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.08em;
   border:1.5px solid var(--rule-strong);background:var(--surface);color:var(--ink);

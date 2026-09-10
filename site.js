@@ -1,4 +1,4 @@
-/* Phelan Green / Hopefield — shared site script
+/* Phelan Green / Hopefield -- shared site script
    Language toggle (English / Afrikaans), remembered per browser. */
 (function () {
   "use strict";

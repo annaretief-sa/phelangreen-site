@@ -1,0 +1,197 @@
+/* ============================================================
+   Phelan Green / Hopefield — shared site style
+   House style carried over from the Resident's Briefing.
+   ============================================================ */
+
+:root{
+  --paper:#F6F3EC;
+  --surface:#FFFFFF;
+  --surface-sunk:#EFEBE0;
+  --ink:#232620;
+  --ink-soft:#55584E;
+  --ink-faint:#7C7E72;
+  --rule:#DAD4C4;
+  --rule-strong:#C3BCA8;
+  --green:#4C6247;
+  --green-soft:#E4EADE;
+  --slate:#3C5A69;
+  --slate-soft:#DEE7EB;
+  --ochre:#A9541F;
+  --ochre-soft:#F1E1D3;
+  --gold:#8A6D1E;
+  --shadow:0 1px 2px rgba(35,38,32,.06),0 8px 24px -12px rgba(35,38,32,.14);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#181A15;
+    --surface:#22251E;
+    --surface-sunk:#1E211A;
+    --ink:#E9E6DA;
+    --ink-soft:#B4B3A4;
+    --ink-faint:#8C8B7C;
+    --rule:#343830;
+    --rule-strong:#454A3F;
+    --green:#9DB78F;
+    --green-soft:#2A3326;
+    --slate:#8FB2C1;
+    --slate-soft:#22322F;
+    --ochre:#DB8A54;
+    --ochre-soft:#3A2A1E;
+    --gold:#C7A852;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.6);
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Libre Franklin",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+
+h1,h2,h3,h4{font-family:"Spectral",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0 0 1em}
+a{color:var(--slate);text-underline-offset:2px}
+strong{font-weight:600}
+small{font-size:13.5px;color:var(--ink-soft)}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+  margin:0 0 10px;
+}
+
+/* ---- masthead ---- */
+header.mast{
+  border-bottom:2px solid var(--ink);
+  background:linear-gradient(180deg,var(--surface-sunk),var(--paper));
+}
+.mast-inner{padding:44px 24px 30px;max-width:720px;margin:0 auto}
+.mast .kicker{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);
+  margin:0 0 16px;
+}
+h1.title{font-size:clamp(2rem,5.2vw,2.8rem);letter-spacing:-.01em;margin:0 0 .35em}
+.standfirst{font-size:1.12rem;color:var(--ink-soft);max-width:56ch;margin:0}
+
+/* ---- language toggle ---- */
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  max-width:720px;margin:0 auto;padding:12px 24px 0;
+}
+.topbar .home{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-faint);text-decoration:none;
+}
+.topbar .home:hover{color:var(--green)}
+.langbtn{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.08em;
+  border:1.5px solid var(--rule-strong);background:var(--surface);color:var(--ink);
+  border-radius:20px;padding:6px 14px;cursor:pointer;white-space:nowrap;text-transform:uppercase;
+}
+.langbtn:hover{border-color:var(--green)}
+
+/* draft-translation banner */
+.draftbar{
+  background:var(--ochre-soft);color:var(--ochre);
+  font-size:13.5px;font-weight:500;text-align:center;padding:8px 18px;
+}
+
+/* one language visible at a time */
+body:not(.af) [lang="af"]{display:none}
+body.af [lang="en"]{display:none}
+body:not(.af) .draftbar{display:none}
+
+/* ---- sections & cards ---- */
+main{padding-bottom:20px}
+section{padding:34px 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+h2.sec{font-size:1.55rem;margin:0 0 6px;letter-spacing:-.01em}
+.sec-note{color:var(--ink-soft);margin:0 0 22px;max-width:60ch}
+h3.sub{font-size:1.12rem;margin:24px 0 6px}
+
+.card{
+  background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px;
+  padding:20px 22px;box-shadow:var(--shadow);margin:16px 0;
+}
+.card.flag{border-left:4px solid var(--ochre)}
+.card.good{border-left:4px solid var(--green)}
+.card.ask{border-left:4px solid var(--slate)}
+.card h3,.card h4{margin-top:0}
+.card p:last-child{margin-bottom:0}
+
+/* big call-to-action links */
+.actions{display:flex;flex-direction:column;gap:14px;margin:20px 0 4px}
+a.action{
+  display:block;text-decoration:none;color:var(--ink);
+  background:var(--surface);border:1px solid var(--rule-strong);border-radius:8px;
+  border-left:5px solid var(--green);
+  padding:20px 22px;box-shadow:var(--shadow);
+}
+a.action:hover{border-left-color:var(--ochre);transform:translateY(-1px)}
+a.action .h{font-family:"Spectral",Georgia,serif;font-size:1.3rem;font-weight:600;display:block;margin:0 0 4px}
+a.action .d{color:var(--ink-soft);font-size:.98rem}
+a.action .arrow{color:var(--green);font-weight:600}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:"Libre Franklin",sans-serif;font-size:16px;font-weight:600;text-decoration:none;
+  min-height:50px;padding:12px 22px;border-radius:8px;border:1.5px solid var(--green);
+  background:var(--green);color:var(--paper);cursor:pointer;
+}
+.btn:hover{background:#3d4f39}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--rule-strong)}
+.btn.ghost:hover{border-color:var(--green)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .btn{color:#181A15}
+}
+
+/* survey embed */
+.embed{
+  margin:18px 0;border:1px solid var(--rule-strong);border-radius:8px;overflow:hidden;
+  background:var(--surface);
+}
+.embed iframe{display:block;width:100%;height:1100px;border:0}
+.embed .fallback{padding:16px 20px;font-size:15px;color:var(--ink-soft);border-top:1px solid var(--rule)}
+
+/* callout */
+.callout{
+  background:var(--green-soft);border:1px solid var(--green);border-radius:6px;
+  padding:16px 20px;margin:18px 0;font-size:15.5px;
+}
+.callout strong{color:var(--green)}
+.callout.warn{background:var(--ochre-soft);border-color:var(--ochre)}
+.callout.warn strong{color:var(--ochre)}
+
+/* placeholder marker (visible until config is filled in) */
+.todo{
+  display:inline-block;background:#ffe9c7;color:#8a4b00;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  padding:2px 7px;border-radius:4px;border:1px dashed #c98a3c;
+}
+
+/* ---- footer ---- */
+footer{
+  border-top:2px solid var(--ink);background:var(--surface-sunk);
+  margin-top:10px;
+}
+.footer-inner{max-width:720px;margin:0 auto;padding:28px 24px 40px}
+footer .disc{font-size:14px;color:var(--ink-soft);margin:0 0 10px}
+footer nav a{color:var(--slate);font-size:14px;margin-right:16px;display:inline-block}
+
+ul.plain{margin:8px 0 0;padding:0 0 0 20px}
+ul.plain li{margin:0 0 8px}
+
+.step-list{margin:8px 0 0;padding:0 0 0 22px}
+.step-list li{margin:0 0 12px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:where(a,button,input,textarea,label):focus-visible{outline:2px solid var(--slate);outline-offset:2px;border-radius:4px}

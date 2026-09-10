@@ -17,6 +17,8 @@ be copied here.
 |---|---|
 | `index.html` | Landing page -- what this is, the nearest deadline, links |
 | `briefing.html` | The Resident's Briefing (a wrapped copy of the published artefact) |
+| `the-record.html` | The long, fully-sourced companion to the briefing. Public-safe: institutions and documents only, no individuals, no advocacy framing. |
+| `sources.html` | The public documents and reporting behind the briefing, with reference numbers |
 | `have-your-say.html` | The survey (KoboToolbox) + WhatsApp voice-note line |
 | `privacy.html` | POPIA privacy note |
 | `style.css`, `site.js` | Shared style and the English/Afrikaans toggle |

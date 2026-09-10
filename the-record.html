@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The detailed record</title>
+<meta name="description" content="The longer, fully-sourced companion to the Hopefield residents' briefing on the proposed Phelan Green development: what the public documents say, where they contradict each other, and what is still unknown.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  .wrap-r{max-width:760px;margin:0 auto;padding:0 24px}
+  main section{padding:38px 0;border-bottom:1px solid var(--rule)}
+  main section:last-of-type{border-bottom:0}
+  h2.sec{font-size:1.65rem;margin:0 0 6px;letter-spacing:-.01em}
+  h3.sub{font-size:1.15rem;margin:28px 0 8px;font-family:"Spectral",Georgia,serif;font-weight:600}
+  h4.mini{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin:18px 0 6px;font-weight:600}
+  .sec-note{color:var(--ink-soft);margin:0 0 22px;max-width:62ch}
+
+  .chip{display:inline-flex;align-items:center;gap:.4em;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;padding:3px 7px;border-radius:3px;white-space:nowrap;vertical-align:middle;border:1px solid transparent}
+  .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+  .chip.doc{background:var(--green-soft);color:var(--green);border-color:color-mix(in srgb,var(--green) 30%,transparent)}
+  .chip.claim{background:var(--ochre-soft);color:var(--ochre);border-color:color-mix(in srgb,var(--ochre) 28%,transparent)}
+  .chip.contest{background:var(--slate-soft);color:var(--slate);border-color:color-mix(in srgb,var(--slate) 30%,transparent)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:10px}
+  .legend div{font-size:13.5px;color:var(--ink-soft);line-height:1.45}
+  .legend .chip{margin-bottom:5px}
+
+  dl.facts{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule);margin-top:6px}
+  dl.facts > div{display:grid;grid-template-columns:150px 1fr;gap:6px 22px;padding:15px 0;border-bottom:1px solid var(--rule)}
+  dl.facts dt{font-weight:600;font-size:14.5px;color:var(--ink-soft)}
+  dl.facts dd{margin:0;font-size:15.5px}
+  dl.facts dd .chip{margin-top:7px}
+  @media(max-width:560px){dl.facts > div{grid-template-columns:1fr}}
+
+  .card{background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px;padding:20px 22px;box-shadow:var(--shadow);margin:18px 0}
+  .card.flag{border-left:4px solid var(--ochre)}
+  .card.note{border-left:4px solid var(--slate)}
+  .card h3,.card h4{margin-top:0}
+  .card p:last-child{margin-bottom:0}
+  .evbox{background:var(--surface-sunk);border:1px solid var(--rule-strong);border-radius:6px;padding:16px 18px;margin:0 0 20px;font-size:14.5px;color:var(--ink-soft)}
+  .evbox strong{color:var(--ink)}
+
+  .ledger{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+  details.item{border:1px solid var(--rule-strong);border-radius:6px;overflow:hidden;background:var(--surface)}
+  details.item > summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;gap:12px;align-items:flex-start;font-weight:600;font-family:"Spectral",Georgia,serif;font-size:1.05rem}
+  details.item > summary::-webkit-details-marker{display:none}
+  details.item > summary::after{content:"+";margin-left:auto;font-family:"IBM Plex Mono",monospace;color:var(--ink-faint);font-size:1.2rem;line-height:1;flex:none}
+  details.item[open] > summary::after{content:"\2013"}
+  details.item .body{padding:2px 18px 18px;border-top:1px solid var(--rule)}
+  details.item .body h4{margin:14px 0 4px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint)}
+  details.item .body p{margin:0 0 .6em;font-size:15.5px}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:3px 6px;border-radius:3px;flex:none;margin-top:2px;font-weight:600}
+  .tag.a{background:var(--ochre-soft);color:var(--ochre)}
+  .tag.b{background:var(--slate-soft);color:var(--slate)}
+  .tag.c{background:var(--green-soft);color:var(--green)}
+
+  ul.timeline{margin:8px 0 0;padding:0;list-style:none;border-left:2px solid var(--rule-strong)}
+  ul.timeline li{position:relative;padding:0 0 20px 24px}
+  ul.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--paper)}
+  ul.timeline .when{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em;color:var(--green);text-transform:uppercase}
+  ul.timeline .what{margin:2px 0 0;font-size:15.5px}
+
+  ul.cal{margin:8px 0 0;padding:0;list-style:none;border-left:2px dashed var(--rule-strong)}
+  ul.cal li{position:relative;padding:0 0 20px 24px}
+  ul.cal li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--slate);border:2px solid var(--paper)}
+  ul.cal li.now::before{background:var(--ochre)}
+  ul.cal .stage{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--slate);text-transform:uppercase}
+  ul.cal .detail{margin:2px 0 0;font-size:15px}
+
+  ul.tight{margin:.4em 0 0;padding-left:1.15em}
+  ul.tight li{margin:.32em 0;font-size:15.5px}
+
+  figure{margin:14px 0 0}
+  figure svg{width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px}
+  figcaption{font-size:13px;color:var(--ink-faint);margin-top:8px;font-family:"IBM Plex Mono",monospace;letter-spacing:.02em}
+
+  .toc{background:var(--surface-sunk);border:1px solid var(--rule-strong);border-radius:6px;padding:16px 20px;margin:20px 0 0}
+  .toc p{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 8px;font-weight:600}
+  .toc ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+  .toc li{margin:.3em 0;font-size:14px;break-inside:avoid}
+  @media(max-width:560px){.toc ul{columns:1}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="navlinks">
+    <a class="home" href="index.html">&larr; Home</a>
+    <a class="home" href="briefing.html">Residents' briefing</a>
+    <a class="home" href="sources.html">Sources</a>
+    <a class="home" href="have-your-say.html">Have your say</a>
+  </span>
+</div>
+
+<header class="mast">
+  <div class="mast-inner">
+    <p class="kicker">The long version &middot; West Coast, Western Cape</p>
+    <h1 class="title">The detailed record</h1>
+    <p class="standfirst">The longer companion to the <a href="briefing.html">residents' briefing</a>: what the public documents on the proposed Phelan Green development actually say, where they contradict each other, and what is still not known. Every point is drawn from a document listed on the <a href="sources.html">sources page</a>.</p>
+    <div class="mast-meta" style="margin-top:24px;padding-top:16px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:6px 22px">
+      <span>Compiled September 2026</span>
+      <span>From the public record</span>
+      <span>Institutions and documents, not individuals</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap-r">
+<main>
+
+  <section id="how">
+    <p class="eyebrow">How to read this</p>
+    <h2 class="sec">What this is</h2>
+    <p class="sec-note">This is the detailed version of the briefing, for anyone who wants to check the shorter document against the record or write a submission of their own. It is compiled from documents that are already public &mdash; the developer's scoping reports and specialist studies, the government's screening reports, the written responses from government bodies, and news coverage. It is not the community's official position, and it is not legal advice.</p>
+    <p class="sec-note">It refers to <strong>organisations and documents by name, and to people only by their role</strong> (&ldquo;the developer,&rdquo; &ldquo;the solar consultant,&rdquo; &ldquo;an independent botanist&rdquo;). Where the official documents disagree with each other, that is the point being made &mdash; not a criticism of any individual. Reference numbers, dates and document versions change; check each against the current official filings before relying on it.</p>
+
+    <div class="legend">
+      <div><span class="chip doc">Documented</span>Stated in an official filing, or confirmed by several independent sources.</div>
+      <div><span class="chip claim">Claimed</span>Asserted by the developer or government; not independently verified.</div>
+      <div><span class="chip contest">Contested</span>The documents conflict, or the figure has changed over time.</div>
+    </div>
+
+    <div class="toc">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#bottom">The bottom line</a></li>
+        <li><a href="#record">What is on the record</a></li>
+        <li><a href="#where">Where it would sit</a></li>
+        <li><a href="#history">How it arrived</a></li>
+        <li><a href="#maze">One project, many applications</a></li>
+        <li><a href="#screening">The screening tool vs the reports</a></li>
+        <li><a href="#organs">Government bodies that have objected</a></li>
+        <li><a href="#calendar">The decision calendar</a></li>
+        <li><a href="#coast">Other projects on the same coast</a></li>
+        <li><a href="#concerns">The concerns in detail</a></li>
+        <li><a href="#benefits">The possible benefits</a></li>
+        <li><a href="#baseline">The economic baseline still owed</a></li>
+        <li><a href="#fynbos">The industries that depend on the fynbos</a></li>
+        <li><a href="#gaps">What is still unknown</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="bottom">
+    <p class="eyebrow">In short</p>
+    <h2 class="sec">The bottom line</h2>
+    <p style="font-family:'Spectral',Georgia,serif;font-size:1.2rem;line-height:1.5">Phelan Green, a renewable-energy company, proposes a roughly <strong>R47-billion</strong> complex north and east of Hopefield: a synthetic-jet-fuel plant and a solar farm of more than <strong>3,000&nbsp;hectares</strong>, on land holding threatened fynbos and renosterveld, in a water-scarce catchment whose groundwater flows toward Langebaan Lagoon. The core government decisions have <strong>not</strong> been taken. The public consultation so far has been widely criticised as rushed and split into pieces. There is a real window to change the project or the conditions attached to it &mdash; and it is open now.</p>
+    <div class="evbox" style="margin-top:22px">
+      <p><strong>The three concerns with the strongest documentary basis:</strong></p>
+      <ul class="tight">
+        <li><strong>Water.</strong> The fuel-plant scoping report rates groundwater contamination as &ldquo;high significance&rdquo; and confirms the aquifer under the plant &ldquo;would drain towards the Langebaan Lagoon&rdquo; &mdash; yet, where the government screening tool requires a full field-based <em>Hydrology Assessment</em>, the report proposes only a <em>desktop</em> study, and the contractor who prepared the groundwater input did not visit the site.</li>
+        <li><strong>Alternatives.</strong> Both scoping reports decline to assess alternative locations &mdash; the solar report's stated reason is that &ldquo;the applicant currently owns the farms.&rdquo; South Africa's environmental law requires alternatives, including site alternatives, to be assessed, and Heritage Western Cape has separately required it.</li>
+        <li><strong>Fragmentation.</strong> One physical complex is being assessed as six or more separate applications, so no single study weighs the combined effect on water, wildlife, traffic or air. The solar report's own table lists about 18 approved renewable projects within 30&nbsp;km, and limits &ldquo;cumulative impact&rdquo; to how the view changes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="record">
+    <p class="eyebrow">The project</p>
+    <h2 class="sec">What is on the record</h2>
+    <p class="sec-note">&ldquo;Phelan Green&rdquo; is the Phelan family's renewable-energy group. Its subsidiary <strong>Solar Capital</strong> is the applicant for the Hopefield solar farm; <strong>Phelan eFuels Saldanha</strong> is the applicant for the fuel plant. Near Hopefield they propose a single integrated complex, applied for as several separate projects. The figures below are the developer's own, from the scoping reports and public notices; where they disagree with each other or with residents' comments, that is noted.</p>
+
+    <dl class="facts">
+      <div><dt>Core idea</dt><dd>Solar electricity splits water into <strong>green hydrogen</strong>; the hydrogen is combined with captured carbon dioxide to make <strong>synthetic jet fuel</strong> (e-SAF) for export. The carbon dioxide is to come from <strong>biomass boilers &ldquo;owned and operated by a third party&rdquo;</strong> &mdash; a combustion plant that is not part of this application; the developer's own letter says the carbon is extracted &ldquo;from straw, procured by local farmers.&rdquo; <span class="chip doc">Documented</span></dd></div>
+      <div><dt>Location</dt><dd>Farmland north and east of Hopefield, west of the Sout River. The developer repeatedly told residents <strong>~3&nbsp;km from town</strong>; residents' comments say the nearest boundary is <strong>~900&nbsp;m</strong>; the solar Final Scoping Report now states the project is <strong>&ldquo;approximately 1&nbsp;km north of Hopefield town (Garden Street)&rdquo;</strong> and that it &ldquo;borders along the existing Hopefield Wind Farm in the south-east.&rdquo; <span class="chip contest">Contested</span></dd></div>
+      <div><dt>Solar farm</dt><dd>The study area is given as anywhere from <strong>2,880 to 3,338&nbsp;hectares</strong> across different documents; the number of farm portions as three or five. Capacity appears as <strong>~1.6&nbsp;GW</strong>, <strong>900&nbsp;MW</strong>, <strong>&ldquo;13 phases,&rdquo;</strong> <strong>&ldquo;four phases,&rdquo;</strong> and &mdash; on the applicant's own proposed-layout drawing &mdash; <strong>three phases (340 / 605 / 655&nbsp;MW)</strong>. Plus a large battery and three on-site substations. <strong>Not connected to the national grid</strong> &mdash; a dedicated 132&nbsp;kV line would feed the hydrogen &ldquo;campus.&rdquo; <span class="chip contest">Contested</span></dd></div>
+      <div><dt>Land condition</dt><dd>One account describes about <strong>30% of the solar site as existing grassland or old fields</strong> and the rest as <strong>Hopefield Sand Fynbos classed as a Critical Biodiversity Area</strong>, within the Swartland Protected Agricultural Area &mdash; not uniformly pristine, but mostly high-value. <span class="chip contest">Contested</span></dd></div>
+      <div><dt>Fuel plant</dt><dd>About <strong>61&nbsp;hectares</strong>. Built in three phases &mdash; 35,000&nbsp;t/yr (2028), +35,000 (2030), +70,000 (2032) &mdash; totalling 140,000&nbsp;t/yr of synthetic jet fuel. About a 25-year operating life; structures up to ~40&nbsp;m; an LPG-fired flare. <span class="chip doc">Documented</span></dd></div>
+      <div><dt>Hazardous inventory</dt><dd>On the plant site, from the scoping report's own table: hydrogen up to ~1,500&nbsp;t, oxygen up to ~6,400&nbsp;t, liquid carbon dioxide ~450&nbsp;t, plus LPG, naphtha, ~35,000&nbsp;t of fuel storage, <strong>1,000&nbsp;t of potassium hydroxide</strong>, ammonia and amine. A hazard-and-operability study and a Major Hazard Installation risk assessment are required &mdash; deferred to the impact-assessment phase. <span class="chip doc">Documented</span></dd></div>
+      <div><dt>Water</dt><dd><strong>The documents give four incompatible water sources.</strong> The fuel-plant report: about <strong>8&nbsp;million litres a day gross</strong> (&ldquo;3&ndash;5 net&rdquo;) from the <strong>Hopefield municipal drinking-water line</strong>, plus groundwater. A January 2025 social report: <strong>seawater desalination</strong> (under its own separate assessment) and, in the same document, <strong>treated municipal wastewater</strong>. The developer's May 2025 letter: <strong>&ldquo;retreated effluent water from the Saldanha Wastewater Treatment Plant&rdquo;</strong> (a different town). Brines and salts are trucked off-site. <span class="chip contest">Contested</span></dd></div>
+      <div><dt>Transport</dt><dd>Fuel moved by <strong>road tanker ~40&ndash;50&nbsp;km to the Port of Saldanha</strong>. Construction: about <strong>44,500 truck trips over five years</strong> and ~400 workers a day at peak. A new ~5&nbsp;km sewage pipeline to the Hopefield treatment works. <span class="chip doc">Documented</span></dd></div>
+      <div><dt>Investment</dt><dd>Headline figure <strong>R47&nbsp;billion</strong>. The company has publicly described the project at ~$800&nbsp;million, ~$2.5&nbsp;billion and ~$2.6&nbsp;billion at different times. The <strong>product has shifted too</strong>: the 2023 status letter and the developer's own consultant reports as late as January 2025 describe a <strong>green-ammonia plant</strong>; the developer's May 2025 letter calls it a <strong>shipping fuel</strong>; only the June 2026 scoping report reframes it as <strong>synthetic jet fuel</strong>. <span class="chip contest">Contested</span></dd></div>
+      <div><dt>Jobs</dt><dd>About <strong>2,500 construction jobs</strong> over roughly five years and <strong>~500 permanent jobs</strong>. The source is the company and provincial government; no local or skills breakdown has been published, and the figures move between documents (see the <a href="#concerns">jobs concern</a>). <span class="chip claim">Claimed</span></dd></div>
+      <div><dt>Special status</dt><dd>Granted <strong>Strategic Integrated Project</strong> status on <strong>25 October 2023</strong> by Infrastructure South Africa, as the &ldquo;Freeport Saldanha Green Ammonia Project&rdquo; under the Green Hydrogen National Programme. The letter is a request to help expedite approvals &mdash; <strong>no community-benefit, local-content or environmental conditions are attached to it.</strong> <span class="chip doc">Documented</span></dd></div>
+    </dl>
+
+    <div class="card note">
+      <h3>The fuel itself &mdash; and whether there is a market</h3>
+      <p><strong>The finished synthetic jet fuel is ordinary kerosene</strong> &mdash; certified and handled exactly like the Jet&nbsp;A-1 airlines already use. It has a high flash point and is one of the safer liquid fuels to store; tanks of finished fuel are not the main hazard. The genuinely dangerous materials sit <strong>upstream, inside the plant</strong>: hydrogen, carbon monoxide, process intermediates, LPG, naphtha and the potassium hydroxide. The scoping report acknowledges risks of &ldquo;fires and explosions, as well as asphyxiant releases&rdquo; and defers the Major Hazard Installation study and the hazard-and-operability review to a later stage.</p>
+      <p><strong>There is a market.</strong> The EU's ReFuelEU Aviation law sets a synthetic-fuel quota airlines must meet every year, rising over time, and the UK has its own mandate. Supply is well short of it &mdash; as of mid-2026, of more than 40 announced European synthetic-fuel projects, none had reached a final investment decision. A plant that is built and delivering would have a guaranteed premium market.</p>
+      <p><strong>The real risk to Hopefield is delivery risk.</strong> The finished product is ordinary jet fuel, so if an export deal falls through it can be sold to domestic airlines instead &mdash; it is not a hazardous stockpile that must sit on the site. The risk is that the land is cleared and the authorisation won, then the project stalls at Phase&nbsp;1 or slips years waiting for financing and buyers, leaving the ecological damage without the investment and jobs at the promised scale. The product has changed three times in three years, which suggests buyers are not yet signed. <span class="chip contest">Contested</span></p>
+    </div>
+  </section>
+
+  <section id="where">
+    <p class="eyebrow">Orientation</p>
+    <h2 class="sec">Where it would sit</h2>
+    <p class="sec-note">Redrawn from the applicant's own proposed site layout &mdash; the same arrangement of phases, plant and river, simplified. Positions and boundaries are approximate; this is a schematic, not a survey.</p>
+    <figure>
+      <svg viewBox="0 0 760 662" role="img" aria-labelledby="rec-schematic">
+        <title id="rec-schematic">Schematic: Hopefield town to the south-west; a three-phase solar farm and the fuel-plant complex to the north and east, split by the Sout River; Phase 3 the largest, extending south-east; the existing wind farm adjoining on the south-east.</title>
+        <defs>
+          <pattern id="rhatch" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <rect width="9" height="9" fill="var(--slate-soft)"/>
+            <line x1="0" y1="0" x2="0" y2="9" stroke="var(--slate)" stroke-width="1.3" opacity="0.5"/>
+          </pattern>
+          <marker id="rarw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--slate)"/></marker>
+        </defs>
+        <text x="384" y="14" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-faint)">applicant's proposed layout &#8212; 3-phase solar farm &#8776; 2,660 ha &#183; ~1.6 GW, plus the fuel-plant complex</text>
+        <line x1="728" y1="60" x2="728" y2="30" stroke="var(--ink-faint)" stroke-width="1.5"/>
+        <path d="M728 24 l5 12 -5 -4 -5 4 z" fill="var(--ink-faint)"/>
+        <text x="728" y="76" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-faint)">N</text>
+        <line x1="4" y1="500" x2="756" y2="150" stroke="var(--ink-faint)" stroke-width="2.5"/>
+        <text x="716" y="162" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-faint)">main road (R45)</text>
+        <polygon points="108,160 128,100 200,78 278,98 306,155 312,244 285,334 232,394 160,394 110,334 96,240" fill="url(#rhatch)" stroke="var(--slate)" stroke-width="1.5"/>
+        <polygon points="360,124 440,96 540,116 605,170 620,258 585,348 500,380 415,354 372,278 352,184" fill="url(#rhatch)" stroke="var(--slate)" stroke-width="1.5"/>
+        <polygon points="430,352 515,320 615,328 700,380 726,462 700,548 610,592 505,570 442,494 416,412" fill="url(#rhatch)" stroke="var(--slate)" stroke-width="1.5"/>
+        <g stroke="var(--slate)" stroke-width="1.3" fill="none">
+          <path d="M706 574 v-13 M706 561 l0 -6 M706 561 l-5.5 3.2 M706 561 l5.5 3.2"/>
+          <path d="M726 542 v-11 M726 531 l0 -5 M726 531 l-4.6 2.7 M726 531 l4.6 2.7"/>
+          <path d="M690 598 v-13 M690 585 l0 -6 M690 585 l-5.5 3.2 M690 585 l5.5 3.2"/>
+        </g>
+        <text x="748" y="616" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--slate)">existing Hopefield Wind Farm &#8212; operating</text>
+        <path d="M330 8 C345 62,320 98,332 154 C344 208,300 240,312 302 C323 362,272 394,270 454 C268 504,232 530,225 590 C221 618,210 636,204 656" fill="none" stroke="var(--slate)" stroke-width="14" opacity="0.16" stroke-linecap="round"/>
+        <path d="M330 8 C345 62,320 98,332 154 C344 208,300 240,312 302 C323 362,272 394,270 454 C268 504,232 530,225 590 C221 618,210 636,204 656" fill="none" stroke="var(--slate)" stroke-width="3.2"/>
+        <text x="342" y="24" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--slate)">Sout River</text>
+        <rect x="44" y="466" width="108" height="74" rx="3" fill="var(--green-soft)" stroke="var(--green)" stroke-width="1.6"/>
+        <text x="98" y="499" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="var(--ink)">HOPEFIELD</text>
+        <text x="98" y="515" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">the town</text>
+        <line x1="238" y1="398" x2="238" y2="462" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="2 3"/>
+        <text x="228" y="430" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">~0.9&#8211;3 km to nearest</text>
+        <text x="228" y="441" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">array (figure disputed)</text>
+        <rect x="146" y="60" width="140" height="52" rx="2" fill="var(--ochre-soft)" stroke="var(--ochre)" stroke-width="1.6"/>
+        <rect x="152" y="66" width="30" height="18" fill="var(--green)" opacity="0.75"/>
+        <rect x="186" y="66" width="28" height="18" fill="var(--slate)" opacity="0.75"/>
+        <rect x="218" y="66" width="20" height="40" fill="var(--ochre)" opacity="0.55"/>
+        <rect x="242" y="66" width="36" height="18" fill="var(--gold)" opacity="0.6"/>
+        <line x1="266" y1="60" x2="266" y2="42" stroke="var(--ochre)" stroke-width="2"/>
+        <circle cx="266" cy="39" r="3" fill="var(--ochre)"/>
+        <text x="216" y="130" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-weight="600" fill="var(--ink)">fuel plant &#183; hydrogen campus</text>
+        <text x="216" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-soft)">substation &#183; battery &#183; flare</text>
+        <text x="8" y="30" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">Plant's own report: the aquifer here</text>
+        <text x="8" y="41" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">&ldquo;would drain towards the Langebaan Lagoon&rdquo;</text>
+        <text x="198" y="238" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">PHASE 1</text>
+        <text x="198" y="252" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">586 ha &#183; 340 MW</text>
+        <text x="486" y="232" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">PHASE 2</text>
+        <text x="486" y="246" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">941 ha &#183; 605 MW</text>
+        <text x="486" y="300" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">threatened fynbos &amp; renosterveld</text>
+        <text x="576" y="478" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">PHASE 3</text>
+        <text x="576" y="492" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">1,133 ha &#183; 655 MW</text>
+        <line x1="214" y1="614" x2="176" y2="650" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#rarw)"/>
+        <text x="252" y="622" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600" fill="var(--ink)">Sout &#8594; Berg River estuary (Ramsar wetland)</text>
+        <text x="252" y="635" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">Langebaan Lagoon ~29 km SW &#8212; via groundwater</text>
+      </svg>
+      <figcaption>Schematic, redrawn from the applicant's proposed site layout. Positions approximate. The three-phase split and the hectare / megawatt figures are the applicant's own labels on that drawing, and differ from the phasing given elsewhere in the project documents. Prevailing wind relative to the town is still not established.</figcaption>
+    </figure>
+  </section>
+
+  <section id="history">
+    <p class="eyebrow">Context</p>
+    <h2 class="sec">How it arrived</h2>
+    <p class="sec-note">The central community complaint is that the project was never presented whole. Each element arrived as a separate step.</p>
+    <ul class="timeline">
+      <li><span class="when">Oct 2023</span><p class="what">Phelan announces a R47-billion Saldanha project. Infrastructure South Africa grants it Strategic Integrated Project status &mdash; as a <strong>&ldquo;Green Ammonia Project.&rdquo;</strong></p></li>
+      <li><span class="when">Nov 2023</span><p class="what">The plant's first environmental field survey (vegetation, birds) is carried out &mdash; later used in the 2026 scoping reports.</p></li>
+      <li><span class="when">Mar 2025</span><p class="what">The <strong>solar farm</strong> becomes locally visible. A land-use application is lodged with Saldanha Bay Municipality over six farm portions. A public meeting on about 13 March draws only <strong>11 residents</strong> &mdash; a day or two's notice, no hard copies. Some specialist reports reach residents only near the comment deadline.</p></li>
+      <li><span class="when">Apr&ndash;May 2025</span><p class="what">Residents register as interested parties and object to the process. The developer replies with a <strong>single generic letter</strong>: it confirms the hydrogen plant as &ldquo;a separate EIA,&rdquo; describes the product as a <strong>shipping fuel</strong>, and names a wind farm about 16&nbsp;km away.</p></li>
+      <li><span class="when">Early&ndash;mid 2026</span><p class="what">The scope widens: a straw-fired biomass plant, a not-yet-sited hydrogen / methanol campus, a desalination plant on &ldquo;its own separate EIA.&rdquo;</p></li>
+      <li><span class="when">Mar&ndash;Jun 2026</span><p class="what">The fuel-plant application is lodged with the Western Cape environment department on 23 March, with its Draft Scoping Report (out for review 7 May &ndash; 8 June). The solar Draft Scoping Report is signed 8 April. The fuel-plant <strong>Final Scoping Report</strong> is finalised in June and, per its own text, &ldquo;will be submitted&rdquo; to the authority. Independent botanists and hydrogeologists go on record with concerns.</p></li>
+      <li><span class="when">Jul 2026</span><p class="what">Three government bodies respond in writing against the solar Draft Scoping Report &mdash; <strong>CapeNature</strong> (&ldquo;objects to this application&rdquo;), the <strong>Western Cape Department of Agriculture</strong> (&ldquo;unable to provide informed comment&rdquo;), and <strong>Air Force Base Langebaanweg</strong> (dated 28 April, &ldquo;objection to the application&rdquo;). All three are later bound into the solar Final Scoping Report.</p></li>
+      <li><span class="when">8 Sep 2026</span><p class="what">The <strong>solar farm's Final Scoping Report</strong> (revision 00, dated August 2026) is circulated to registered parties &mdash; the event that opened the comment window now running. It repeats the &ldquo;no alternatives&rdquo; line, carries the old fuel-plant heritage study as its heritage study, leaves the three government objections unanswered, and states that specialist studies &ldquo;have been concluded&rdquo; while its own bird and CapeNature fieldwork was scheduled for 7 and 14 September.</p></li>
+      <li><span class="when">Now</span><p class="what">The step with a deadline is the <strong>solar Final Scoping Report &mdash; comments by 8 October 2026</strong>. Beyond that, the Environmental Impact Reports, the Water Use Licence and the Atmospheric Emission Licence all still lie ahead, and the hydrogen plant, desalination plant, power line and wind facility have not begun their own processes. The main decisions have not been taken.</p></li>
+    </ul>
+  </section>
+
+  <section id="maze">
+    <p class="eyebrow">Regulation</p>
+    <h2 class="sec">One project, many applications</h2>
+    <p class="sec-note">One physical complex has been divided into roughly six separate authorisation processes, each with a different decision-maker, a different consultant and a different comment deadline. That is lawful &mdash; but it has consequences.</p>
+
+    <div class="card note">
+      <h3>&ldquo;Final Scoping Report&rdquo; &mdash; what it is, and what it is not</h3>
+      <p>The environmental-authorisation route being used here has <strong>two reporting stages</strong>. Stage&nbsp;1 is the <strong>Scoping Report</strong>: a Draft goes out for comment, then a <strong>Final Scoping Report</strong> is submitted to the competent authority, which has about 43 days to accept or reject it. Only then does Stage&nbsp;2 begin: the <strong>specialist studies, a Draft Environmental Impact Report for at least 30 days' public comment, a Final report, and the decision</strong>. So &ldquo;Final&rdquo; means the finalised <em>scoping-stage</em> report &mdash; not the last document and not the last chance to comment.</p>
+      <p>And there is <strong>a Final Scoping Report per sub-project</strong>, not one for the whole complex &mdash; the solar farm; the fuel plant; the hydrogen / methanol campus and its 132&nbsp;kV line (described by the applicant as &ldquo;a further, separate EIA,&rdquo; not started); the desalination plant (&ldquo;its own Environmental Impact Assessment,&rdquo; not started); the wind facility (not started); and the Water Use Licence and Atmospheric Emission Licence, which are licensing processes with their own public participation. Several of the not-yet-started applications will each run a full scoping-then-impact-report cycle, each with its own comment periods.</p>
+    </div>
+
+    <div class="card flag">
+      <h3>Why the fragmentation is a live grievance</h3>
+      <p><strong>No cumulative assessment.</strong> No single study weighs the plant, solar farm, campus, power line, wind facility and biomass plant together. The <strong>fuel-plant screening report lists 28 approved or pending wind and solar developments within 30&nbsp;km</strong> (several 8&ndash;9&nbsp;km away); the solar Draft Scoping Report lists about 18 &mdash; and confines cumulative impact to &ldquo;sense of place and visual impacts.&rdquo; South African law requires cumulative impacts on water, biodiversity, traffic, air and visual amenity to be assessed properly.</p>
+      <p><strong>The applicant's own master plan shows one integrated complex &mdash; and it is now in the Final Scoping Report itself.</strong> The solar report's section&nbsp;2.3 layout (August 2026) places the whole facility on one farm: the phased solar array, a battery, a hydrogen plant, <strong>methanol synthesis and storage tanks</strong>, a <strong>carbon-capture unit</strong>, a <strong>biomass plant and store</strong>, a <strong>fuel-processing plant</strong>, <strong>two &ldquo;safety torch&rdquo; (flare) zones</strong>, an effluent-treatment plant, a truck-loading area and several &ldquo;future expansion&rdquo; blocks. This is the same picture as an earlier tender drawing (dated 3 October 2025). Yet the same report still calls the campus a separate application and says &ldquo;the exact development area will be determined in the EIA phase.&rdquo;</p>
+      <p><strong>No alternatives assessed.</strong> The solar Final Scoping Report repeats the draft word for word: <em>&ldquo;A location alternative would mean reconsidering land tenure options and negotiations with landowners. A location alternative is therefore not considered.&rdquo;</em> The same sentence appears, verbatim, in the Aquatic Impact Assessment and the Soil &amp; Agricultural statement. The fuel-plant report: <em>&ldquo;no other site alternatives are being considered.&rdquo;</em> South Africa's National Environmental Management Act (section 24(4)(b)) requires a genuine assessment of alternatives, including site alternatives; Heritage Western Cape has also formally required it.</p>
+      <p><strong>Recycled templates.</strong> The solar Final Scoping Report still says site notices were placed &ldquo;on sites around <strong>Rietfontein</strong>&rdquo; and that &ldquo;the targeted newspapers cover the WCDM and <strong>Waterberg</strong>&rdquo; &mdash; a place in Limpopo &mdash; and carries an &ldquo;Annexure ??&rdquo; placeholder. The draft additionally named its applicant several ways, cited the &ldquo;Limpopo Environmental Management Act,&rdquo; footed pages with an unrelated company name, ran Western Cape provincial statistics (population 7.4&nbsp;million) as a &ldquo;Hopefield Census summary,&rdquo; and described the geology in terms of the Bushveld Igneous Complex (about 1,400&nbsp;km away). Supporting studies show the same pattern &mdash; a biodiversity report that refers to &ldquo;the proposed housing development&rdquo; and &ldquo;mining activities&rdquo;; a heritage study with an appendix titled &ldquo;Archaeological Tools in Kwa-Zulu Natal&rdquo; and a reference to &ldquo;sugar cane fields&rdquo; (there is no sugar cane at Hopefield); a visual study that repeatedly calls the fynbos &ldquo;Karoo veld.&rdquo;</p>
+      <p><strong>Comment before evidence.</strong> Communities were asked to comment before specialist studies existed; written requests to the solar consultant are recorded as going unanswered. A resident's April 2025 objection records that three of the seven specialist reports were never posted to the municipal website and reached her only after repeated requests, the day before the deadline.</p>
+      <p><strong>The applicant's identity is not settled.</strong> The solar Final Scoping Report names the applicant as a company registered in 2025, &ldquo;an affiliate of Solar Capital&rdquo; &mdash; while the covering email calls it &ldquo;same company&rdquo; and the notes of the March 2025 meeting record the developer explaining the solar / plant split with &ldquo;it's two different companies executing each project.&rdquo; &ldquo;Two different companies&rdquo; (2025, to justify the split as lawful) and &ldquo;same company&rdquo; (2026, to explain the naming) cannot both be true.</p>
+    </div>
+  </section>
+
+  <section id="screening">
+    <p class="eyebrow">The evidence</p>
+    <h2 class="sec">The government's screening tool vs the reports</h2>
+    <p class="sec-note">Before an application is lodged, the developer must run the <strong>national environmental screening tool</strong> &mdash; the government's own system. It returns the site's sensitivity ratings and the list of specialist assessments required. The point below is a straight comparison of what the tool requires with what the scoping reports propose.</p>
+
+    <h4 class="mini">The fuel-plant site (61 hectares)</h4>
+    <p>The screening tool rates it <strong>Very High</strong> for Terrestrial Biodiversity, Aquatic Biodiversity and Agriculture, <strong>High</strong> for Animal Species (naming the Black Harrier and Southern Black Korhaan) and <strong>High</strong> for Civil Aviation. Run under four different activity headings it returns overlapping lists; between them they require, among others: a <strong>Palaeontology assessment</strong> (all four runs), a <strong>Hydrology assessment</strong> (three of four), a <strong>Health Impact Assessment</strong> and <strong>air-quality assessments</strong> (two of four), a <strong>Geotechnical assessment</strong> (two of four) and a <strong>Noise assessment</strong>.</p>
+    <p>The Final Scoping Report then <strong>downgrades or omits nearly every one</strong>: Agriculture becomes a &ldquo;Compliance Statement,&rdquo; Hydrology a &ldquo;Desktop Geohydrological Assessment,&rdquo; Noise a &ldquo;Compliance Statement,&rdquo; the air-quality studies collapse into one &ldquo;Atmospheric Emissions Assessment,&rdquo; and there is <strong>no Health Impact Assessment and no Geotechnical Assessment at all</strong> &mdash; for a chemical plant with a flare, near a town. The palaeontology assessment was <strong>waived on a motivation letter</strong>. The screening protocol requires the practitioner to motivate every omission &ldquo;with photographic evidence.&rdquo;</p>
+
+    <h4 class="mini">The solar site</h4>
+    <p>The solar screening rates the site <strong>Very High</strong> for Terrestrial Biodiversity, Aquatic Biodiversity, Agriculture and Landscape; <strong>High</strong> for Animal Species and Plant Species; and <strong>Medium</strong> for Civil Aviation, Palaeontology and Defence. Regardless of rating, it identifies <strong>13 required specialist assessments</strong> &mdash; because the protocol requires the practitioner either to include each identified study or to &ldquo;motivate&hellip; the reason for not including&rdquo; it &ldquo;with photographic evidence.&rdquo;</p>
+    <p>The solar Final Scoping Report proposes <strong>seven</strong> (socio-economic, biodiversity, visual, a combined heritage / palaeontology study, traffic, soil &amp; agriculture, aquatic), <strong>omitting with no motivation</strong> the <strong>Civil Aviation, Defence, Geotechnical and radio-frequency-interference assessments and the standalone Plant Species and Animal Species assessments</strong>. It also enters <strong>no development footprint</strong> into the tool, so the whole screening runs on the ~3,252-hectare study area.</p>
+
+    <div class="card flag">
+      <h3>Civil aviation and glare &mdash; the studies disagree with each other</h3>
+      <p>The screening tool rates civil aviation <strong>&ldquo;High&rdquo;</strong> for the plant and <strong>&ldquo;Medium&rdquo;</strong> for the solar site. The solar farm's own <strong>Glare Assessment</strong> (September 2024), using standard modelling, finds <strong>&ldquo;yellow&rdquo; glare &mdash; bright enough to cause temporary after-image and rated a &ldquo;high risk to traffic&rdquo;</strong> &mdash; on the <strong>R45, Oak Street / Hopefield Road, Voortrekker Street</strong> (present more than six months of the year, from about 90% of the site) and other roads, and recommends <strong>removing solar arrays from part of Phase 3A entirely</strong>. It also finds green glare at the <strong>Air Force Base Langebaanweg control tower</strong> and along two flight paths.</p>
+      <p>The earlier <strong>Visual Impact Assessment</strong> had dismissed glare in a paragraph &mdash; &ldquo;standard solar module produces less glare and reflectance than standard window glass.&rdquo; The two studies reach opposite conclusions. Neither the plant nor the solar Final Scoping Report includes a Civil Aviation study, and the solar Draft Scoping Report expressly excludes one while conceding the military flight path is &ldquo;in close proximity.&rdquo;</p>
+      <p>The Air Force Base's own 28 April 2026 letter (see below) states: <em>&ldquo;glare risk is governed by geometry (alignment with flight paths and sun angles), not distance.&rdquo;</em></p>
+    </div>
+  </section>
+
+  <section id="organs">
+    <p class="eyebrow">On the record</p>
+    <h2 class="sec">Government bodies that have objected</h2>
+    <p class="sec-note">The solar Draft Scoping Report went out in April 2026. Within three months, three arms of government had responded in writing against it &mdash; and all three letters are now bound into the Final Scoping Report itself, at Appendix&nbsp;D4. These are quoted from the public appendix.</p>
+
+    <div class="card flag">
+      <h3>CapeNature &mdash; provincial conservation authority</h3>
+      <p>9 July 2026. <em>&ldquo;CapeNature unfortunately objects to this application.&rdquo;</em> The site development plan <em>&ldquo;in its current format is fatally flawed from a biodiversity perspective.&rdquo;</em> The arrays sit <em>&ldquo;directly within a landscape macro-ecological corridor&rdquo;</em> that <em>&ldquo;cannot be offset&rdquo;</em>; the <em>&ldquo;lake effect &hellip; on avifauna is expected to be substantial&rdquo;</em>; and <em>&ldquo;plant species in vegetation maintained under solar panels will be shaded out, and thus the PV farm areas should be regarded as cleared areas&rdquo;</em> &mdash; directly contradicting the developer's headline defence that fynbos can persist under the panels. CapeNature requires a spring botanical survey, renosterveld confirmation, nesting and breeding screening, a standalone aquatic impact assessment, and that the plan <em>&ldquo;be revised and reduced,&rdquo;</em> and assessed <em>&ldquo;together with the eSAF development application.&rdquo;</em></p>
+    </div>
+
+    <div class="card flag">
+      <h3>Western Cape Department of Agriculture</h3>
+      <p>10 July 2026, copied to the environment department and the municipality. The Department <em>&ldquo;is unable to provide informed comment on the agricultural implications of the proposed development&rdquo;</em> because <em>&ldquo;without a defined layout, it is not possible to adequately evaluate direct and cumulative impacts or determine the scale of agricultural land loss.&rdquo;</em> It records <em>&ldquo;concerns &hellip; regarding the permanent conversion of agricultural land for energy generation that is not primarily intended to support agricultural activities&rdquo;</em> and that <em>&ldquo;no site alternatives have been identified or assessed. Information available through Cape Farm Mapper indicates that there may be extensive areas within the broader region that are suitable for solar energy generation.&rdquo;</em> Its further comment <em>&ldquo;will be provided later in the EIA process&rdquo;</em> &mdash; the agricultural position is expressly not settled.</p>
+    </div>
+
+    <div class="card flag">
+      <h3>Air Force Base Langebaanweg &mdash; SA Air Force, Department of Defence</h3>
+      <p>28 April 2026, to the Saldanha Bay Municipal Manager. Headed <em>&ldquo;OBJECTION TO THE APPLICATION.&rdquo;</em> The site is <strong>within the Langebaanweg Control Zone &mdash; controlled airspace from ground level to 19,500&nbsp;feet</strong>, about 6&ndash;7&nbsp;km from an active runway. Glint and glare is <em>&ldquo;the most critical risk,&rdquo;</em> and <em>&ldquo;glare risk is governed by geometry (alignment with flight paths and sun angles), not distance.&rdquo;</em> Reflective arrays and electrical infrastructure risk interference with radar, instrument landing systems and navigation. The base wants the project referred to the civil-aviation and air-force obstacle-evaluation processes before any planning approval, a formal glint-and-glare and interference assessment, and an aquifer impact study &mdash; and asks expressly that <em>&ldquo;approval be withheld pending the completion and review of the required aviation and environmental assessments.&rdquo;</em></p>
+    </div>
+
+    <p>These are the responsible conservation, agriculture and defence authorities, each asking for work the Final Scoping Report does not contain. The report was finalised in August / September 2026 and resolves none of it.</p>
+  </section>
+
+  <section id="calendar">
+    <p class="eyebrow">The road ahead</p>
+    <h2 class="sec">The decision calendar</h2>
+    <p class="sec-note">The standard sequence under South Africa's environmental-assessment and licensing law, <strong>for each application separately</strong>. Exact dates are not yet public.</p>
+    <ul class="cal">
+      <li class="now"><span class="stage">Now &mdash; Scoping (solar)</span><p class="detail">The solar Final Scoping Report was circulated on 8 September 2026, with hard copies at the Hopefield, Saldanha and Langebaan libraries. Comments to <strong>percy@ecocompliance.co.za by 8 October 2026</strong>. Per its own section&nbsp;1.2, once comments are recorded and responded to, the report &ldquo;will be submitted to the competent authority for decision making&rdquo; &mdash; so it is not yet before the national department. The covering email states the April 2025 comment round was &ldquo;voluntary public participation done before the EIA process was started,&rdquo; making this the formal round.</p></li>
+      <li class="now"><span class="stage">Now &mdash; Scoping (plant)</span><p class="detail">The fuel-plant Final Scoping Report states it &ldquo;will be submitted&rdquo; to the Western Cape environment department for the scoping stage to be accepted. Comments to <strong>DEADPEIAAdmin@westerncape.gov.za</strong> (copy pp@wsp.com).</p></li>
+      <li><span class="stage">Next &mdash; Specialist studies</span><p class="detail">The detailed studies are done and released with a Draft Environmental Impact Report and management programme, for at least 30 days' public comment.</p></li>
+      <li><span class="stage">Final report &rarr; decision</span><p class="detail">The consultant finalises the report with a comments-and-responses table; the authority decides &mdash; grant, grant with conditions, or refuse &mdash; typically within about 107 days of submission.</p></li>
+      <li><span class="stage">Environmental Authorisation issued</span><p class="detail">Registered parties then have about <strong>20 days</strong> to lodge a notice of appeal, to the MEC (plant) or the Minister (solar).</p></li>
+      <li><span class="stage">In parallel</span><p class="detail">The Water Use Licence (Department of Water &amp; Sanitation) and the Atmospheric Emission Licence (West Coast District Municipality) each run their own application and public process.</p></li>
+      <li><span class="stage">Still to start</span><p class="detail">The hydrogen / methanol campus and its 132&nbsp;kV line, the desalination plant and the wind facility are each a separate environmental application the applicant has not yet lodged.</p></li>
+      <li><span class="stage">If needed &mdash; judicial review</span><p class="detail">After appeals are exhausted, a High Court review under the Promotion of Administrative Justice Act remains available, generally within 180 days.</p></li>
+    </ul>
+  </section>
+
+  <section id="coast">
+    <p class="eyebrow">The wider picture</p>
+    <h2 class="sec">Other projects on the same coast</h2>
+    <p class="sec-note">Phelan Green is not the only developer seeking West Coast farmland, grid capacity, water and port access. None of the Phelan assessments account for any of the projects below.</p>
+
+    <div class="card flag">
+      <h3>A larger project downstream: Velddrif</h3>
+      <p>On <strong>11 February 2026</strong> a German-led renewable-energy group <strong>publicly announced</strong> a much larger integrated project centred on <strong>Velddrif</strong>, at the mouth of the Berg River. As announced, it would include about 20&nbsp;GW of solar and wind in the Northern Cape, a <strong>450&nbsp;km private transmission-and-pipeline corridor</strong> along the existing Sishen&ndash;Saldanha railway, a <strong>desalination plant at Velddrif scaling to 150&nbsp;million litres a day</strong> &mdash; the water split into hydrogen, ammonia and aviation fuels for export <strong>through Saldanha Bay</strong> &mdash; and a new residential development for 150,000 people. The Western Cape Premier was present at the announcement. As of that date the project had <strong>begun no environmental, water or regulatory process</strong> and there was no signed agreement with the province.</p>
+      <p><strong>Why this matters to Hopefield.</strong> Velddrif sits on the <strong>Berg Estuary Ramsar Site</strong> (declared 2 February 2022, South Africa's 28th wetland of international importance). The fuel-plant scoping report states the <strong>Sout River, which runs past Hopefield, is a &ldquo;tributary of the Berg River&rdquo;</strong> &mdash; so the Phelan complex's surface drainage flows to that same Ramsar estuary, while its groundwater pathway reaches a second Ramsar site, Langebaan Lagoon. A 150-million-litre-a-day desalination plant at Velddrif carries its own brine-discharge footprint on that estuary. Two hydrogen-and-desalination complexes now bear on the Berg estuary system and the same port &mdash; and no assessment considers them together.</p>
+    </div>
+
+    <h4 class="mini">Renewable-energy procurement on the West Coast</h4>
+    <p>The municipalities are separately buying renewable power, with the bidder bringing the land and the plant: <strong>Saldanha Bay Municipality</strong> tender SBM&nbsp;50/23/24 (about 100&nbsp;MW, dispatchable, 15 years; closed May 2025); <strong>Bergrivier Municipality</strong> tender T&nbsp;8/3/69-2024 (closed April 2025); <strong>Swartland Municipality</strong> (a solar plant for Darling, and a planned 10&nbsp;MW plant at Malmesbury); <strong>Cederberg Municipality</strong> (wind and solar at Clanwilliam and Lambert's Bay). Nationally, the Renewable Energy IPP Procurement Programme continues, and the transmission grid across the Western and Northern Cape is saturated by earlier rounds &mdash; the same constraint that means the Phelan solar farm would not connect to the national grid. The Transnet National Ports Authority issued a Request for Information in October 2023 for hydrogen export terminals at seven ports, Saldanha among them.</p>
+
+    <div class="card note">
+      <h3>Why this belongs in the assessment</h3>
+      <p>Intense competition for limited grid capacity, suitable land, water and port access on this coast is direct evidence against the scoping report's claim that the Phelan site is &ldquo;the only feasible alternative&rdquo; &mdash; and it is exactly the material a proper cumulative-impact assessment would have to weigh, especially for the Berg estuary, now facing two desalination and industrial complexes.</p>
+    </div>
+  </section>
+
+  <section id="concerns">
+    <p class="eyebrow">The substance</p>
+    <h2 class="sec">The concerns in detail</h2>
+    <p class="sec-note">Each item gives what is on the record, what is still uncertain, and the change or condition that specialists or government bodies on the record have said would reduce it. The confidence tag refers to how well-established the <em>concern</em> is &mdash; not how likely the harm. Expand each item. This ledger is ordered by the potential scale and reversibility of the impact; for the same concerns ordered by how widely they are felt in the town, see the <a href="briefing.html">briefing</a>.</p>
+
+    <div class="ledger">
+
+      <details class="item">
+        <summary><span class="tag a">Land &middot; biodiversity</span>The site is rated by independent specialists and by the government tool as exceptionally poorly chosen <span class="chip doc" style="margin-left:auto">Documented</span></summary>
+        <div class="body">
+          <h4>On the record</h4>
+          <p>Independent botanists report an unusually high concentration of threatened plant species across the area &mdash; roughly 25 threatened species &mdash; in <strong>Hopefield Sand Fynbos</strong> (Vulnerable) and, to the east, <strong>Swartland Shale Renosterveld</strong> (Critically Endangered). More than <strong>30% of the site is mapped as the province's highest-protection category</strong> (Critical Biodiversity Area &mdash; terrestrial, wetland and river), plus Ecological Support Area; the West Coast National Park is within 5&ndash;10&nbsp;km. The government screening tool rates both the plant and the solar site <strong>&ldquo;Very High&rdquo; for terrestrial and aquatic biodiversity and &ldquo;High&rdquo; for animal species</strong>, and the solar screening names the species it flags: the <strong>Southern Black Korhaan</strong> and <strong>Black Harrier</strong>, plus the African Marsh Harrier, Secretarybird, Tawny Eagle, a golden mole and a threatened dung beetle, and about thirty plant species. The fuel-plant report's own biodiversity maps show the eastern part of the footprint, and much of its regulated buffer, inside the highest terrestrial category, with the Sout River mapped as a river Critical Biodiversity Area flanked by a wide corridor.</p>
+          <h4>The field survey recorded threatened plants on site &mdash; then contradicted itself</h4>
+          <p>The developer's biodiversity report (February 2024) lists, at section&nbsp;5.1.6, <strong>eight species of conservation concern &ldquo;encountered within the study site&rdquo;</strong> &mdash; including the Endangered Hopefield Cornbush and Snakestem Pincushion. Its section&nbsp;8 conclusion then says the survey was <em>&ldquo;unproductive with regards to finding plants of conservation significance&rdquo;</em> and re-lists the same eight species as merely &ldquo;high potential of occurrence.&rdquo; Body says found; conclusion says not found &mdash; and it is the conclusion's wording the scoping reports carry forward. The report's &ldquo;no Red Data species recorded&rdquo; line refers only to fauna and birds.</p>
+          <h4>Why the biodiversity basis is weak</h4>
+          <p>Both applications rest on <strong>one biodiversity study &mdash; a spring-only, daytime-only survey over 1&ndash;2 days in November 2023</strong>, by a firm based in another province. The specialist's own words: <em>&ldquo;the assessment was based on one day's dry season (spring) survey only&hellip; Site visits should ideally be conducted over differing seasons.&rdquo;</em> No night surveys, despite bats and owls being noted. The report also concedes that the mandatory site-sensitivity verification &ldquo;was not readily available to the specialist at the time.&rdquo; And it is a <strong>recycled template from a mining assessment</strong>: the mitigation text repeatedly refers to &ldquo;mining activities,&rdquo; &ldquo;waste from blasting or excavations,&rdquo; and elsewhere to &ldquo;the proposed housing development.&rdquo; Residents caught both problems unaided &mdash; the April 2025 comments record notes that the survey was done in the dry season with plants dormant, and for a facility of a different size.</p>
+          <h4>The two flagship birds were filtered out</h4>
+          <p>The report assesses only <strong>six</strong> Red Data bird species and states that species <em>&ldquo;with a reporting rate of [less than] 1% were not included in the study.&rdquo;</em> That filter drops the <strong>Black Harrier</strong> (Endangered) and the <strong>Southern Black Korhaan</strong> (Vulnerable) &mdash; both Cape endemics, both in the report's own 181-species desktop list, and both flagged as &ldquo;High&rdquo; for this site by the government screening tool. Even so, the report rates the impact on birds <strong>&ldquo;Very High&rdquo; before mitigation</strong> &mdash; on its own scale, above the level it says &ldquo;may constitute a fatal flaw&rdquo; &mdash; then brings it to &ldquo;medium&rdquo; on paper with diverters and buffers. A Black Harrier specialist has since been appointed, with fieldwork scheduled for 14 September 2026, and CapeNature-requested surveys for 7 September &mdash; both <em>after</em> the Final Scoping Report was circulated on 8 September.</p>
+          <h4>CapeNature has objected outright</h4>
+          <p>Its 9 July 2026 letter states that it <em>&ldquo;objects to this application&rdquo;</em> and that the site plan <em>&ldquo;in its current format is fatally flawed from a biodiversity perspective&rdquo;</em> (see <a href="#organs">Government bodies that have objected</a>). It requires a spring survey, renosterveld confirmation, nesting and breeding screening, a standalone aquatic impact assessment, a reduced site plan, and assessment together with the fuel-plant application. None of that is in the Final Scoping Report.</p>
+          <h4>Can fynbos survive under the panels?</h4>
+          <p>This is the developer's on-the-record answer to the biodiversity objection: its comments-and-responses says <em>&ldquo;minimal vegetation clearance &hellip; the roots and seed bank is retained &hellip; vegetation regrowth happens naturally.&rdquo;</em> The claim is borrowed from temperate-grassland agrivoltaics, where light shade and no herbicide can support reasonable biodiversity. It does not transfer to fynbos and renosterveld, mainly because of <strong>fire</strong>: these systems must burn every 10&ndash;15 years to regenerate, and you cannot burn under an array &mdash; so over one panel lifetime the plant community simplifies regardless. Deep shade (most fynbos shrubs need full sun), soil disturbance and altered rainfall add to that. <strong>CapeNature reached the same conclusion</strong>: vegetation under the panels <em>&ldquo;will be shaded out,&rdquo;</em> and <em>&ldquo;the PV farm areas should be regarded as cleared areas.&rdquo;</em></p>
+          <h4>The biodiversity study exists in two versions</h4>
+          <p>The copy residents first reviewed opens: <em>&ldquo;The proponent intends to establish a <strong>900MW</strong> &hellip; Solar Energy Facility.&rdquo;</em> The copy now bound into the solar Final Scoping Report reads <em>&ldquo;a <strong>1.6GW</strong> &hellip; Solar Energy Facility&rdquo;</em> &mdash; same report number, same date, same version label, headline capacity changed with no revision. The underlying one-day survey did not change with it.</p>
+          <h4>Still uncertain</h4>
+          <p>The full species inventory (a single spring survey cannot give it); the extirpation risk for the Hopefield-endemic Cornbush; whether credible offsets exist. A dedicated <strong>Aquatic Impact Assessment now exists</strong> (wet-season, July 2026) &mdash; a credentialed study that <strong>confirms the &ldquo;Very High&rdquo; rating</strong> and delineates six wetlands including the Sout River floodplain wetland &mdash; but its &ldquo;Low impact&rdquo; conclusion is expressly conditional on &ldquo;the current layout&rdquo; avoiding every wetland and buffer, while the report says the footprint is not yet decided; and it is a <strong>surface-water study only &mdash; it does not assess groundwater</strong>, so the plant's Langebaan-aquifer pathway is still assessed nowhere.</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>The change most often named on the record is <strong>relocating the solar array onto already-transformed cropland</strong> &mdash; an independent botanist's phrase is &ldquo;move this thing 20&nbsp;km to the east&hellip; and you've got no environmental issues,&rdquo; and one of the developer's own cited sources puts about 13% of the municipality in a degraded state. Failing relocation: hard no-go zones around Critical Biodiversity Areas and wetlands, a search-and-rescue and rehabilitation programme with a financial guarantee, a multi-season survey by a Cape-flora botanist that resolves the report's own contradiction, and independent botanical review.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag a">Water &middot; groundwater</span>The scoping report rates this &ldquo;high,&rdquo; cites a pathway to Langebaan Lagoon &mdash; then proposes a desktop study <span class="chip doc" style="margin-left:auto">Documented</span></summary>
+        <div class="body">
+          <h4>What the report itself says</h4>
+          <p>The plant sits about 875&nbsp;m from the Sout River. The site overlies a <strong>&ldquo;highly permeable&rdquo;</strong> aquifer with <strong>&ldquo;high&rdquo; vulnerability to contamination</strong>. The report states plainly: groundwater from the property <em>&ldquo;would drain towards the Langebaan Lagoon&rdquo;</em> about 29&nbsp;km south-west, and the lagoon's ecosystems <em>&ldquo;are dependent on groundwater flows,&rdquo;</em> so <em>&ldquo;it is vital that the aquifer be protected.&rdquo;</em> It rates two impacts &mdash; contamination from spills or leaks, and contaminated groundwater migrating <em>&ldquo;ultimately [to] the Langebaan Lagoon&rdquo;</em> &mdash; as <strong>HIGH significance before mitigation</strong>.</p>
+          <h4>The problem</h4>
+          <p>The screening tool requires a <strong>&ldquo;Hydrology Assessment.&rdquo;</strong> The report proposes only a <strong>&ldquo;Desktop Geohydrological Assessment&rdquo;</strong> &mdash; and the groundwater input notes that <em>&ldquo;no site visit was undertaken.&rdquo;</em> Water demand is about 8&nbsp;million litres a day from the town's drinking-water line, in a catchment where groundwater is <em>&ldquo;the only readily available source of water&rdquo;</em> outside town. Brines and salts are trucked off-site, so &ldquo;zero liquid discharge&rdquo; is not literal. One on-site borehole already shows salinity above the guideline, and downgradient boreholes show trace-metal and nitrate exceedances.</p>
+          <p><strong>The water story keeps changing</strong> (see <a href="#record">What is on the record</a>): the developer's May 2025 letter promises <em>&ldquo;we will not use water from the Saldanha Municipality town supply,&rdquo;</em> which contradicts the scoping report's 8&nbsp;million litres a day from the Hopefield line. The notes of the March 2025 meeting record residents asking for the water plan <em>&ldquo;in writing&rdquo;</em> &mdash; many months on it still does not exist in a single consistent form.</p>
+          <p>The <strong>Berg Estuary Ramsar Site now faces two projects at once</strong> (see <a href="#coast">Other projects on the same coast</a>). The Air Force Base's April 2026 letter also flags the aquifer &mdash; &ldquo;long-term groundwater vulnerability&rdquo; &mdash; and asks for &ldquo;an environmental impact study &hellip; to determine the impact of this large scale operation on the aquifer system.&rdquo;</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>A <strong>field-based hydrogeological investigation and a calibrated numerical groundwater model</strong>, independently peer-reviewed and public before authorisation &mdash; not a desktop study; desalination as the primary water source from the start; a legal guarantee that Hopefield's drinking-water supply is never reduced or reprioritised; full containment with a monitoring-borehole network and public quarterly data.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag a">Economy &middot; delivery risk</span>The project could clear the land and then stall <span class="chip contest" style="margin-left:auto">Contested</span></summary>
+        <div class="body">
+          <h4>Documented</h4>
+          <p>The commercial basis is the EU and UK synthetic-fuel mandates, which are real and undersupplied. But <strong>no commercial-scale synthetic-jet-fuel project anywhere had reached a final investment decision as of mid-2026</strong>; these plants need government price guarantees and airlines under firm contract before a bank will lend. The product has changed three times in three years, and the 2023 status was granted for a &ldquo;Green Ammonia Project.&rdquo; The report also makes the carbon-dioxide supply &mdash; and therefore the whole plant &mdash; dependent on a <strong>third-party biomass combustion facility</strong> that is not in any visible application.</p>
+          <h4>Uncertain</h4>
+          <p>Whether the developer has signed buyers and financing for the Hopefield plant, for which product; who builds and runs the biomass plant, where, and on what feedstock; whether Phase&nbsp;1 proceeds on schedule; the fallback if the economics fail.</p>
+          <h4>Why this matters to the town</h4>
+          <p>The worst realistic outcome is not a dangerous product left behind &mdash; the finished fuel is ordinary jet fuel and could be sold to any airline. It is <strong>ecological damage and disruption locked in by an early authorisation, with the investment and jobs arriving late, small, or not at all.</strong></p>
+          <h4>What the record shows would reduce it</h4>
+          <p>Staged, legally binding conditions: no vegetation clearing until financing and signed fuel-purchase contracts are demonstrated; milestone deadlines with lapse provisions; a rehabilitation guarantee that applies on abandonment at any stage; and disclosure of the fuel-purchase contracts and any government price-support position before authorisation.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag a">Jobs &middot; economy</span>The employment promise is the least tested claim in the project <span class="chip claim" style="margin-left:auto">Claimed</span></summary>
+        <div class="body">
+          <h4>What is claimed</h4>
+          <p>About 2,500 construction jobs over roughly five years; about 500 permanent operational jobs. The Final Scoping Report rates &ldquo;creation of employment&rdquo; as a positive impact of high significance &mdash; but its Social Impact Assessment <strong>has no Hopefield-specific data</strong>: &ldquo;Data specific to Ward&nbsp;7 within Hopefield will be included once interviews and consultations&hellip; are concluded.&rdquo; Peak construction is about 400 workers a day, &ldquo;transported from the surrounding areas.&rdquo;</p>
+          <h4>The assessment undermines its own numbers</h4>
+          <p>The Social Impact Assessment traces the job figures to a <strong>renewable-energy news website</strong> &mdash; not to the applicant or a labour study; the article it cites is a piece questioning green-hydrogen viability. The assessment records that <em>&ldquo;a rumour was noted during consultation that approximately 2,500 workers would be brought in during construction&rdquo;</em> &mdash; treating its own headline number as a rumour &mdash; and describes the 500 permanent roles as work in <em>&ldquo;hydrogen production, engineering, plant operations&rdquo;</em> requiring &ldquo;a new skilled labour market in green hydrogen,&rdquo; which is not what solar operation needs and not what a farmworker town is positioned to fill.</p>
+          <h4>The numbers move, and the one specialist estimate is small</h4>
+          <p>The January 2025 baseline report contradicts itself &mdash; one section says <strong>&ldquo;2000 jobs over &hellip; 5 years and more than 3000 indirect jobs,&rdquo;</strong> another repeats <strong>&ldquo;2,500 jobs&rdquo;</strong> over four years. The only figure from an actual specialist calculation is in the solar <strong>traffic study</strong>, which models <strong>a permanent operational workforce of about eight people per 150&nbsp;MW phase</strong>. At the May 2026 public meeting the consultant put <strong>peak construction at about 1,000, not 2,500</strong>, with 2,500 a cumulative-over-time figure.</p>
+          <h4>The baseline the company published works against its own claim</h4>
+          <p>The published Saldanha-Bay figures: about <strong>11% of adults have any post-school qualification</strong>; 40% did not complete secondary school. A chemical plant making hydrogen and jet fuel needs post-school engineering and technical skills; the company has not disclosed the skill or wage profile of the jobs despite making them the headline benefit; and agriculture &mdash; the sector being displaced &mdash; provides about 38% of district employment. The assessment also never contemplates a &ldquo;no-go&rdquo; outcome, only &ldquo;mitigation.&rdquo;</p>
+          <h4>Gains must be netted against losses</h4>
+          <p>Every job figure quoted is a <em>gross</em> number. No one has assessed the jobs the project <strong>puts at risk</strong> in the existing Hopefield economy &mdash; apiculture and honey manufacture, wildflower cultivation and the Fynbos Show, small-scale farming, domestic employment, local building trades, and town-based businesses (see <a href="#fynbos">The industries that depend on the fynbos</a>).</p>
+          <h4>What the record shows would make it real</h4>
+          <p>A Social Impact Assessment redone with actual fieldwork in Hopefield (see <a href="#baseline">the baseline</a>); a breakdown of the jobs claim by skill and by local-versus-imported, sourced to the applicant; numeric local-employment and local-procurement targets by phase as licence conditions; a funded skills pipeline started before construction; a community equity stake or trust with a stated percentage and governance; and public advertising of every project post.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag b">Agriculture &middot; land use</span>The agricultural study overrides the &ldquo;very high&rdquo; screening rating to use its lightest tier of assessment <span class="chip contest" style="margin-left:auto">Contested</span></summary>
+        <div class="body">
+          <h4>What the report says</h4>
+          <p>The site is inside a <strong>Category&nbsp;B Protected Agricultural Area</strong>, and the screening tool rates it <strong>&ldquo;Very High&rdquo;</strong> agricultural sensitivity and requires a full <strong>Agricultural Impact Assessment</strong>. The solar study is not that: it is an <strong>&ldquo;Agricultural Compliance Statement,&rdquo;</strong> the protocol's lightest tier &mdash; and it is only <em>permitted</em> to be a Compliance Statement because the specialist <strong>first overrides the screening's &ldquo;Very High&rdquo; down to &ldquo;low to medium.&rdquo;</strong> Its argument: the sandy soils are &ldquo;completely unsuitable for viable rainfed crop production,&rdquo; so the loss of production potential is &ldquo;of low significance and &hellip; acceptable.&rdquo; It recommends approval.</p>
+          <h4>Why it is contestable</h4>
+          <p>The &ldquo;can't grow crops&rdquo; argument sits against <strong>a commercial fynbos-horticulture operation of more than 60&nbsp;hectares on the same soils, on the edge of Hopefield</strong>, which the statement does not mention. The statement also defines &ldquo;agricultural impact&rdquo; narrowly &mdash; it declares that the facility's layout and technology have &ldquo;absolutely no bearing&rdquo; on agricultural impact, and does not assess <strong>dust and chemical deposition onto neighbouring crops, nursery stock, the apiaries or livestock</strong>. Its alternatives section dismisses all alternatives, then concedes the no-go option is agriculturally preferable &mdash; before recommending approval on non-agricultural grounds.</p>
+          <h4>The provincial Department of Agriculture has declined to support it</h4>
+          <p>Its 10 July 2026 letter (see <a href="#organs">Government bodies that have objected</a>) says it is &ldquo;unable to provide informed comment&rdquo; while the footprint is undefined, that concerns remain about &ldquo;the permanent conversion of agricultural land,&rdquo; and that &ldquo;no site alternatives have been identified or assessed&rdquo; although suitable land exists elsewhere. The Compliance Statement recommends approval; the authority whose mandate this is has reserved its comment.</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>A full Agricultural Impact Assessment covering deposition and drift onto neighbouring farms and the apiaries; the provincial Department of Agriculture's written position on the Protected Agricultural Area departure, including the further comment it has said it will give once a layout exists.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag a">Heritage &middot; deep time &middot; living culture</span>&ldquo;Heritage&rdquo; has been reduced to four farm buildings &mdash; and the regulator has already overruled the &ldquo;low&rdquo; finding <span class="chip doc" style="margin-left:auto">Documented</span></summary>
+        <div class="body">
+          <h4>The regulator has already overruled the &ldquo;low&rdquo; finding</h4>
+          <p>The fuel-plant report reports &ldquo;no heritage,&rdquo; and the solar Draft Scoping Report rates heritage &ldquo;low.&rdquo; But <strong>Heritage Western Cape</strong>, after a 2024 meeting, formally responded that <em>&ldquo;there is reason to believe that the proposed PV Solar energy facility &hellip; will impact on heritage resources&rdquo;</em> and <strong>requires a full Heritage Impact Assessment</strong> meeting section&nbsp;38(3) of the National Heritage Resources Act &mdash; including a dedicated Archaeological Impact Assessment, an assessment of impact <em>relative to the development's benefits</em>, the results of consultation with affected communities, and consideration of alternatives.</p>
+          <p><strong>The solar Final Scoping Report has been circulated with none of that &mdash; its &ldquo;heritage study&rdquo; is the rejected fuel-plant study</strong>, a Phase&nbsp;1 assessment from January 2025 for a different project (&ldquo;green hydrogen and green ammonia processing facility&rdquo;), concluding &ldquo;no heritage resources were identified.&rdquo; It contains no dedicated archaeological assessment, no assessment of alternatives, no record of community consultation, and does not engage the regulator's requirements. Eighteen months on, there is still <strong>no compliant section-38(3) heritage assessment for the solar farm</strong>.</p>
+          <h4>Heritage is being defined too narrowly</h4>
+          <p>The whole exercise has come down to <strong>four farm buildings from the last 120 years</strong>. The National Heritage Resources Act covers &mdash; regardless of age &mdash; palaeontological and geological sites, archaeological material, graves, cultural landscapes, and <strong>&ldquo;living heritage&rdquo;: oral tradition, indigenous knowledge systems, and the holistic relationship to nature</strong>. This landscape carries all of it:</p>
+          <ul class="tight">
+            <li><strong>Deep human history.</strong> Elandsfontein, about 10&nbsp;km west of Hopefield, is where the &ldquo;Saldanha Man&rdquo; cranium was found in 1953 &mdash; an archaic human on the order of half a million years old &mdash; alongside one of southern Africa's largest Stone Age and Pleistocene-fauna assemblages.</li>
+            <li><strong>A world-class fossil record next door.</strong> The West Coast Fossil Park at Langebaanweg is one of the richest 5-million-year-old fossil sites on Earth.</li>
+            <li><strong>First Nations who are still here.</strong> This is <strong>Cochoqua (Khoekhoe) ancestral land</strong> &mdash; the farm's own name, Portugeesche Fontyn, comes from a Khoi clan, and the heritage report's own background section describes the Cochoqua as the people who held this coast at Dutch contact. An assessment that treats them as absent erases a living people and a living knowledge system.</li>
+          </ul>
+          <h4>A First Nations council has formally objected &mdash; and was not consulted</h4>
+          <p>The <strong>Aikonese Cochoqua Khoi Tribal Council</strong> &mdash; registered by Heritage Western Cape as a Heritage Conservation Body in November 2024, which gives its comments formal standing in any section-38 process &mdash; has <strong>officially submitted a comment</strong> contesting the absence of consultation with the Cochoqua on a large development on their ancestral land, and calling for the process to be suspended and public participation reopened. (Another body, the Western Cape First Nations Collective, has reportedly said the process was inclusive of Khoi-San voices; both positions belong on the record.)</p>
+          <h4>The palaeontology exemption does not hold up</h4>
+          <p>A palaeontological assessment for the solar site was <strong>waived on a June 2024 motivation letter</strong>. It has four problems: the <strong>government's own screening rates palaeontological sensitivity &ldquo;Medium,&rdquo; not &ldquo;Low,&rdquo;</strong> and lists the assessment as required; it <strong>covers only the solar farm</strong>, not the far deeper fuel-plant excavations; it rests on a claim that the local sands &ldquo;do not preserve fossils&rdquo; that <strong>Elandsfontein &mdash; in exactly those sands, about 10&nbsp;km away &mdash; disproves</strong>; and it <strong>describes the wrong project</strong> (&ldquo;an Ammonia production facility &hellip; about 30&nbsp;km to the northwest&rdquo;).</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>The full section-38(3) Heritage Impact Assessment that Heritage Western Cape has already required &mdash; both footprints, the buildings, the fossil and archaeological record of all ages, the Khoi cultural landscape, alternatives &mdash; from Cape, not other-province, material; the palaeontology exemption revisited to cover the deeper plant excavations and corrected for the project description; and direct, documented consultation with the registered Cochoqua conservation body, on the record.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag b">Air &middot; dust &middot; fire</span>Dust, flares and fire risk next to the town <span class="chip doc" style="margin-left:auto">Documented</span></summary>
+        <div class="body">
+          <h4>What is at stake</h4>
+          <p><strong>Construction dust</strong> from clearing and grading on sandy, wind-exposed ground &mdash; the scoping report itself flags an <em>&ldquo;Exceedance of NAAQS&rdquo;</em> (national air-quality standards) as a construction impact. For operations it concedes the plant <em>&ldquo;exceeds NAAQS beyond the facility boundary where there is public access&rdquo;</em> (though not, it argues, at the nearest homes). Routine and <strong>flare emissions</strong> from the fuel plant, which combusts methane, hydrogen and carbon monoxide. <strong>Fire and explosion</strong> risk from the hazardous inventory. Over the solar farm, loss of vegetation and soil crust over thousands of hectares changes local wind and dust generation.</p>
+          <h4>On the &ldquo;heat&rdquo; fear specifically</h4>
+          <p>Large solar farms do warm the air directly above the panels by about 1&ndash;4&nbsp;&deg;C, but that effect stays local to the array and fades within tens of metres of its edge &mdash; it will not measurably heat a town 1&nbsp;km away. The real local effect is indirect: stripping vegetation off thousands of hectares. The evidence is strong on dust, fire and vegetation loss.</p>
+          <h4>What the screening tool requires &mdash; and the report skips</h4>
+          <p>The screening for the emissions licence requires a <strong>Health Impact Assessment</strong>, an <strong>Ambient Air Quality Impact Assessment</strong> and an <strong>Air Quality Impact Assessment</strong>. The report proposes a single &ldquo;Atmospheric Emissions Assessment&rdquo; and <strong>no Health Impact Assessment at all</strong>.</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>A full Health Impact Assessment and both air-quality studies; enforceable dust-management and air-quality monitoring with public data and stop-work triggers; retention of ground cover between panel rows; a vegetated buffer between the array and town; an independent fire risk assessment and a funded joint fire-response arrangement; and binding limits and monitoring in the Atmospheric Emission Licence.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag b">Visual &middot; glare &middot; aviation</span>The solar farm's own studies contradict each other &mdash; and one says remove panels near the road and town <span class="chip doc" style="margin-left:auto">Documented</span></summary>
+        <div class="body">
+          <h4>Two studies, opposite conclusions on glare</h4>
+          <p>The <strong>Visual Impact Assessment</strong> (November 2023) dismisses glare in a paragraph. A year later the <strong>Glare Assessment</strong> (September 2024), using the industry-standard modelling tool, found the opposite: <strong>&ldquo;yellow&rdquo; glare &mdash; bright enough to cause temporary after-image, rated a &ldquo;high risk to traffic&rdquo;</strong> &mdash; at multiple locations:</p>
+          <ul class="tight">
+            <li><strong>The R45</strong> &mdash; yellow glare from two phases; the study recommends removing solar arrays from a section of Phase&nbsp;3A entirely.</li>
+            <li><strong>Oak Street / Hopefield Road</strong> &mdash; yellow glare; arrays &ldquo;should be removed from this section.&rdquo;</li>
+            <li><strong>Voortrekker Street</strong> &mdash; yellow glare present more than six months of the year, from about 90% of the site.</li>
+            <li><strong>Air Force Base Langebaanweg</strong> &mdash; green glare at the air traffic control tower and along two flight paths.</li>
+            <li><strong>Hopefield Primary School, the sportsfields and residential streets</strong> &mdash; green glare, some yellow.</li>
+          </ul>
+          <h4>Why this matters beyond glare</h4>
+          <p>It independently confirms the screening tool's civil-aviation flag &mdash; which the plant report omits and the solar Draft Scoping Report excludes. It shows the visual study's headline reassurance was wrong. And the fix is being <strong>deferred</strong>: the Glare Assessment puts all mitigation into a management programme to be worked out &ldquo;after environmental and planning approval,&rdquo; and part of it depends on re-angling panels &mdash; while the study assumes no screening trees exist, which is also the visual study's main mitigation. The two studies cancel each other out.</p>
+          <h4>The Air Force Base has objected in writing</h4>
+          <p>Its 28 April 2026 letter (see <a href="#organs">Government bodies that have objected</a>) records that the site is within controlled airspace, that &ldquo;glare risk is governed by geometry &hellip; not distance,&rdquo; and asks that approval be withheld pending aviation and environmental assessments. At the May 2026 meeting &mdash; three weeks after the objection &mdash; the consultant told the Air Force that the glare was &ldquo;limited to 7am&ndash;9am&rdquo; and there was a dispute over distance. That is not what the study says, and per the base's own letter, distance is not the test.</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>The full glare model and layout made public and independently checked before authorisation; glare mitigation &mdash; including any array removal near the R45, Oak Street and the town &mdash; written into the authorisation as a <strong>condition</strong>, not deferred; a Civil Aviation Assessment and a Defence Assessment completed before the scoping report is accepted; formal referral to the aviation obstacle-evaluation processes; the Air Force Base objection resolved on the record; a dusk-and-night visual assessment; and a real vegetated buffer between the array and town established before construction.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag b">Local economy &middot; what is already at risk</span>The jobs the project could destroy have never been counted <span class="chip contest" style="margin-left:auto">Contested</span></summary>
+        <div class="body">
+          <h4>What Hopefield's economy is</h4>
+          <p>Beyond wheat and sheep, the town runs on things the project threatens. Three established local industries depend on the fynbos itself &mdash; <strong>honey, cut-flowers and nursery stock, and wildflower tourism</strong> (see <a href="#fynbos">their own section</a>): between them, a commercial flower farm and the honey businesses alone employ well over 200 people, mostly local, permanent and seasonal. On top of that: <strong>small-scale and community farming</strong>, <strong>domestic employment</strong>, <strong>local building and trade small businesses</strong>, and <strong>town-based light manufacturing and services with customers across the Western Cape</strong>.</p>
+          <h4>The assessment half-admits it, then walks away</h4>
+          <p>The Social Impact Assessment concedes the project would displace <em>&ldquo;informal or land-based livelihoods,&rdquo;</em> <em>&ldquo;small-scale or informal farming,&rdquo;</em> and open space used <em>&ldquo;for cultural or social purposes&rdquo;</em> &mdash; rated High negative before mitigation &mdash; but does <strong>no census of who is affected</strong> and offers only &ldquo;fair compensation&rdquo; with no mechanism.</p>
+          <h4>Property values</h4>
+          <p>Peer-reviewed work finds housing within about 4&nbsp;km of a hydrogen production facility loses about <strong>4&ndash;5%</strong> of value; homes near refineries lose more. Hopefield sits about 1&ndash;3&nbsp;km from the plant. Falling property values erode household wealth and, in turn, demand for domestic workers and local trades.</p>
+          <h4>What the record shows would reduce it</h4>
+          <p>A baseline that quantifies at-risk employment and nets losses against verifiable gains; an affected-persons census and a livelihood-restoration framework (which the international standards the assessment itself invokes require); specific mitigation for the apiculture and wildflower industries; and a property-value protection or compensation mechanism for the households closest to the plant.</p>
+        </div>
+      </details>
+
+      <details class="item">
+        <summary><span class="tag b">Process &middot; trust</span>The consultation failures are themselves grounds for objection <span class="chip doc" style="margin-left:auto">Documented</span></summary>
+        <div class="body">
+          <h4>On the record</h4>
+          <p>One or two days' notice for the March 2025 meeting; 11 attendees; no hard copies for residents without internet; reports uploaded late and in pieces; the project revealed component by component; the whole thing split across six-plus processes with no cumulative assessment; information requests unanswered. Despite that, about <strong>30 residents and businesses lodged written comments</strong> in April 2025 &mdash; raising the distance to town, water, fire and explosion risk, road damage, the one-day biodiversity survey, worker influx, loss of &ldquo;sense of place,&rdquo; the split process, glare and tourism. Two are recorded as supporting the project.</p>
+          <h4>A generic reply to numbered objections</h4>
+          <p>A resident registered as an interested party in April 2025 with a detailed, numbered objection. The developer's reply (27 May 2025) was a <strong>single generic letter sent to every commenter</strong> &mdash; the covering note states it &ldquo;covers all comments received, including some that were not raised&rdquo; &mdash; that answered almost none of the specific points and instead set out the national jobs case. Two of the public-participation files named &ldquo;Residents of Hopefield&rdquo; and &ldquo;Residents of Tuin Street&rdquo; are in fact <strong>copies of that generic reply letter</strong>, addressed to those groups &mdash; there is no actual residents'-group submission in the pack.</p>
+          <h4>Comments dropped from the register</h4>
+          <p>The resident's comment went to the consultant on 20 April 2025; on 28 May 2025 the consultant wrote back acknowledging it, and on 27 May 2025 the developer wrote to her by name. Both acknowledged the comment in writing. Yet in the consultant's <strong>&ldquo;Comments Received&rdquo; register &mdash; now bound into the Final Scoping Report</strong> &mdash; her row contains <strong>her name, mis-recorded as representing an organisation she does not, and then nothing else: no date, no comment</strong>. Her numbered objection was never transcribed. The omission is in the finalised report that is now before the authority.</p>
+          <p><strong>The consultant has acknowledged the omissions in writing.</strong> Its 14 August 2026 letter states: <em>&ldquo;because most comments came through the Protect the West Coast &ndash; Ripl Platform, most comments were similar and we captured them as one. This means that some of the I&amp;APs' names may not appear on the table, but their comments are addressed as they were mention[ed] by other people.&rdquo;</em> Under the EIA Regulations the practitioner must register <em>every</em> interested party and record and respond to <em>every</em> comment. The separate &ldquo;Comments and Responses&rdquo; material collapses about 30 people's comments into eight generic theme-paragraphs &mdash; no names, no dates, and &ldquo;project splitting&rdquo; (the most-raised concern) not addressed at all.</p>
+          <h4>The Social Impact Assessment: no visit, no local baseline, a pre-written verdict</h4>
+          <p>The Social Impact Assessment is a <strong>desktop study with no site visit</strong> &mdash; its compliance table leaves the &ldquo;date, duration and season of the site investigation&rdquo; blank. It has <strong>no data on Hopefield or Ward&nbsp;7</strong>; every baseline figure is province-, district- or Saldanha-Bay-wide. Its declaration of independence is <strong>co-signed by one of the project's own environmental practitioners</strong>. It is a recycled template &mdash; though titled for the solar facility it repeatedly assesses &ldquo;hydrogen production,&rdquo; &ldquo;electrolysers&rdquo; and &ldquo;hydrogen leaks&rdquo; &mdash; and it concludes, at scoping phase, that the project &ldquo;should be authorised from a social perspective.&rdquo; A separate baseline report dated a year later still has no Hopefield data.</p>
+          <h4>How the Final Scoping Report was circulated (8 September 2026)</h4>
+          <p>Three things about the distribution are on the record: the 2025 comments were <strong>reclassified as &ldquo;voluntary&rdquo;</strong>; the email went to about <strong>224 recipients, all in the open &ldquo;To&rdquo; field</strong> &mdash; disclosing every interested party's email address to every other recipient, a Protection of Personal Information Act failure; and it was distributed by a <strong>shared file-hosting link</strong>, not an official portal, though hard copies were placed at three libraries.</p>
+          <h4>The report is out of sequence</h4>
+          <p>Section&nbsp;9.1 states &ldquo;specialist studies and site visits have been concluded&rdquo; &mdash; but the bird and CapeNature-requested fieldwork was scheduled for 7 and 14 September 2026, <em>after</em> the report was circulated on 8 September. Section&nbsp;10 admits the sequencing is inverted: &ldquo;extensive work have already been undertaken before the FSR was compiled. Therefore, some of the potential impacts and mitigation measures are included as early as now&rdquo; &mdash; impacts and mitigation being pre-decided at the scoping stage, which is not what scoping is for.</p>
+          <h4>Why this is useful, not just frustrating</h4>
+          <p>South Africa's EIA regulations require <em>meaningful</em> public participation and a genuine assessment of alternatives. A documented pattern of failures &mdash; partly admitted in the report itself, and including comments dropped from the register &mdash; is a direct ground to ask for the process to be extended and the comments record corrected, and to appeal an authorisation that follows.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section id="benefits">
+    <p class="eyebrow">The other side of the ledger</p>
+    <h2 class="sec">The possible benefits</h2>
+    <p class="sec-note">Opposing the harms and capturing the gains are not contradictory. A well-run project could genuinely help a town that depends on agriculture, fishing and tourism. The honest problem is that <strong>none of the upside is quantified yet</strong> &mdash; there is no published local economic baseline to weigh against the costs (see the <a href="#baseline">next section</a>).</p>
+    <div class="ledger">
+      <details class="item"><summary><span class="tag c">Real</span>Investment and construction spend in a small economy</summary><div class="body"><p>Even discounted heavily, a multi-billion-rand build over years brings real spending on accommodation, services, transport, catering and local trades. The question is capture: without local-procurement rules it flows past Hopefield to metro suppliers. A condition that would address this: phased local-content targets with penalties.</p></div></details>
+      <details class="item"><summary><span class="tag b">Conditional</span>Lasting employment for local people</summary><div class="body"><p>Possible only with a training pipeline started years ahead and enforceable local-hire targets. Without a binding community-benefit agreement, this is marketing.</p></div></details>
+      <details class="item"><summary><span class="tag b">Conditional</span>Municipal revenue and infrastructure</summary><div class="body"><p>Rates, service charges and possibly upgraded bulk water, electricity and road infrastructure. Could also <em>strain</em> town services and housing if worker influx is unmanaged. A condition that would address this: a development agreement that funds the infrastructure the project needs and leaves it for the town afterwards, plus a housing and services plan.</p></div></details>
+      <details class="item"><summary><span class="tag b">Conditional</span>Community ownership and a long-term income stream</summary><div class="body"><p>A community trust with an equity stake can deliver dividends for decades &mdash; schools, bursaries, clinics, enterprise funds. This is standard in South African renewable projects but the percentage and governance are everything. The solar Draft Scoping Report says <em>&ldquo;a Community Trust will be established and funded by the applicant&rdquo;</em> &mdash; but with <strong>no percentage, no quantum and no governance</strong>, and it is a solar-only promise, not written into any licence.</p></div></details>
+      <details class="item"><summary><span class="tag c">Real</span>Profile, skills and diversification</summary><div class="body"><p>A flagship project raises the area's profile and can seed a local renewables and industrial skills base and supplier ecosystem beyond this one developer &mdash; if the training and small-business support are structured to outlast construction.</p></div></details>
+      <details class="item"><summary><span class="tag b">Conditional</span>Environmental co-benefits</summary><div class="body"><p>Alien-vegetation clearing, a well-funded conservation offset, or a managed reserve on retained land could be net positives &mdash; but only if genuine, additional, permanent and independently verified, not a paper offset for irreplaceable renosterveld.</p></div></details>
+    </div>
+  </section>
+
+  <section id="baseline">
+    <p class="eyebrow">Foundations first</p>
+    <h2 class="sec">The economic baseline the assessment still owes Hopefield</h2>
+    <p class="sec-note">Before anyone can honestly weigh this project, the missing piece is a proper economic baseline for the town itself. The Social Impact Assessment has none &mdash; it extrapolates from Saldanha-Bay-wide statistics and promises Ward&nbsp;7 data &ldquo;once consultations are concluded,&rdquo; which many months later had still not happened. Every job argument, on both sides, is currently a guess. This is the specification a credible assessment must contain.</p>
+    <div class="card note">
+      <h4 class="mini">1 &middot; Employment profile of Hopefield residents</h4>
+      <p>How many working-age residents are employed, unemployed or not economically active; by age, sex and education; formal versus informal. Crucially &mdash; <strong>where they work</strong>: in Hopefield, or commuting daily to Vredenburg, Saldanha and beyond; in what sectors; for what kind of employer. This is the only honest denominator against which &ldquo;jobs created in Hopefield&rdquo; can be measured.</p>
+      <h4 class="mini">2 &middot; The local businesses the project puts at risk &mdash; with headcounts</h4>
+      <p>A census, not an estimate, of employment in: apiculture and honey-product manufacture; wildflower cultivation and the Fynbos Show economy; small-scale and community farming; domestic employment; local building and trade small businesses; and town-based businesses serving customers across the wider Western Cape.</p>
+      <h4 class="mini">3 &middot; Skills and education profile of the town</h4>
+      <p>A Hopefield-specific breakdown of qualifications, trades and experience &mdash; so there is a factual basis for how many of the construction and permanent roles residents could actually fill, and what a training pipeline would have to bridge.</p>
+      <h4 class="mini">4 &middot; The property market</h4>
+      <p>Recent sale volumes, prices and time-on-market &mdash; to test the reported stall in the local market and to quantify the second-round effect on domestic and trade employment.</p>
+      <h4 class="mini">5 &middot; Method</h4>
+      <p>A genuine household and business survey, not a desktop extrapolation; by an independent specialist with no role on the assessment team; with indicators defined up front so the same measures can be re-run after construction and after operation, to verify actual local job gains against this baseline and net them against the losses in point&nbsp;2.</p>
+    </div>
+    <p class="sec-note" style="margin-top:16px;margin-bottom:0">Until this exists, the position the record supports on the jobs question is not &ldquo;the project will&rdquo; or &ldquo;won't&rdquo; help Hopefield &mdash; it is that <strong>the work to know has not been done.</strong></p>
+  </section>
+
+  <section id="fynbos">
+    <p class="eyebrow">Jobs on the other side of the ledger</p>
+    <h2 class="sec">The industries that depend on the fynbos</h2>
+    <p class="sec-note">Three established industries in and around Hopefield are built directly on healthy fynbos, clean air and stable groundwater &mdash; across the land the project would clear, and downwind and downgradient of the plant. They employ people the project's permanent roles will not: local, permanent and seasonal. None of this is assessed in the Social Impact Assessment (desktop, no site visit) or the biodiversity report (one spring day).</p>
+    <h3 class="sub">Cut-flowers and nursery stock</h3>
+    <p>A specialist commercial fynbos-horticulture farm on the edge of Hopefield, established in 2002, has grown to <strong>more than 60 hectares under cultivation</strong>. It runs a cut-flower division that <strong>exports to Europe</strong> and a wholesale nursery producing roughly <strong>200,000 potted plants a year</strong>, supplying national retail garden centres and landscapers. It employs about <strong>110 permanent staff, rising to about 190 through the July&ndash;December harvest</strong> &mdash; one of the largest private employers in the town, and the jobs are local. What threatens it: dust and particulate deposition from years of construction and from operations, settling on flower crops and nursery stock (cosmetic damage makes graded export and retail flowers unsaleable); competition for water and any deterioration in groundwater quality; and the loss of the surrounding veld that is both a working genetic resource and part of the Cape-Floral-Kingdom provenance the industry sells on.</p>
+    <h3 class="sub">Honey and honey products</h3>
+    <p>Hopefield markets itself on <strong>fynbos honey</strong>. A family beekeeping business in the town since the 1950s employs about <strong>11 local people</strong> and runs a visitor centre; other beekeepers add to that. Bees forage over several kilometres, so clearing 3,000-plus hectares of flowering veld, plus construction and operational dust, directly reduces forage and can contaminate hives &mdash; and an industrial neighbour undermines a brand sold as &ldquo;West Coast&rdquo; and &ldquo;raw fynbos.&rdquo;</p>
+    <h3 class="sub">Wildflowers and the Fynbos Show economy</h3>
+    <p>Spring wildflower season and the <strong>Hopefield Fynbos Show</strong> &mdash; the town's flagship annual event, drawing up to <strong>8,000 visitors</strong> &mdash; support local accommodation, food and retail. Its specimen exhibit, built each year by local botanists, is in effect an annual field inventory of the veld now proposed for clearing. The scoping report's own visual assessment rates sense-of-place impact &ldquo;High&rdquo; at points before mitigation.</p>
+    <div class="card note">
+      <p><strong>The common thread:</strong> all three industries depend on the same ecological services &mdash; pollinator habitat, clean air, groundwater, intact veld and rural sense of place &mdash; that the biodiversity, air, water and visual concerns each flag as under threat. They are also, unlike the plant's permanent roles, <strong>employment a farmworker town can hold</strong>. A credible assessment would treat them as a cluster, with a proper agricultural and horticultural impact assessment of dust and deposition, enforceable dust and air limits with monitoring, a no-go buffer, and formal consultation with the fynbos cut-flower and beekeeping industry bodies.</p>
+    </div>
+  </section>
+
+  <section id="gaps">
+    <p class="eyebrow">Be honest about this</p>
+    <h2 class="sec">What is still unknown</h2>
+    <p class="sec-note">Most of the primary documents have now been read closely. The following still has to be obtained or established.</p>
+    <h4 class="mini">Documents not yet public</h4>
+    <ul class="tight">
+      <li>The <strong>Major Hazard Installation risk assessment</strong> &mdash; blast, fire and toxic-release contours and the safe distance to town. What is published as the plant's &ldquo;Appendix D-1&rdquo; is only the government screening report.</li>
+      <li>The <strong>air-quality / atmospheric-emissions report</strong> with modelled ground-level concentrations.</li>
+      <li>The full <strong>section-38(3) heritage study</strong> Heritage Western Cape has required, and a <strong>palaeontological assessment covering the fuel-plant footprint</strong>.</li>
+      <li>The full <strong>Agricultural Impact Assessment</strong> the &ldquo;Very High&rdquo; rating requires, and the Department of Agriculture's promised further comment once a layout exists.</li>
+      <li>A <strong>properly compiled, per-commenter Comments and Responses report</strong>, and a corrected &ldquo;Comments Received&rdquo; register.</li>
+      <li>The <strong>hydrogen / methanol campus</strong>, <strong>desalination-plant</strong>, <strong>wind-facility</strong> and <strong>132&nbsp;kV power-line</strong> applications &mdash; not yet started.</li>
+      <li>Any <strong>application for the biomass plant</strong> &mdash; who, where, feedstock, scale. The &ldquo;green&rdquo; claim and the plant's carbon-dioxide supply depend on it.</li>
+      <li>The <strong>Water Use Licence</strong>, <strong>Atmospheric Emission Licence</strong> and <strong>waste management licence</strong> applications.</li>
+      <li>Any <strong>agreements, incentives or fuel-purchase arrangements</strong> between the developer and the province, the municipality or state agencies &mdash; obtainable by formal records request.</li>
+      <li>Land records for the farm portions &mdash; lease versus purchase, and when acquired.</li>
+    </ul>
+    <h4 class="mini">Facts to establish by original work</h4>
+    <ul class="tight">
+      <li>A <strong>Hopefield economic baseline</strong> &mdash; neither social assessment has any town-level data (see the <a href="#baseline">specification</a>).</li>
+      <li>The <strong>municipal water balance</strong> &mdash; whether Saldanha Bay has spare drinking-water capacity, or the plant competes with the town for 8&nbsp;million litres a day; and whether the Hopefield wastewater works can take the new pipeline's load.</li>
+      <li><strong>Prevailing wind</strong> at the site relative to town &mdash; for dust and the flare plume.</li>
+      <li>Whether the two announced hydrogen-and-desalination projects on the Berg estuary system are connected in any way, and what a combined assessment of the estuary would show.</li>
+    </ul>
+    <p class="sec-note" style="margin-top:16px">The full source list is on the <a href="sources.html">sources page</a>.</p>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="disc">Compiled September 2026 from the public record as it then stood, to help residents engage on an informed basis. Not legal advice, and not a substitute for the official documents. Reference numbers, dates and document versions change &mdash; confirm each against the current official filings, and, for anything with legal consequences, a qualified environmental attorney.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="briefing.html">Briefing</a>
+      <a href="sources.html">Sources</a>
+      <a href="have-your-say.html">Have your say</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

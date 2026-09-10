@@ -65,6 +65,10 @@ everything between the `BEGIN briefing content` and `END briefing content`
 comments with the new published HTML. The source of record is
 `../AI Musings/Phelan Green/artefacts/residents-briefing.html`.
 
+**Keep** the `<style>` + `<nav class="site-nav">` block that sits just before
+`<header class="mast">` — that's the "Home / Have your say" bar, and a fresh
+paste of the artefact would drop it.
+
 ## Adding more documents later
 
 To publish another artefact (e.g. the research file) once it has been reviewed

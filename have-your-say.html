@@ -57,24 +57,16 @@
     <p class="sec-note" lang="en">Eight short questions: what you think of the proposal, what matters most to you, what you would want the town to get from it, what worries you, where you stand right now, and a little about you (all optional).</p>
     <p class="sec-note" lang="af">Agt kort vrae: wat jy van die voorstel dink, wat vir jou die belangrikste is, wat jy sou wou h&ecirc; die dorp moet daaruit kry, wat jou bekommer, waar jy op die oomblik staan, en 'n bietjie oor jou (alles opsioneel).</p>
 
-    <!-- =====================================================================
-         SET-UP: paste your KoboToolbox web-form (Enketo) link below.
-         1. In KoboToolbox, open the project &rarr; Form &rarr; "Collect data".
-         2. Copy the link under "Online-Offline (multiple submission)".
-         3. Replace BOTH the iframe src and the fallback href below with it.
-         Until then this shows a placeholder.
-         ===================================================================== -->
+    <!-- Survey hosted on KoboToolbox. To change it, replace the URL in both
+         the iframe src and the fallback link below. -->
     <div class="embed">
       <iframe
         title="Hopefield residents' survey"
-        src="about:blank"
-        data-kobo-src="PASTE_KOBOTOOLBOX_FORM_LINK_HERE"
+        src="https://ee.kobotoolbox.org/x/UhOhLGRy"
         loading="lazy"></iframe>
       <div class="fallback">
-        <span class="todo">SET-UP NEEDED</span>
-        <p style="margin:8px 0 0" lang="en">The survey link has not been added yet. Once it is, the form will appear here, and this button will open it in a new tab:
-          <br><a class="btn ghost" style="margin-top:10px" href="PASTE_KOBOTOOLBOX_FORM_LINK_HERE">Open the survey</a></p>
-        <p style="margin:8px 0 0" lang="af">Die vraelys-skakel is nog nie bygevoeg nie. Sodra dit is, sal die vorm hier verskyn, en hierdie knoppie sal dit in 'n nuwe oortjie oopmaak.</p>
+        <p style="margin:0" lang="en">If the survey does not load above, <a href="https://ee.kobotoolbox.org/x/UhOhLGRy">open it in a new tab</a>.</p>
+        <p style="margin:8px 0 0" lang="af">As die vraelys nie hierbo laai nie, <a href="https://ee.kobotoolbox.org/x/UhOhLGRy">maak dit in 'n nuwe oortjie oop</a>.</p>
       </div>
     </div>
     <p><small lang="en">The survey works on any phone. If you lose signal part-way, your answers are kept and sent when you are back online.</small><small lang="af">Die vraelys werk op enige foon. As jy sein verloor, word jou antwoorde gestoor en gestuur sodra jy weer aanlyn is.</small></p>
@@ -122,19 +114,5 @@
 </footer>
 
 <script src="site.js"></script>
-<script>
-/* Load the KoboToolbox form only once a real link has been set (avoids a
-   broken empty iframe while the site is being set up). */
-(function () {
-  var f = document.querySelector(".embed iframe");
-  if (!f) return;
-  var src = f.getAttribute("data-kobo-src") || "";
-  if (/^https?:\/\//.test(src)) {
-    f.src = src;
-  } else {
-    f.style.display = "none";
-  }
-})();
-</script>
 </body>
 </html>

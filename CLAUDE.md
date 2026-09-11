@@ -54,7 +54,7 @@ As of 13 Sep 2026, `briefing.html` is **no longer a wrapped copy of the claude.a
 (Status as of 11 Sep 2026, except where an item states its own later date — check before assuming otherwise.)
 - **WhatsApp voice-note line** — not yet live. `have-your-say.html` shows a "coming soon" callout; the real `wa.me/27XXXXXXXXX` markup is sitting in an HTML comment ready to swap in once a number exists. Anna's target: sourced by the end of that weekend (~13 Sep 2026) — ask if it's overdue.
 - **Privacy note** (`privacy.html`) — responsible party and contact (`hopefieldorigins@gmail.com`) are filled in, but the page still carries a "Draft — not yet reviewed by an attorney" banner. No attorney has been found yet as of this writing.
-- **Afrikaans translations** — drafts are live and toggleable on every page now (`the-record.html` and `sources.html` caught up 13 Sep 2026), but not yet checked by a native speaker (`.draftbar` banner). No fixed reviewer — likely to be different volunteers over time, or Anna herself if she has time. Don't assume a review is scheduled. PDF review copies (see below) exist for `briefing.html`, `the-record.html` and `sources.html` to make that review easier to do offline/by email.
+- **Afrikaans translations** — drafts are live and toggleable on every page now (`the-record.html` and `sources.html` caught up 13 Sep 2026), but not yet checked by a native speaker (`.draftbar` banner). No fixed reviewer — likely to be different volunteers over time, or Anna herself if she has time. Don't assume a review is scheduled. PDF review copies (see below) exist for all seven pages, to make that review easier to do offline/by email.
 
 ## Making a bilingual PDF for review
 

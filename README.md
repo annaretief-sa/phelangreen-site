@@ -19,6 +19,7 @@ be copied here.
 | `briefing.html` | The Resident's Briefing -- a short, plain-language summary. Deliberately brief; `the-record.html` carries the full detail |
 | `the-record.html` | The long, fully-sourced companion to the briefing. Public-safe: institutions and documents only, no individuals, no advocacy framing. |
 | `sources.html` | The public documents and reporting behind the briefing, with reference numbers |
+| `glossary.html` | Plain-language definitions of the environmental-law, heritage and policy terms used across the site |
 | `have-your-say.html` | The survey (KoboToolbox) + WhatsApp voice-note line |
 | `corrections.html` | How to report a mistake or share a document/source the site is missing |
 | `privacy.html` | POPIA privacy note |
@@ -26,10 +27,11 @@ be copied here.
 
 Every footer shows **"Site last updated: ..."** -- this is read live from the GitHub API (latest commit to this repo) by `site.js`, so it always reflects the truth and never needs manual updating. It quietly falls back to the static placeholder text in the HTML if the API call fails (e.g. the visitor is offline).
 
-Most pages are English + a **draft** Afrikaans translation (toggle, top right):
-`index.html`, `briefing.html`, `have-your-say.html`, `corrections.html`,
-`privacy.html`. `the-record.html` and `sources.html` are still English-only.
-Have an Afrikaans speaker check every translated page before sharing widely.
+Every page is English + a **draft** Afrikaans translation (toggle, top right).
+Have an Afrikaans speaker check it before sharing widely. Bilingual PDF review
+copies of every page (English and Afrikaans shown together, for easy
+line-by-line checking) live in the private repo's `Phelan Green/translations/`
+folder.
 
 ## Set-up before launch
 

@@ -3,506 +3,282 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E">
-<style>body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#F6F3EC;color:#232620}img{max-width:100%}[hidden]{display:none!important}</style>
-<!-- ============================================================= -->
-<!-- BEGIN briefing content. To update: republish the Resident's   -->
-<!-- Briefing artefact, then replace everything between this line  -->
-<!-- and "END briefing content" with the new published HTML.       -->
-<!-- Source of record: ../AI Musings/Phelan Green/artefacts/residents-briefing.html -->
-<!-- ============================================================= -->
 <title>Hopefield Resident's Briefing</title>
-<meta name="description" content="A plain-language briefing for Hopefield residents on the proposed Phelan Green fuel-plant and solar development: what is proposed, what has and has not been decided, and how to take part." />
-<style>
-  :root{
-    --paper:#F6F3EC;
-    --surface:#FFFFFF;
-    --surface-sunk:#EFEBE0;
-    --ink:#232620;
-    --ink-soft:#55584E;
-    --ink-faint:#7C7E72;
-    --rule:#DAD4C4;
-    --rule-strong:#C3BCA8;
-    --green:#4C6247;
-    --green-soft:#E4EADE;
-    --slate:#3C5A69;
-    --slate-soft:#DEE7EB;
-    --ochre:#A9541F;
-    --ochre-soft:#F1E1D3;
-    --gold:#8A6D1E;
-    --shadow:0 1px 2px rgba(35,38,32,.06),0 8px 24px -12px rgba(35,38,32,.14);
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --paper:#181A15;
-      --surface:#22251E;
-      --surface-sunk:#1E211A;
-      --ink:#E9E6DA;
-      --ink-soft:#B4B3A4;
-      --ink-faint:#8C8B7C;
-      --rule:#343830;
-      --rule-strong:#454A3F;
-      --green:#9DB78F;
-      --green-soft:#2A3326;
-      --slate:#8FB2C1;
-      --slate-soft:#22322F;
-      --ochre:#DB8A54;
-      --ochre-soft:#3A2A1E;
-      --gold:#C7A852;
-      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.55);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#181A15;
-    --surface:#22251E;
-    --surface-sunk:#1E211A;
-    --ink:#E9E6DA;
-    --ink-soft:#B4B3A4;
-    --ink-faint:#8C8B7C;
-    --rule:#343830;
-    --rule-strong:#454A3F;
-    --green:#9DB78F;
-    --green-soft:#2A3326;
-    --slate:#8FB2C1;
-    --slate-soft:#22322F;
-    --ochre:#DB8A54;
-    --ochre-soft:#3A2A1E;
-    --gold:#C7A852;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.55);
-  }
-
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Libre Franklin",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    font-size:17px;
-    line-height:1.62;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:720px;margin:0 auto;padding:0 24px}
-
-  h1,h2,h3,h4{font-family:"Spectral",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
-  .eyebrow{
-    font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
-    margin:0 0 10px;
-  }
-  p{margin:0 0 1em}
-  a{color:var(--slate);text-underline-offset:2px}
-  strong{font-weight:600}
-  small{font-size:13.5px;color:var(--ink-soft)}
-
-  header.mast{
-    border-bottom:2px solid var(--ink);
-    background:linear-gradient(180deg,var(--surface-sunk),var(--paper));
-  }
-  .mast-inner{padding:52px 24px 34px;max-width:720px;margin:0 auto}
-  .mast .kicker{
-    font-family:"IBM Plex Mono",ui-monospace,monospace;
-    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);
-    margin:0 0 18px;
-  }
-  h1.title{font-size:clamp(2.1rem,5.4vw,3rem);letter-spacing:-.01em;margin:0 0 .35em}
-  .standfirst{font-size:1.14rem;color:var(--ink-soft);max-width:56ch;margin:0}
-  .mast-meta{
-    margin-top:26px;padding-top:18px;border-top:1px solid var(--rule);
-    display:flex;flex-wrap:wrap;gap:8px 26px;
-    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;color:var(--ink-faint);
-    letter-spacing:.02em;
-  }
-
-  section{padding:38px 0;border-bottom:1px solid var(--rule)}
-  section:last-of-type{border-bottom:0}
-  h2.sec{font-size:1.6rem;margin:0 0 6px;letter-spacing:-.01em}
-  .sec-note{color:var(--ink-soft);margin:0 0 24px;max-width:60ch}
-  h3.sub{font-size:1.12rem;margin:26px 0 6px}
-
-  .card{
-    background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px;
-    padding:20px 22px;box-shadow:var(--shadow);margin:18px 0;
-  }
-  .card.flag{border-left:4px solid var(--ochre)}
-  .card.good{border-left:4px solid var(--green)}
-  .card.ask{border-left:4px solid var(--slate)}
-  .card h3,.card h4{margin-top:0}
-  .card p:last-child{margin-bottom:0}
-
-  .bottomline{font-family:"Spectral",Georgia,serif;font-size:1.2rem;line-height:1.5;color:var(--ink);margin:0;text-wrap:pretty}
-
-  .facts{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule);margin-top:6px}
-  .fact{
-    display:grid;grid-template-columns:140px 1fr;gap:6px 22px;
-    padding:14px 0;border-bottom:1px solid var(--rule);
-  }
-  .fact dt{font-weight:600;font-size:14px;color:var(--ink-soft)}
-  .fact dd{margin:0;font-size:15.5px}
-  @media(max-width:560px){.fact{grid-template-columns:1fr}}
-
-  dl.glo{margin:0;border-top:1px solid var(--rule)}
-  dl.glo div{padding:12px 0;border-bottom:1px solid var(--rule)}
-  dl.glo dt{font-weight:600;font-size:15px}
-  dl.glo dd{margin:3px 0 0;font-size:15px;color:var(--ink-soft)}
-
-  .timeline{margin:8px 0 0;padding:0;list-style:none;border-left:2px solid var(--rule-strong)}
-  .timeline li{position:relative;padding:0 0 20px 24px}
-  .timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--paper)}
-  .timeline .when{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-  .timeline .what{margin:2px 0 0;font-size:15.5px}
-
-  figure{margin:14px 0 0}
-  figure svg{width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px}
-  figcaption{font-size:13px;color:var(--ink-faint);margin-top:8px;font-family:"IBM Plex Mono",monospace;letter-spacing:.02em}
-
-  .concern{border:1px solid var(--rule-strong);border-radius:6px;background:var(--surface);padding:16px 18px;margin:14px 0}
-  .concern h3{font-size:1.06rem;margin:0 0 6px}
-  .concern p{font-size:15.5px;margin:0 0 .6em}
-  .concern p:last-child{margin-bottom:0}
-  .concern .fix{color:var(--green);font-weight:600}
-
-  .cal{margin:8px 0 0;padding:0;list-style:none;border-left:2px dashed var(--rule-strong)}
-  .cal li{position:relative;padding:0 0 20px 24px}
-  .cal li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--slate);border:2px solid var(--paper)}
-  .cal li.nowmark::before{background:var(--ochre)}
-  .cal .stage{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--slate);text-transform:uppercase}
-  .cal .detail{margin:2px 0 0;font-size:15px}
-
-  ol.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:10px}
-  ol.steps li{
-    counter-increment:s;position:relative;padding:13px 16px 13px 50px;
-    background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px;font-size:15.5px;
-  }
-  ol.steps li::before{
-    content:counter(s);position:absolute;left:14px;top:11px;
-    font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:14px;
-    width:24px;height:24px;display:grid;place-items:center;
-    background:var(--ink);color:var(--paper);border-radius:5px;
-  }
-  ul.tight{margin:.4em 0 0;padding-left:1.15em}
-  ul.tight li{margin:.32em 0;font-size:15.5px}
-
-  .kin{background:var(--surface-sunk);border:1px solid var(--rule-strong);border-radius:6px;padding:16px 18px;margin:18px 0;font-size:14.5px;color:var(--ink-soft)}
-  .kin strong{color:var(--ink)}
-  .kin a{white-space:nowrap}
-
-  footer{padding:32px 0 60px;color:var(--ink-faint);font-size:13px}
-  .disc{max-width:62ch}
-
-  :where(a,summary,button):focus-visible{outline:2px solid var(--slate);outline-offset:2px;border-radius:2px}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+<meta name="description" content="A brief, plain-language briefing for Hopefield residents on the proposed Phelan Green fuel-plant and solar development: what is proposed, what has and has not been decided, and how to take part.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<style>
-  /* site navigation added around the briefing artefact */
-  .site-nav{max-width:720px;margin:0 auto;padding:14px 24px 12px;display:flex;flex-wrap:wrap;gap:6px 16px;
-    border-bottom:1px solid var(--rule);
-    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-  .site-nav a{color:var(--ink-faint);text-decoration:none;white-space:nowrap}
-  .site-nav a:hover{color:var(--green)}
-  .site-nav a[aria-current="page"]{color:var(--ink);font-weight:600}
-</style>
-<nav class="site-nav" aria-label="Site">
-  <a href="index.html">Home</a>
-  <a href="briefing.html" aria-current="page">Briefing</a>
-  <a href="the-record.html">Detailed record</a>
-  <a href="sources.html">Sources</a>
-  <a href="have-your-say.html">Have your say</a>
-  <a href="corrections.html">Corrections</a>
-  <a href="privacy.html">Privacy</a>
-</nav>
+<div class="topbar">
+  <nav class="navlinks" aria-label="Site">
+    <a class="home" href="index.html" lang="en">Home</a><a class="home" href="index.html" lang="af">Tuis</a>
+    <a class="home" href="briefing.html" aria-current="page" lang="en">Briefing</a><a class="home" href="briefing.html" aria-current="page" lang="af">Oorsig</a>
+    <a class="home" href="the-record.html" lang="en">Detailed record</a><a class="home" href="the-record.html" lang="af">Gedet. rekord</a>
+    <a class="home" href="sources.html" lang="en">Sources</a><a class="home" href="sources.html" lang="af">Bronne</a>
+    <a class="home" href="have-your-say.html" lang="en">Have your say</a><a class="home" href="have-your-say.html" lang="af">Laat jou stem hoor</a>
+    <a class="home" href="corrections.html" lang="en">Corrections</a><a class="home" href="corrections.html" lang="af">Regstellings</a>
+    <a class="home" href="privacy.html" lang="en">Privacy</a><a class="home" href="privacy.html" lang="af">Privaatheid</a>
+  </nav>
+  <button class="langbtn" id="langToggle" type="button" aria-label="Switch language">Afrikaans</button>
+</div>
+
+<div class="draftbar">
+  Voorlopige Afrikaanse vertaling &mdash; laat asseblief 'n Afrikaanssprekende dit nagaan.
+</div>
 
 <header class="mast">
   <div class="mast-inner">
-    <p class="kicker">For Hopefield residents &middot; West Coast, Western Cape</p>
-    <h1 class="title">The Phelan Green project: a resident's briefing</h1>
-    <p class="standfirst">What is being proposed on the town's doorstep, what has and has not been decided, and how to have your say &mdash; in plain language.</p>
+    <p class="kicker" lang="en">For Hopefield residents &middot; West Coast, Western Cape</p>
+    <p class="kicker" lang="af">Vir Hopefield-inwoners &middot; Weskus, Wes-Kaap</p>
+    <h1 class="title">
+      <span lang="en">The Phelan Green project: a resident's briefing</span>
+      <span lang="af">Die Phelan Green-projek: 'n inwoner-oorsig</span>
+    </h1>
+    <p class="standfirst">
+      <span lang="en">What is proposed, what has (and has not) been decided, and how to have your say &mdash; in plain language. For the fully-sourced version, see <a href="the-record.html">the detailed record</a>.</span>
+      <span lang="af">Wat voorgestel word, wat reeds (en nog nie) besluit is nie, en hoe om jou s&ecirc; te s&ecirc; &mdash; in eenvoudige taal. Vir die volledige, verwysde weergawe, sien <a href="the-record.html">die gedetailleerde rekord</a>.</span>
+    </p>
     <div class="mast-meta">
-      <span>Updated 10 September 2026</span>
-      <span>Compiled from public sources</span>
-      <span>Plain-language edition &mdash; v14</span>
+      <span lang="en">Updated 13 September 2026</span><span lang="af">Opgedateer 13 September 2026</span>
+      <span lang="en">Compiled from public sources</span><span lang="af">Saamgestel uit openbare bronne</span>
+      <span lang="en">Plain-language edition &mdash; v15</span><span lang="af">Eenvoudige-taal uitgawe &mdash; v15</span>
     </div>
   </div>
 </header>
 
 <div class="wrap">
+<main>
 
   <section id="how">
-    <p class="eyebrow">Start here</p>
-    <h2 class="sec">How to read this</h2>
-    <p class="sec-note">This is a short, plain-language summary for anyone in Hopefield. It is not the community's official position and not legal advice &mdash; it is a map of what is known, so you can take part on an informed basis. Every figure here comes from a public document; the sources are listed on the <a href="sources.html">sources page</a>.</p>
-
-    <div class="card">
-      <h4>A few terms you will meet</h4>
-      <dl class="glo">
-        <div><dt>EIA &mdash; Environmental Impact Assessment</dt><dd>The study a developer must do, and the public process around it, before the government decides whether a large project may go ahead. Run under the <strong>National Environmental Management Act</strong>.</dd></div>
-        <div><dt>Scoping report</dt><dd>The <strong>first of two</strong> reporting stages in an EIA &mdash; it describes the project and lists the specialist studies to be done. A "Draft" version goes out for comment, then a "Final" version to the authority. <strong>"Final" only means the consultant has finished this scoping report &mdash; not that the process is over.</strong> The detailed studies, and a further round of public comment, come in the <strong>Environmental Impact Report</strong> stage after this. Each part of the project that has been split off (the fuel plant, the hydrogen plant, the desalination plant, the power line, the wind facility) has, or will have, <strong>its own</strong> scoping report.</dd></div>
-        <div><dt>Consultant (EAP)</dt><dd>The firm the developer pays to run the EIA and write the reports. Here: <strong>WSP</strong> for the fuel plant and <strong>Eco-Compliance</strong> for the solar farm.</dd></div>
-        <div><dt>I&amp;AP &mdash; Interested &amp; Affected Party</dt><dd>Anyone who registers to take part. Registering is how you get notified, and how your comments must be recorded and answered.</dd></div>
-        <div><dt>The deciding office</dt><dd>The <strong>Western Cape environment department</strong> decides on the fuel plant; the <strong>national environment department</strong> decides on the solar farm.</dd></div>
-        <div><dt>Water Use Licence</dt><dd>Separate permission from the national <strong>Department of Water &amp; Sanitation</strong> to take water and to build near a river. Its own public process.</dd></div>
-        <div><dt>Critical Biodiversity Area</dt><dd>Land the province has mapped as so ecologically important that it should not be cleared for development.</dd></div>
-        <div><dt>Ramsar site</dt><dd>A wetland on an international protected list. <strong>Langebaan Lagoon</strong> is one; the groundwater under the plant site flows towards it.</dd></div>
-        <div><dt>SIP &mdash; Strategic Integrated Project</dt><dd>A priority status the national government gives certain projects to speed up their approvals. It does <strong>not</strong> remove any of the required studies or public processes.</dd></div>
-        <div><dt>e-SAF</dt><dd>Synthetic jet fuel made from hydrogen and captured carbon dioxide instead of from crude oil. The project's current final product.</dd></div>
-        <div><dt>PAIA request</dt><dd>A formal request &mdash; which anyone may make &mdash; for records held by a government body or a company.</dd></div>
-      </dl>
+    <div class="callout warn">
+      <p style="margin:0" lang="en"><strong>The nearest deadline is 8 October 2026.</strong> The solar farm's Final Scoping Report was released 8 September 2026; written comments go to the consultant, <strong><a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a></strong>, by 8 October. Printed copies are at the Hopefield, Saldanha and Langebaan libraries. This is only the <em>scoping</em> stage &mdash; a fuller study stage, with another comment round, still follows. How to comment is below.</p>
+      <p style="margin:8px 0 0" lang="af"><strong>Die naaste sperdatum is 8 Oktober 2026.</strong> Die sonplaas se Finale Bestekverslag is op 8 September 2026 vrygestel; skriftelike kommentaar gaan na die konsultant, <strong><a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a></strong>, teen 8 Oktober. Gedrukte afskrifte is by die Hopefield-, Saldanha- en Langebaan-biblioteke. Dit is net die <em>bestek</em>-fase &mdash; 'n voller studie-fase, met nog 'n kommentaar-ronde, volg steeds. Hoe om kommentaar te lewer, is hieronder.</p>
     </div>
   </section>
 
   <section id="bottomline">
-    <p class="eyebrow">In short</p>
-    <h2 class="sec">The bottom line</h2>
-    <p class="bottomline">Phelan Green, a renewable-energy company, proposes a roughly <strong>R47-billion</strong> complex north and east of Hopefield: a synthetic jet-fuel plant and a solar farm covering more than <strong>3,000 hectares</strong>, on land that holds threatened fynbos and renosterveld, in a dry catchment whose groundwater flows toward Langebaan Lagoon. The main government decisions have <strong>not</strong> been taken. The public consultation so far has been widely criticised as rushed and split into pieces. There is a real opportunity to change the project, or the conditions attached to it &mdash; and the time to act is now, before any approval is issued.</p>
+    <p class="eyebrow" lang="en">In short</p>
+    <p class="eyebrow" lang="af">Kortliks</p>
+    <h2 class="sec" lang="en">The bottom line</h2>
+    <h2 class="sec" lang="af">Kort opsomming</h2>
+    <p lang="en">Phelan Green proposes a roughly <strong>R47-billion</strong> complex north and east of Hopefield: a synthetic jet-fuel plant and a solar farm over <strong>3,000 hectares</strong>, on land with threatened fynbos, in a dry catchment that drains toward Langebaan Lagoon. The main government decisions have <strong>not</strong> been taken. Consultation so far has been widely criticised as rushed and split into pieces. There is a real chance to change the project, or its conditions &mdash; and now is the time, before any approval is issued.</p>
+    <p lang="af">Phelan Green stel 'n omtrent <strong>R47-miljard</strong> kompleks noord en oos van Hopefield voor: 'n sintetiese straalbrandstof-aanleg en 'n sonplaas van meer as <strong>3 000 hektaar</strong>, op grond met bedreigde fynbos, in 'n dro&euml; opvanggebied wat na die Langebaanlagune afloop. Die hoof regeringsbesluite is <strong>nog nie</strong> geneem nie. Die openbare deelname tot dusver is wyd gekritiseer as haastig en in stukke opgebreek. Daar is 'n regte kans om die projek, of sy voorwaardes, te verander &mdash; en nou is die tyd, voordat enige goedkeuring uitgereik word.</p>
   </section>
 
   <section id="what">
-    <p class="eyebrow">The project</p>
-    <h2 class="sec">What is being proposed</h2>
-    <p class="sec-note">Drawn from the developer's own scoping reports and public notices. Where the documents disagree with themselves or with residents, that is noted.</p>
-    <dl class="facts">
-      <div class="fact"><dt>The idea</dt><dd>Solar electricity splits water into <strong>hydrogen</strong>; the hydrogen is combined with <strong>carbon dioxide</strong> to make <strong>synthetic jet fuel</strong> for export to Europe. The carbon dioxide is to come from a <strong>straw-fired plant "owned by a third party"</strong> that is not part of this application.</dd></div>
-      <div class="fact"><dt>Location</dt><dd>Farmland north and east of town, west of the Sout River. The company told residents about <strong>3 km</strong> from Hopefield; residents say the nearest boundary is about <strong>900 m</strong>; and the Final Scoping Report itself now says the project is <strong>"approximately 1 km north of Hopefield town (Garden Street)."</strong> The site adjoins the existing wind farm on its south-east side.</dd></div>
-      <div class="fact"><dt>Size</dt><dd>Solar farm <strong>3,000+ hectares</strong> (the documents give figures from 2,880 to 3,338 ha), plus a large battery and three electrical substations. Fuel plant about <strong>61 hectares</strong>, built in three phases through to around <strong>2032</strong>. Not connected to the national grid &mdash; a dedicated power line would feed the hydrogen plant.</dd></div>
-      <div class="fact"><dt>Water</dt><dd>About <strong>8 million litres a day</strong>. The documents name <strong>four different sources</strong>: the town's drinking-water pipeline, groundwater, desalinated seawater, and treated sewage piped from Saldanha. Which one is real is not settled.</dd></div>
-      <div class="fact"><dt>Hazardous materials</dt><dd>On the plant site: hydrogen, oxygen, liquid carbon dioxide, LPG, naphtha, 1,000 tonnes of potassium hydroxide, ammonia. A <strong>major-hazard safety study</strong> is required but has been postponed to a later stage.</dd></div>
-      <div class="fact"><dt>Jobs</dt><dd>The company and province say about <strong>2,500 construction jobs</strong> over roughly five years and about <strong>500 permanent jobs</strong>. No breakdown of how many could go to local people, or what skills are needed, has been published.</dd></div>
-      <div class="fact"><dt>Transport</dt><dd>Fuel trucked about <strong>40&ndash;50 km to the Port of Saldanha</strong>. Construction: roughly <strong>44,500 truck trips over five years</strong>, about 400 workers a day at peak. A new ~5 km sewage pipeline to the Hopefield treatment works.</dd></div>
-      <div class="fact"><dt>Special status</dt><dd>Granted <strong>SIP status in October 2023</strong> &mdash; described then as a "Green Ammonia Project". The product has since changed to a shipping fuel, and then to jet fuel. The status speeds up approvals but attaches <strong>no conditions</strong> about community benefit or the environment.</dd></div>
-    </dl>
-  </section>
-
-  <section id="where">
-    <p class="eyebrow">Orientation</p>
-    <h2 class="sec">Where it would sit</h2>
-    <p class="sec-note">Redrawn from the applicant's own proposed site layout &mdash; the same arrangement of phases, plant and river, simplified. Positions and boundaries are approximate; this is not a survey.</p>
-    <figure>
-      <svg viewBox="0 0 760 662" role="img" aria-labelledby="schematic-title">
-        <title id="schematic-title">Schematic plan based on the applicant's proposed layout: Hopefield town to the south-west; a three-phase solar farm and the fuel-plant complex to the north and east, split by the Sout River; Phase 3 the largest, extending south-east.</title>
-        <defs>
-          <pattern id="hatch" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-            <rect width="9" height="9" fill="var(--slate-soft)"/>
-            <line x1="0" y1="0" x2="0" y2="9" stroke="var(--slate)" stroke-width="1.3" opacity="0.5"/>
-          </pattern>
-          <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0L10 5L0 10z" fill="var(--slate)"/>
-          </marker>
-        </defs>
-
-        <text x="384" y="14" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-faint)">applicant's proposed layout &#8212; 3-phase solar farm &#8776; 2,660 ha &#183; ~1.6 GW, plus the fuel-plant complex</text>
-
-        <!-- compass -->
-        <line x1="728" y1="60" x2="728" y2="30" stroke="var(--ink-faint)" stroke-width="1.5"/>
-        <path d="M728 24 l5 12 -5 -4 -5 4 z" fill="var(--ink-faint)"/>
-        <text x="728" y="76" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-faint)">N</text>
-
-        <!-- main road -->
-        <line x1="4" y1="500" x2="756" y2="150" stroke="var(--ink-faint)" stroke-width="2.5"/>
-        <text x="716" y="162" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-faint)">main road (R45)</text>
-
-        <!-- Phase polygons -->
-        <polygon points="108,160 128,100 200,78 278,98 306,155 312,244 285,334 232,394 160,394 110,334 96,240" fill="url(#hatch)" stroke="var(--slate)" stroke-width="1.5"/>
-        <polygon points="360,124 440,96 540,116 605,170 620,258 585,348 500,380 415,354 372,278 352,184" fill="url(#hatch)" stroke="var(--slate)" stroke-width="1.5"/>
-        <polygon points="430,352 515,320 615,328 700,380 726,462 700,548 610,592 505,570 442,494 416,412" fill="url(#hatch)" stroke="var(--slate)" stroke-width="1.5"/>
-
-        <!-- existing Hopefield Wind Farm &mdash; adjoins the site on the SE -->
-        <g stroke="var(--slate)" stroke-width="1.3" fill="none">
-          <path d="M706 574 v-13 M706 561 l0 -6 M706 561 l-5.5 3.2 M706 561 l5.5 3.2"/>
-          <path d="M726 542 v-11 M726 531 l0 -5 M726 531 l-4.6 2.7 M726 531 l4.6 2.7"/>
-          <path d="M690 598 v-13 M690 585 l0 -6 M690 585 l-5.5 3.2 M690 585 l5.5 3.2"/>
-        </g>
-        <text x="748" y="614" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--slate)">existing Hopefield Wind Farm &#8212; operating;</text>
-        <text x="748" y="624" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--slate)">it adjoins the solar site on the south-east</text>
-
-        <!-- faint existing centre-pivot fields -->
-        <g fill="none" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="3 4" opacity="0.28">
-          <circle cx="196" cy="210" r="42"/><circle cx="226" cy="308" r="28"/>
-          <circle cx="470" cy="192" r="44"/><circle cx="540" cy="290" r="32"/>
-          <circle cx="600" cy="470" r="38"/>
-        </g>
-
-        <!-- Sout River -->
-        <path d="M330 8 C345 62,320 98,332 154 C344 208,300 240,312 302 C323 362,272 394,270 454 C268 504,232 530,225 590 C221 618,210 636,204 656" fill="none" stroke="var(--slate)" stroke-width="14" opacity="0.16" stroke-linecap="round"/>
-        <path d="M330 8 C345 62,320 98,332 154 C344 208,300 240,312 302 C323 362,272 394,270 454 C268 504,232 530,225 590 C221 618,210 636,204 656" fill="none" stroke="var(--slate)" stroke-width="3.2"/>
-        <text x="342" y="24" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--slate)">Sout River</text>
-
-        <!-- town -->
-        <rect x="44" y="466" width="108" height="74" rx="3" fill="var(--green-soft)" stroke="var(--green)" stroke-width="1.6"/>
-        <text x="98" y="499" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="var(--ink)">HOPEFIELD</text>
-        <text x="98" y="515" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">the town</text>
-
-        <!-- gap to nearest phase -->
-        <line x1="238" y1="398" x2="238" y2="462" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="2 3"/>
-        <text x="228" y="426" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">~0.9&#8211;3 km to</text>
-        <text x="228" y="437" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">nearest array</text>
-        <text x="228" y="448" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">(figure disputed)</text>
-
-        <!-- plant complex at north end of Phase 1 -->
-        <rect x="146" y="60" width="140" height="52" rx="2" fill="var(--ochre-soft)" stroke="var(--ochre)" stroke-width="1.6"/>
-        <rect x="152" y="66" width="30" height="18" fill="var(--green)" opacity="0.75"/>
-        <rect x="186" y="66" width="28" height="18" fill="var(--slate)" opacity="0.75"/>
-        <rect x="218" y="66" width="20" height="40" fill="var(--ochre)" opacity="0.55"/>
-        <rect x="242" y="66" width="36" height="18" fill="var(--gold)" opacity="0.6"/>
-        <rect x="152" y="90" width="84" height="16" fill="var(--slate)" opacity="0.3"/>
-        <line x1="266" y1="60" x2="266" y2="42" stroke="var(--ochre)" stroke-width="2"/>
-        <circle cx="266" cy="39" r="3" fill="var(--ochre)"/>
-        <text x="216" y="130" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-weight="600" fill="var(--ink)">e-SAF plant &#183; hydrogen campus</text>
-        <text x="216" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-soft)">substation &#183; battery &#183; flare</text>
-
-        <!-- groundwater note -->
-        <text x="8" y="30" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">Plant's own report: the aquifer here</text>
-        <text x="8" y="41" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">"would drain towards the Langebaan Lagoon"</text>
-
-        <!-- phase labels -->
-        <text x="198" y="236" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">PHASE 1</text>
-        <text x="198" y="250" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">586 ha &#183; 340 MW</text>
-        <text x="486" y="230" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">PHASE 2</text>
-        <text x="486" y="244" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">941 ha &#183; 605 MW</text>
-        <text x="486" y="300" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">threatened fynbos &amp; renosterveld</text>
-        <text x="486" y="311" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink-faint)">Critical Biodiversity Areas</text>
-        <text x="576" y="476" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)">PHASE 3</text>
-        <text x="576" y="490" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">1,133 ha &#183; 655 MW</text>
-
-        <!-- downstream -->
-        <line x1="214" y1="614" x2="176" y2="650" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#arw)"/>
-        <text x="252" y="622" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600" fill="var(--ink)">Sout &#8594; Berg River estuary (Ramsar wetland)</text>
-        <text x="252" y="635" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink-soft)">Langebaan Lagoon ~29 km SW &#8212; via groundwater</text>
-      </svg>
-      <figcaption>Schematic, redrawn from the applicant's proposed site layout. Positions and boundaries approximate &mdash; not a survey. The three-phase split and the hectare / megawatt figures are the applicant's own labels on that drawing, and differ from the phasing given elsewhere in the project documents. The existing Hopefield Wind Farm, already operating, adjoins the site on the south-east along the R45 (the scoping report's words: the project "borders along the existing Hopefield Wind Farm in the south-east"). Prevailing wind relative to the town is still not established.</figcaption>
-    </figure>
+    <p class="eyebrow" lang="en">The project</p>
+    <p class="eyebrow" lang="af">Die projek</p>
+    <h2 class="sec" lang="en">What is being proposed</h2>
+    <h2 class="sec" lang="af">Wat voorgestel word</h2>
+    <ul class="plain">
+      <li lang="en"><strong>The idea:</strong> solar electricity splits water into hydrogen; the hydrogen is combined with carbon dioxide (from a straw-fired plant "owned by a third party") to make synthetic jet fuel for export.</li>
+      <li lang="af"><strong>Die idee:</strong> son-elektrisiteit splits water in waterstof; die waterstof word met koolstofdioksied (van 'n strooi-aanleg "besit deur 'n derde party") gekombineer om sintetiese straalbrandstof vir uitvoer te maak.</li>
+      <li lang="en"><strong>Location:</strong> farmland north and east of town. The company said ~3&nbsp;km from Hopefield; residents say the nearest boundary is ~900&nbsp;m; the Final Scoping Report itself now says "approximately 1&nbsp;km north of town."</li>
+      <li lang="af"><strong>Ligging:</strong> plaasgrond noord en oos van die dorp. Die maatskappy het ges&ecirc; ~3&nbsp;km van Hopefield; inwoners s&ecirc; die naaste grens is ~900&nbsp;m; die Finale Bestekverslag self s&ecirc; nou "ongeveer 1&nbsp;km noord van die dorp."</li>
+      <li lang="en"><strong>Size:</strong> solar farm 3,000+&nbsp;hectares, fuel plant ~61&nbsp;hectares, built in phases to around 2032. Not connected to the national grid &mdash; a dedicated power line would feed the hydrogen plant.</li>
+      <li lang="af"><strong>Grootte:</strong> sonplaas 3 000+&nbsp;hektaar, brandstof-aanleg ~61&nbsp;hektaar, in fases gebou tot omtrent 2032. Nie aan die nasionale kragnet gekoppel nie &mdash; 'n toegewyde kraglyn sou die waterstof-aanleg voed.</li>
+      <li lang="en"><strong>Water:</strong> about 8&nbsp;million litres a day. The documents name four different possible sources &mdash; the town's own drinking-water pipeline among them &mdash; and don't settle on one.</li>
+      <li lang="af"><strong>Water:</strong> omtrent 8&nbsp;miljoen liter per dag. Die dokumente noem vier moontlike bronne &mdash; die dorp se eie drinkwaterpyplyn onder hulle &mdash; en bepaal nie een nie.</li>
+      <li lang="en"><strong>Hazardous materials:</strong> hydrogen, ammonia, LPG and 1,000&nbsp;tonnes of potassium hydroxide on site. The required major-hazard safety study has been postponed to a later stage.</li>
+      <li lang="af"><strong>Gevaarlike materiaal:</strong> waterstof, ammoniak, vloeibare petrolgas en 1 000&nbsp;ton kaliumhidroksied op die terrein. Die vereiste groot-gevaar-veiligheidstudie is na 'n latere fase uitgestel.</li>
+      <li lang="en"><strong>Jobs:</strong> ~2,500 construction jobs and ~500 permanent jobs are claimed, traced to a news website rather than a labour study. No breakdown by skill, or of how many could go to local people, has been published.</li>
+      <li lang="af"><strong>Werk:</strong> ~2 500 konstruksiewerk en ~500 permanente poste word beweer, na 'n nuuswebwerf teruggevoer eerder as 'n arbeidstudie. Geen uiteensetting per vaardigheid, of hoeveel plaaslik kan wees nie, is gepubliseer.</li>
+      <li lang="en"><strong>Special status:</strong> granted "SIP" priority status in October 2023 as a "Green Ammonia Project." The product has since changed twice &mdash; to a shipping fuel, then jet fuel. The status speeds approvals but attaches no community or environmental conditions.</li>
+      <li lang="af"><strong>Spesiale status:</strong> in Oktober 2023 "SIP"-prioriteitstatus toegeken as 'n "Groen Ammoniak-projek." Die produk het sedertdien twee keer verander &mdash; na 'n skeepvaartbrandstof, dan straalbrandstof. Die status bespoedig goedkeurings maar heg geen gemeenskap- of omgewingsvoorwaardes nie.</li>
+    </ul>
   </section>
 
   <section id="history">
-    <p class="eyebrow">Context</p>
-    <h2 class="sec">How it arrived</h2>
-    <p class="sec-note">The central community complaint is that the project was never presented as a whole. Each part arrived as a separate surprise.</p>
-    <ul class="timeline">
-      <li><span class="when">Oct 2023</span><p class="what">Phelan announces a R47-billion Saldanha project. It is granted SIP status as a <strong>"Green Ammonia Project."</strong></p></li>
-      <li><span class="when">Mar 2025</span><p class="what">The <strong>solar farm</strong> becomes locally visible. A public meeting on about 13 March draws only <strong>11 residents</strong> &mdash; a day or two's notice, no printed documents. Some specialist reports reach residents only near the comment deadline.</p></li>
-      <li><span class="when">Apr&ndash;May 2025</span><p class="what">Residents register and object to the process. Phelan Green replies with a <strong>single generic letter</strong> to everyone: it calls the product a shipping fuel, names a wind farm about 16 km away, and confirms the hydrogen plant will be "a separate EIA."</p></li>
-      <li><span class="when">2026</span><p class="what">The scope widens again: a straw-fired plant, a not-yet-sited hydrogen campus, a desalination plant "on its own separate EIA."</p></li>
-      <li><span class="when">Mar&ndash;Jul 2026</span><p class="what">The fuel plant's environmental application is lodged in March; its Draft Scoping Report is out for review from early May to 8 June, and the <strong>Final Scoping Report is finalised in June</strong>, to go to the Western Cape authority for the scoping stage to be signed off. The solar farm's Draft Scoping Report is released in April. Independent botanists and hydrogeologists go on record with concerns, and three government bodies &mdash; <strong>CapeNature</strong>, the <strong>Western Cape Department of Agriculture</strong> and <strong>Air Force Base Langebaanweg</strong> &mdash; write in against the solar project, CapeNature calling the plan "fatally flawed from a biodiversity perspective."</p></li>
-      <li><span class="when">8 September 2026</span><p class="what">The <strong>solar farm's Final Scoping Report is sent to registered parties</strong> &mdash; the event that started the comment window now running. It finalises the August 2026 report and bundles in the specialist studies and the record of public comments. Reviewers point out at once that it still refuses to assess any alternative site, still relies on the old fuel-plant heritage study, leaves the three government objections unanswered, and was circulated before its own bird and plant fieldwork was finished.</p></li>
-      <li><span class="when">Now</span><p class="what">The one step with a deadline on it is the <strong>solar Final Scoping Report &mdash; comments to Eco-Compliance by 8 October 2026</strong>. After that, the solar and fuel-plant Environmental Impact Reports, the Water Use Licence and the Atmospheric Emission Licence all still lie ahead &mdash; and the hydrogen plant, desalination plant, power line and wind facility have not even begun their own environmental processes. The main decisions have <strong>not</strong> been made. This is the window to act.</p></li>
+    <p class="eyebrow" lang="en">Context</p>
+    <p class="eyebrow" lang="af">Konteks</p>
+    <h2 class="sec" lang="en">How it arrived</h2>
+    <h2 class="sec" lang="af">Hoe dit hier gekom het</h2>
+    <p class="sec-note" lang="en">The central community complaint: the project was never presented as a whole. Each part arrived as a separate surprise.</p>
+    <p class="sec-note" lang="af">Die kern-grief in die gemeenskap: die projek is nooit as 'n geheel aangebied nie. Elke deel het as 'n aparte verrassing opgedaag.</p>
+    <ul class="plain">
+      <li lang="en"><strong>Oct 2023</strong> &mdash; Phelan announces a R47-billion Saldanha project; granted SIP status as a "Green Ammonia Project."</li>
+      <li lang="af"><strong>Okt 2023</strong> &mdash; Phelan kondig 'n R47-miljard Saldanha-projek aan; SIP-status toegeken as 'n "Groen Ammoniak-projek."</li>
+      <li lang="en"><strong>Mar&ndash;May 2025</strong> &mdash; The solar farm becomes locally visible. One public meeting, ~11 residents, no printed documents. Objectors get a single generic reply letter.</li>
+      <li lang="af"><strong>Mrt&ndash;Mei 2025</strong> &mdash; Die sonplaas word plaaslik sigbaar. Een openbare vergadering, ~11 inwoners, geen gedrukte dokumente nie. Beswaarmakers kry een generiese antwoordbrief.</li>
+      <li lang="en"><strong>2026</strong> &mdash; The scope widens again: a straw-fired plant, a not-yet-sited hydrogen campus, a desalination plant &mdash; each called "a separate application."</li>
+      <li lang="af"><strong>2026</strong> &mdash; Die omvang groei weer: 'n strooi-aanleg, 'n nog-nie-gele&euml; waterstofkampus, 'n ontsoutingsaanleg &mdash; elk "'n aparte aansoek" genoem.</li>
+      <li lang="en"><strong>Jun&ndash;Jul 2026</strong> &mdash; Both Final Scoping Reports are finalised. Three government bodies &mdash; CapeNature, the WCape Agriculture Department, Air Force Base Langebaanweg &mdash; object in writing.</li>
+      <li lang="af"><strong>Jun&ndash;Jul 2026</strong> &mdash; Albei Finale Bestekverslae word gefinaliseer. Drie regeringsliggame &mdash; CapeNature, die WKaap Landbou-departement, Lugmagbasis Langebaanweg &mdash; maak skriftelike besware.</li>
+      <li lang="en"><strong>8 Sep 2026</strong> &mdash; The solar Final Scoping Report is sent to registered parties, opening the comment window now running &mdash; still without site alternatives assessed, the old heritage study reused, or the three objections answered.</li>
+      <li lang="af"><strong>8 Sep 2026</strong> &mdash; Die sonplaas se Finale Bestekverslag word aan geregistreerde partye gestuur, wat die huidige kommentaar-venster open &mdash; steeds sonder terrein-alternatiewe beoordeel, met die ou erfenisstudie hergebruik, en die drie besware onbeantwoord.</li>
     </ul>
   </section>
 
   <section id="split">
-    <p class="eyebrow">Why this keeps coming up</p>
-    <h2 class="sec">One project, many applications</h2>
-    <p>One physical complex has been divided into <strong>six or more separate approval processes</strong> &mdash; the fuel plant, the solar farm, a hydrogen campus, a power line, a wind facility, a desalination plant, plus the water and air licences &mdash; each with its own consultant, its own deciding office and its own comment deadline.</p>
-    <p><strong>Each of those runs the full course on its own &mdash; and this Final Scoping Report is not the last document.</strong> It is the solar farm's, and only its scoping stage; the more detailed Environmental Impact Report, with another comment period, still follows. The <strong>fuel plant has its own Final Scoping Report</strong>, finalised in June 2026 and going to the Western Cape authority &mdash; comments on it can still be sent there. And the <strong>hydrogen plant, the desalination plant, the power line and the wind facility</strong> are each described by the developer as a separate environmental application; several of them will produce their own scoping reports, then their own impact reports, still to come. None of those has started.</p>
-    <p>This is legal. But it means <strong>no single study looks at the combined effect</strong> of everything together on water, wildlife, traffic or air. The solar report limits "combined impact" to how the view changes.</p>
-    <p>The solar farm's <strong>Final Scoping Report (August 2026) itself contains an engineering layout of the whole complex</strong> &mdash; solar, battery, hydrogen plant, methanol plant and storage tanks, carbon capture, straw-fired plant, flares, truck loading &mdash; all on one farm, with "future expansion" areas marked. Yet the same report still calls the campus a separate application and says the development footprint is not yet decided.</p>
-    <p>Both scoping reports also <strong>refuse to assess alternative locations.</strong> The solar report's Final version repeats, word for word, that "a location alternative is therefore not considered" because "the applicant currently owns the farms." The law requires alternatives to be assessed, Heritage Western Cape has formally demanded it, and it still has not been done.</p>
-    <p>Three arms of government have already put objections or reservations in writing &mdash; all now bound into the Final Scoping Report itself. <strong>CapeNature</strong> says the plan is "fatally flawed from a biodiversity perspective." The <strong>Western Cape Department of Agriculture</strong> says it "is unable to provide informed comment" while the layout is undefined, and that suitable alternative land exists elsewhere. <strong>Air Force Base Langebaanweg</strong> asks that "approval be withheld pending the completion and review of the required aviation and environmental assessments." The Final Scoping Report answers none of them.</p>
+    <p class="eyebrow" lang="en">Why this keeps coming up</p>
+    <p class="eyebrow" lang="af">Hoekom dit steeds opduik</p>
+    <h2 class="sec" lang="en">One project, many applications</h2>
+    <h2 class="sec" lang="af">Een projek, baie aansoeke</h2>
+    <p lang="en">One physical complex has been divided into <strong>six or more separate approval processes</strong> &mdash; the fuel plant, the solar farm, a hydrogen campus, a power line, a wind facility, a desalination plant, plus water and air licences &mdash; each with its own consultant, deciding office and deadline. <strong>This Final Scoping Report is not the last document</strong>: it is only the solar farm's scoping stage, with a fuller impact-report stage and another comment round still to come; the other applications haven't even started. No single study looks at the combined effect of everything together.</p>
+    <p lang="af">Een fisiese kompleks is in <strong>ses of meer aparte goedkeuringsprosesse</strong> opgedeel &mdash; die brandstof-aanleg, die sonplaas, 'n waterstofkampus, 'n kraglyn, 'n wind-fasiliteit, 'n ontsoutingsaanleg, plus water- en lugvergunnings &mdash; elk met sy eie konsultant, besluitnemende kantoor en sperdatum. <strong>Hierdie Finale Bestekverslag is nie die laaste dokument nie</strong>: dit is net die sonplaas se bestek-fase, met 'n voller impakverslag-fase en nog 'n kommentaar-ronde wat nog kom; die ander aansoeke het nie eens begin nie. Geen enkele studie kyk na die gesamentlike effek van alles saam nie.</p>
+    <p lang="en">Both scoping reports also <strong>refuse to assess alternative locations</strong>, repeating that "a location alternative is therefore not considered" because "the applicant currently owns the farms" &mdash; despite the law requiring it, and Heritage Western Cape formally demanding it. <strong>CapeNature, the Agriculture Department and the Air Force</strong> have all objected in writing, bound into the report itself; the Final Scoping Report answers none of them.</p>
+    <p lang="af">Albei bestekverslae <strong>weier ook om alternatiewe liggings te beoordeel</strong>, en herhaal dat "'n liggingsalternatief word dus nie oorweeg nie" omdat "die aansoeker tans die plase besit" &mdash; ten spyte daarvan dat die wet dit vereis, en Erfenis Wes-Kaap dit formeel ge&euml;is het. <strong>CapeNature, die Landbou-departement en die Lugmag</strong> het almal skriftelik beswaar gemaak, ingebind in die verslag self; die Finale Bestekverslag beantwoord nie een van hulle nie.</p>
   </section>
 
   <section id="concerns">
-    <p class="eyebrow">The substance</p>
-    <h2 class="sec">The main concerns</h2>
-    <p class="sec-note">Ordered here by <strong>how widely the concern is likely to be felt in the town</strong> &mdash; from the ones that touch the most households first, to the ones held strongly by fewer people last. That is <em>not</em> a ranking of how serious each is, or how strong the evidence is &mdash; the research file weighs those. It is a working estimate, drawn from the pattern of the written comments so far, and it should be tested against a proper listening exercise. Each concern comes from the developer's own documents or independent specialists; the single most useful change is marked in green.</p>
+    <p class="eyebrow" lang="en">The substance</p>
+    <p class="eyebrow" lang="af">Die kernsake</p>
+    <h2 class="sec" lang="en">The main concerns</h2>
+    <h2 class="sec" lang="af">Die hoof-kwelpunte</h2>
+    <p class="sec-note" lang="en">Ordered by how widely each is likely felt across the town, not by severity &mdash; that weighing is in <a href="the-record.html">the detailed record</a>. Each point comes from the developer's own documents or independent specialists.</p>
+    <p class="sec-note" lang="af">Gerangskik volgens hoe wyd elkeen in die dorp gevoel word, nie volgens erns nie &mdash; daardie weging is in <a href="the-record.html">die gedetailleerde rekord</a>. Elke punt kom uit die ontwikkelaar se eie dokumente of onafhanklike spesialiste.</p>
 
-    <div class="concern">
-      <h3>1 &middot; Jobs and the local economy</h3>
-      <p>This cuts both ways and touches nearly everyone. The <strong>2,500 and 500 job figures come from a news website, not a labour study</strong>, and the developer's own social report treats its own headline number as "a rumour." At a May 2026 meeting the consultant walked it back &mdash; <strong>peak construction is about 1,000 workers, not 2,500</strong> (2,500 is a total over the whole build). The one specialist calculation in the documents &mdash; in the traffic study &mdash; estimates about <strong>eight permanent staff per phase</strong> of the solar farm. Meanwhile <strong>no one has studied Hopefield's own economy</strong>: how many people are employed, in what, with what skills, and where they work (many commute to Vredenburg and Saldanha). And local industries that depend on healthy fynbos and clean air &mdash; <strong>Arnelia Farms</strong> (around 110&ndash;190 jobs), the <strong>honey businesses</strong>, and the <strong>wildflower and Fynbos Show economy</strong> &mdash; have not been assessed as being at risk at all. Residents also report that house sales in the town have stalled since the project became public, and that two earlier developments &mdash; the wind farm and the Kropz mine &mdash; made job promises the town says were never kept.</p>
-      <p class="fix">The fix: a real household-and-business survey of Hopefield before any decision; the jobs claim broken down by skill and by local-versus-imported; and binding local-hire, local-procurement and community-benefit terms written into the licence, not promised in a brochure.</p>
+    <div class="card flag">
+      <h3 lang="en">1 &middot; Jobs and the local economy</h3>
+      <h3 lang="af">1 &middot; Werk en die plaaslike ekonomie</h3>
+      <p lang="en">The 2,500/500 job figures trace to a news website, not a labour study &mdash; the developer's own report calls its headline number "a rumour," and a later meeting put peak construction at ~1,000. No one has studied Hopefield's own economy, or the local industries (honey, wildflowers, Arnelia Farms) that depend on healthy fynbos and could be put at risk instead.</p>
+      <p lang="af">Die 2 500/500-werksyfers word na 'n nuuswebwerf teruggevoer, nie 'n arbeidstudie nie &mdash; die ontwikkelaar se eie verslag noem sy eie hoofsyfer "'n gerug," en 'n latere vergadering het spitskonstruksie op ~1 000 gestel. Niemand het Hopefield se eie ekonomie bestudeer nie, of die plaaslike bedrywe (heuning, veldblomme, Arnelia Farms) wat van gesonde fynbos afhang en eerder op die spel kan wees.</p>
+      <p lang="en"><strong>The fix:</strong> an independent economic study before any decision, and binding local-hire and community-benefit terms written into the licence.</p>
+      <p lang="af"><strong>Die oplossing:</strong> 'n onafhanklike ekonomiese studie voor enige besluit, en bindende plaaslike-indiensneming- en gemeenskapsvoordeel-voorwaardes in die vergunning geskryf.</p>
     </div>
 
-    <div class="concern">
-      <h3>2 &middot; Water</h3>
-      <p>A water-scarce town, and the plant would draw about <strong>8 million litres a day</strong> &mdash; the documents at times take it straight from Hopefield's own drinking-water pipeline &mdash; in a district where groundwater is the only water outside town. The plant's own report also rates the risk of <strong>polluting the groundwater as "high"</strong>, and states plainly that groundwater under the site "would drain towards the Langebaan Lagoon." Yet where the government's screening requires a proper <strong>field study of the groundwater</strong>, the report proposes only a <strong>desk study</strong> &mdash; and the contractor who wrote it never visited the site.</p>
-      <p class="fix">The fix: a proper field-based groundwater study and computer model, independently checked and made public before any approval &mdash; desalinated seawater as the water source from day one, and a legal guarantee that Hopefield's own supply is never reduced or reprioritised.</p>
+    <div class="card flag">
+      <h3 lang="en">2 &middot; Water</h3>
+      <h3 lang="af">2 &middot; Water</h3>
+      <p lang="en">A water-scarce town, and the plant would draw ~8&nbsp;million litres a day. The plant's own report rates groundwater pollution risk "high" and confirms it flows toward Langebaan Lagoon &mdash; yet proposes only a desktop study, by a contractor who never visited the site.</p>
+      <p lang="af">'n Waterskaars dorp, en die aanleg sal ~8&nbsp;miljoen liter per dag onttrek. Die aanleg se eie verslag gradeer grondwatervervuilingsrisiko "hoog" en bevestig dit vloei na die Langebaanlagune &mdash; en stel tog net 'n lessenaarstudie voor, deur 'n kontrakteur wat nooit die terrein besoek het nie.</p>
+      <p lang="en"><strong>The fix:</strong> a proper field-based groundwater study, made public before approval; desalinated seawater as the source from day one; and a legal guarantee Hopefield's own supply is never reduced.</p>
+      <p lang="af"><strong>Die oplossing:</strong> 'n regte veld-gebaseerde grondwaterstudie, openbaar gemaak voor goedkeuring; ontsoute seewater as die bron van dag een af; en 'n regsgarantie dat Hopefield se eie voorraad nooit verminder word nie.</p>
     </div>
 
-    <div class="concern">
-      <h3>3 &middot; Air, dust, fire and safety</h3>
-      <p>The concern most raised by people living close to the site. The plant's own report flags <strong>dust exceeding air-quality standards during construction</strong>, on sandy, wind-exposed ground, and concedes the operating plant would exceed those standards beyond its boundary. It carries a flare, and a large stock of flammable and hazardous materials near the town. The government screening requires a <strong>Health Impact Assessment</strong> and two air-quality studies; the report proposes one combined study and <strong>no health assessment at all.</strong></p>
-      <p class="fix">The fix: the full health and air-quality studies; the major-hazard safety study &mdash; with modelled fire and blast distances to town &mdash; made public before approval, not after; and a funded joint fire-response arrangement.</p>
+    <div class="card flag">
+      <h3 lang="en">3 &middot; Air, dust, fire and safety</h3>
+      <h3 lang="af">3 &middot; Lug, stof, brand en veiligheid</h3>
+      <p lang="en">The plant's own report concedes dust exceeding air-quality standards during construction, and carries a flare plus large stocks of hazardous material. A Health Impact Assessment is required by the government screening tool but is not planned at all.</p>
+      <p lang="af">Die aanleg se eie verslag erken stof wat lugkwaliteitstandaarde tydens konstruksie oorskry, en dra 'n vlam plus groot voorrade gevaarlike materiaal. 'n Gesondheidsimpakstudie word deur die regering se siftingsmiddel vereis maar word glad nie beplan nie.</p>
+      <p lang="en"><strong>The fix:</strong> the full health and air-quality studies, and the major-hazard safety study &mdash; with fire and blast distances to town &mdash; made public before approval.</p>
+      <p lang="af"><strong>Die oplossing:</strong> die volle gesondheids- en lugkwaliteitstudies, en die groot-gevaar-veiligheidstudie &mdash; met brand- en ontploffingsafstande tot die dorp &mdash; openbaar gemaak voor goedkeuring.</p>
     </div>
 
-    <div class="concern">
-      <h3>4 &middot; How the process has been run</h3>
-      <p>A grievance shared across the town, whatever people think of the project itself. One or two days' notice for the first meeting; 11 people there; reports posted late and in pieces; the project revealed part by part; information requests left unanswered. At least one resident's <strong>formally acknowledged written objection is missing from the official comments list &mdash; and that list is now bound into the Final Scoping Report</strong>. In an August 2026 letter the consultant admits it <strong>"captured [similar comments] as one,"</strong> so <strong>"some of the I&amp;APs' names may not appear"</strong> &mdash; but the law requires every person and every comment to be recorded and answered individually. The developer's replies to residents were a single generic letter, not answers to the points raised. These failures are themselves grounds to ask for the process to be extended and corrected, and to appeal a decision that follows.</p>
-      <p class="fix">The fix: every commenter named and every comment answered individually, with the "captured as one" approach dropped; one coordinated public process across all the applications, in Afrikaans and English; in-person meetings in Hopefield; printed documents locally; and comment periods that only start once the specialist studies are available.</p>
+    <div class="card flag">
+      <h3 lang="en">4 &middot; How the process has been run</h3>
+      <h3 lang="af">4 &middot; Hoe die proses hanteer is</h3>
+      <p lang="en">Short notice, 11 people at the first meeting, reports posted late and in pieces. The consultant admits comments were "captured as one," so some names may not appear &mdash; though the law requires every comment recorded and answered individually. At least one resident's objection is missing from the official list.</p>
+      <p lang="af">Kort kennisgewing, 11 mense by die eerste vergadering, verslae laat en in stukke geplaas. Die konsultant erken kommentaar is "as een vasgevang," so party name verskyn moontlik nie &mdash; alhoewel die wet vereis elke kommentaar individueel aangeteken en beantwoord word. Minstens een inwoner se beswaar ontbreek van die amptelike lys.</p>
+      <p lang="en"><strong>The fix:</strong> every commenter named and answered individually; one coordinated process across all the applications, in Afrikaans and English.</p>
+      <p lang="af"><strong>Die oplossing:</strong> elke kommentator benoem en individueel beantwoord; een geko&ouml;rdineerde proses oor al die aansoeke, in Afrikaans en Engels.</p>
     </div>
 
-    <div class="concern">
-      <h3>5 &middot; Wildlife, fynbos and the town's character</h3>
-      <p>Hopefield calls itself a <strong>"flower town"</strong> &mdash; spring wildflower season, the Fynbos Show and the surrounding veld draw visitors and support local businesses, and matter to how the town sees itself. The land is also ecologically exceptional: independent botanist Nick Helme reports an <strong>unusually high number of threatened plant species</strong> here, more than 30% of the site is mapped as the province's highest-protection category, and the government screening rates it <strong>"very high"</strong> for land and freshwater habitat and <strong>"high"</strong> for animal species &mdash; naming the Black Harrier and the Southern Black Korhaan. The developer's biodiversity study rests on a <strong>single day in spring</strong>, by an out-of-region firm working from a mining-project template, and it contradicts itself &mdash; one section records eight threatened plants on the site, another says none were found. <strong>CapeNature, the province's own conservation authority, formally objected</strong> in July 2026, calling the layout "fatally flawed from a biodiversity perspective" and asking for a proper spring survey and a smaller plan &mdash; and the Final Scoping Report was published without resolving any of it.</p>
-      <p class="fix">The fix: a multi-season survey by a Cape-flora botanist; a real vegetated buffer between any solar array and the town; and, as Helme puts it, "move this thing 20 km to the east" onto already-degraded farmland, where there would be "no environmental issues."</p>
+    <div class="card flag">
+      <h3 lang="en">5 &middot; Wildlife, fynbos and the town's character</h3>
+      <h3 lang="af">5 &middot; Wildlewe, fynbos en die dorp se karakter</h3>
+      <p lang="en">An independent botanist reports an unusually high number of threatened plant species on site; <strong>CapeNature formally objected</strong>, calling the layout "fatally flawed from a biodiversity perspective." The developer's own biodiversity study rests on a single spring day, and contradicts itself on what it found.</p>
+      <p lang="af">'n Onafhanklike bottanikus rapporteer 'n ongewoon ho&euml; aantal bedreigde plantspesies op die terrein; <strong>CapeNature het formeel beswaar gemaak</strong>, en noem die uitleg "fataal gebrekkig vanuit 'n biodiversiteitsoogpunt." Die ontwikkelaar se eie biodiversiteitstudie berus op een lente-dag, en weerspreek homself oor wat gevind is.</p>
+      <p lang="en"><strong>The fix:</strong> a multi-season survey by a Cape-flora specialist, and &mdash; as the botanist himself recommends &mdash; move the array onto already-degraded farmland nearby.</p>
+      <p lang="af"><strong>Die oplossing:</strong> 'n multi-seisoen opname deur 'n Kaapse-flora spesialis, en &mdash; soos die botanikus self aanbeveel &mdash; skuif die skikking na reeds-agteruitgegane plaasgrond naby.</p>
     </div>
 
-    <div class="concern">
-      <h3>6 &middot; Heritage and First Nations</h3>
-      <p>Held strongly by fewer people, but a serious gap. The heritage work so far has come down to <strong>four farm buildings from the last 120 years.</strong> That is not what the National Heritage Resources Act protects: it also covers fossils, archaeology of any age, graves, cultural landscapes, and "living heritage." This landscape has the fossil record of the <strong>West Coast Fossil Park</strong> and the <strong>"Saldanha Man" site at Elandsfontein</strong> nearby, and it is <strong>Cochoqua (Khoekhoe) ancestral land</strong> &mdash; the farm's own name, Portugeesche Fontyn, comes from a Khoi clan. <strong>Heritage Western Cape formally required a full heritage study in 2024</strong> &mdash; including archaeology, alternatives and community consultation &mdash; and the registered <strong>Aikonese Cochoqua Khoi Tribal Council</strong> has objected that it was never consulted. Eighteen months on, the solar Final Scoping Report's "heritage study" is <strong>the old, rejected study written for the fuel plant</strong>, which found "no heritage resources." A compliant one still does not exist.</p>
-      <p class="fix">The fix: the full heritage study Heritage Western Cape has already ordered &mdash; covering the deep-time and Khoi cultural landscape, not just old buildings &mdash; and direct, recorded consultation with the Cochoqua council.</p>
+    <div class="card flag">
+      <h3 lang="en">6 &middot; Heritage and First Nations</h3>
+      <h3 lang="af">6 &middot; Erfenis en Eerste Nasies</h3>
+      <p lang="en">The site is Cochoqua (Khoekhoe) ancestral land near a significant fossil landscape. Heritage Western Cape formally required a full heritage study in 2024; the registered <strong>Aikonese Cochoqua Khoi Tribal Council says it was never consulted</strong>. The current "heritage study" is an old, rejected one, reused.</p>
+      <p lang="af">Die terrein is Cochoqua (Khoekhoe) voorvaderlike grond naby 'n beduidende fossiellandskap. Erfenis Wes-Kaap het in 2024 formeel 'n volle erfenisstudie ge&euml;is; die geregistreerde <strong>Aikonese Cochoqua Khoi-stamraad s&ecirc; hulle is nooit geraadpleeg nie</strong>. Die huidige "erfenisstudie" is 'n ou, verworpe een, hergebruik.</p>
+      <p lang="en"><strong>The fix:</strong> the full heritage study already ordered, and direct, recorded consultation with the Cochoqua council.</p>
+      <p lang="af"><strong>Die oplossing:</strong> die volle erfenisstudie wat reeds beveel is, en direkte, aangetekende konsultasie met die Cochoqua-raad.</p>
     </div>
   </section>
 
   <section id="benefits">
-    <p class="eyebrow">The other side</p>
-    <h2 class="sec">The possible benefits</h2>
-    <p class="sec-note">Opposing the harms and wanting the town to gain from the project are not contradictory. A well-run project could genuinely help a town that lives on farming, fishing and tourism.</p>
-    <p>The realistic possible gains are: <strong>construction spending</strong> in the local economy over several years; <strong>municipal rates and upgraded services</strong>; a <strong>community trust with a share of the project</strong>, which is standard in South African renewable projects and can fund bursaries, clinics and enterprise support for decades; and a <strong>local skills base</strong> that outlasts this one developer.</p>
-    <p>The honest problem is that <strong>none of it is quantified, and none of it is yet written into any licence.</strong> Every one is "possible, if conditions are attached." Until there is a proper study of Hopefield's own economy, the jobs claim cannot be tested either way &mdash; which is why that study is the single most important thing to demand.</p>
+    <p class="eyebrow" lang="en">The other side</p>
+    <p class="eyebrow" lang="af">Die ander kant</p>
+    <h2 class="sec" lang="en">The possible benefits</h2>
+    <h2 class="sec" lang="af">Die moontlike voordele</h2>
+    <p lang="en">Opposing the harms and wanting the town to gain are not contradictory. A well-run project could genuinely help: construction spending, municipal rates, a community trust with a share of the project (standard on South African renewable projects), and a local skills base that outlasts this one developer. The problem: <strong>none of it is quantified, and none of it is written into any licence yet</strong> &mdash; which is exactly why the economic study above is the single most important thing to demand.</p>
+    <p lang="af">Om die skade teen te staan en te wil h&ecirc; die dorp moet baat, is nie teenstrydig nie. 'n Goed-bestuurde projek kan werklik help: konstruksiebesteding, munisipale tariewe, 'n gemeenskapstrust met 'n aandeel in die projek (standaard by Suid-Afrikaanse hernubare-energie projekte), en 'n plaaslike vaardigheidsbasis wat langer as hierdie een ontwikkelaar hou. Die probleem: <strong>niks daarvan is gekwantifiseer, en niks is nog in enige vergunning geskryf nie</strong> &mdash; presies hoekom die ekonomiese studie hierbo die enkele belangrikste ding is om te eis.</p>
   </section>
 
   <section id="calendar">
-    <p class="eyebrow">The road ahead</p>
-    <h2 class="sec">The decision calendar</h2>
-    <p class="sec-note">This is the standard sequence under South Africa's environmental law. Exact dates are not yet public &mdash; ask the consultants for them and put every one on a shared calendar.</p>
-    <ul class="cal">
-      <li class="nowmark"><span class="stage">Now &mdash; Scoping (solar farm)</span><p class="detail">The <strong>solar farm's Final Scoping Report was released on 8 September 2026</strong>. Comments go directly to the consultant (<strong><a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a></strong>) by <strong>8 October 2026</strong>; hard copies are at the Hopefield, Saldanha and Langebaan public libraries. <strong>"Final" means the finalised scoping-stage report for the solar farm &mdash; not the end of the process.</strong> The report says that after the comment period it "will be submitted to the competent authority" (the national environment department, DFFE); if DFFE accepts it, the fuller Environmental Impact Report stage, with the specialist studies and another comment round, still follows. The fuel plant's own Final Scoping Report was finalised in June 2026, ahead of the Western Cape authority's decision on it; comments on it can still be sent to <strong><a href="mailto:DEADPEIAAdmin@westerncape.gov.za">DEADPEIAAdmin@westerncape.gov.za</a></strong> (copy <strong><a href="mailto:pp@wsp.com">pp@wsp.com</a></strong>).</p></li>
-      <li><span class="stage">Next &mdash; Specialist studies</span><p class="detail">The detailed studies are done and released with a Draft Environmental Impact Report, for at least 30 days' public comment. Ask now that every study the developer has downgraded or left out be restored.</p></li>
-      <li><span class="stage">Final report &rarr; decision</span><p class="detail">The consultant finalises the report with a table of comments and responses; the authority decides &mdash; approve, approve with conditions, or refuse.</p></li>
-      <li><span class="stage">Approval issued</span><p class="detail">Registered parties then have only <strong>about 20 days</strong> to lodge a notice of appeal. Being ready before this point is decisive.</p></li>
-      <li><span class="stage">In parallel</span><p class="detail">The <strong>Water Use Licence</strong> (Department of Water &amp; Sanitation) and the <strong>Atmospheric Emission Licence</strong> (West Coast District Municipality) each run their own public processes. Comment on both.</p></li>
-      <li><span class="stage">If needed &mdash; court review</span><p class="detail">After appeals are exhausted, a High Court review remains available, generally within 180 days.</p></li>
+    <p class="eyebrow" lang="en">The road ahead</p>
+    <p class="eyebrow" lang="af">Die pad vorentoe</p>
+    <h2 class="sec" lang="en">The decision calendar</h2>
+    <h2 class="sec" lang="af">Die besluitnemingskalender</h2>
+    <p class="sec-note" lang="en">The standard sequence under South Africa's environmental law. Exact dates beyond 8 October are not yet public.</p>
+    <p class="sec-note" lang="af">Die standaardvolgorde onder Suid-Afrika se omgewingswet. Presiese datums na 8 Oktober is nog nie openbaar nie.</p>
+    <ul class="plain">
+      <li lang="en"><strong>Now:</strong> scoping comments &mdash; solar by 8 Oct 2026; the fuel plant's own Final Scoping Report can still be commented on too.</li>
+      <li lang="af"><strong>Nou:</strong> bestek-kommentaar &mdash; sonplaas teen 8 Okt 2026; op die brandstof-aanleg se eie Finale Bestekverslag kan ook steeds kommentaar gelewer word.</li>
+      <li lang="en"><strong>Next:</strong> specialist studies, then a Draft Impact Report for at least 30 days' comment.</li>
+      <li lang="af"><strong>Volgende:</strong> spesialisstudies, dan 'n Konsep Impakverslag vir minstens 30 dae se kommentaar.</li>
+      <li lang="en"><strong>Then:</strong> final report and comments-table; the authority decides &mdash; approve, approve with conditions, or refuse.</li>
+      <li lang="af"><strong>Dan:</strong> finale verslag en kommentaartabel; die owerheid besluit &mdash; keur goed, keur goed met voorwaardes, of weier.</li>
+      <li lang="en"><strong>Appeal window:</strong> ~20 days after any approval &mdash; be ready before this point, not after.</li>
+      <li lang="af"><strong>App&egrave;l-venster:</strong> ~20 dae na enige goedkeuring &mdash; wees gereed v&oacute;&oacute;r hierdie punt, nie daarna nie.</li>
+      <li lang="en"><strong>In parallel:</strong> the Water Use Licence and Atmospheric Emission Licence each run their own public process.</li>
+      <li lang="af"><strong>Terselfdertyd:</strong> die Watergebruiklisensie en Atmosferiese Emissielisensie loop elk hul eie openbare proses.</li>
     </ul>
   </section>
 
   <section id="engage">
-    <p class="eyebrow">Your part</p>
-    <h2 class="sec">How to have your say</h2>
-    <p class="sec-note"><strong>The nearest deadline is 8 October 2026</strong> &mdash; comments on the solar farm's Final Scoping Report, to <strong><a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a></strong>. (The consultant's letters have given more than one date for this window &mdash; ask him to confirm it to you in writing, and don't wait until the last day.)</p>
-    <ol class="steps">
-      <li><strong>Register as an Interested &amp; Affected Party</strong> &mdash; in writing, and keep proof of sending &mdash; with <em>both</em> consultants: <strong>WSP</strong> for the fuel plant (<a href="mailto:pp@wsp.com">pp@wsp.com</a>, ref ZA0066851.7273 / DEA&amp;DP 16/3/3/2/F4/5/3019/26) and <strong>Eco-Compliance</strong> for the solar farm (<a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a>, ref HSP02/2025 / DFFE 14/12/16/3/3/2/2839). You can also register through the <strong>Ripl</strong> platform via Protect the West Coast.</li>
-      <li><strong>Comment at each stage</strong>, in writing, with your points numbered. Ask that the comment period only runs once the specialist studies are public, and that every point gets an individual written response.</li>
-      <li><strong>Register for the other permissions too</strong> &mdash; the Water Use Licence (Department of Water &amp; Sanitation), the Atmospheric Emission Licence (West Coast District Municipality), and the heritage process (Heritage Western Cape). Each has its own process.</li>
-      <li><strong>Write to your ward councillor</strong> and to the Western Cape environment MEC, <strong>Anton Bredell</strong>. Ask for written answers and a public meeting in Hopefield.</li>
-      <li><strong>Check the official comments list</strong> against your own dated sent items once it is published, and report any omission in writing to the consultant and the deciding office.</li>
-      <li><strong>Be ready for the appeal window</strong> &mdash; about 20 days after any approval. Organise before then, not after.</li>
+    <p class="eyebrow" lang="en">Your part</p>
+    <p class="eyebrow" lang="af">Jou deel</p>
+    <h2 class="sec" lang="en">How to have your say</h2>
+    <h2 class="sec" lang="af">Hoe om jou s&ecirc; te s&ecirc;</h2>
+    <p class="sec-note" lang="en"><strong>The nearest deadline is 8 October 2026</strong> &mdash; comments on the solar farm's Final Scoping Report, to <strong><a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a></strong>. Don't wait until the last day.</p>
+    <p class="sec-note" lang="af"><strong>Die naaste sperdatum is 8 Oktober 2026</strong> &mdash; kommentaar op die sonplaas se Finale Bestekverslag, aan <strong><a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a></strong>. Moenie tot die laaste dag wag nie.</p>
+    <ol class="step-list">
+      <li lang="en"><strong>Register as an Interested &amp; Affected Party</strong>, in writing, with proof of sending &mdash; with <em>both</em> consultants: <strong>WSP</strong> for the fuel plant (<a href="mailto:pp@wsp.com">pp@wsp.com</a>) and <strong>Eco-Compliance</strong> for the solar farm (<a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a>).</li>
+      <li lang="af"><strong>Registreer as 'n Belanghebbende en Geaffekteerde Party</strong>, skriftelik, met bewys van versending &mdash; by <em>albei</em> konsultante: <strong>WSP</strong> vir die brandstof-aanleg (<a href="mailto:pp@wsp.com">pp@wsp.com</a>) en <strong>Eco-Compliance</strong> vir die sonplaas (<a href="mailto:percy@ecocompliance.co.za">percy@ecocompliance.co.za</a>).</li>
+      <li lang="en"><strong>Comment at each stage</strong>, in writing, with your points numbered.</li>
+      <li lang="af"><strong>Lewer kommentaar by elke fase</strong>, skriftelik, met jou punte genommer.</li>
+      <li lang="en"><strong>Register for the other permissions too</strong> &mdash; the Water Use Licence, the Atmospheric Emission Licence, and the heritage process.</li>
+      <li lang="af"><strong>Registreer ook vir die ander vergunnings</strong> &mdash; die Watergebruiklisensie, die Atmosferiese Emissielisensie, en die erfenisproses.</li>
+      <li lang="en"><strong>Write to your ward councillor</strong> and the Western Cape environment MEC, <strong>Anton Bredell</strong>. Ask for a public meeting in Hopefield.</li>
+      <li lang="af"><strong>Skryf aan jou wyksraadslid</strong> en die Wes-Kaapse omgewings-MEK, <strong>Anton Bredell</strong>. Vra vir 'n openbare vergadering in Hopefield.</li>
+      <li lang="en"><strong>Be ready for the appeal window</strong> &mdash; about 20 days after any approval. Organise before then, not after.</li>
+      <li lang="af"><strong>Wees gereed vir die app&egrave;l-venster</strong> &mdash; omtrent 20 dae na enige goedkeuring. Organiseer vantevore, nie daarna nie.</li>
     </ol>
 
-    <div class="kin">
-      <p><strong>Where the documents are:</strong> nearly everything is collected at <a href="https://www.whyhopefield.co.za/">whyhopefield.co.za</a>, run by a Hopefield resident.</p>
-      <p><strong>Who is already working on this:</strong> the <strong>West Coast Environmental Protection Association (WCEPA)</strong> and <strong>Protect the West Coast</strong> have been tracking the deadlines and requesting documents. Contact WCEPA to get involved.</p>
-      <p><strong>For legal help:</strong> the <strong>Centre for Environmental Rights</strong> and <strong>Natural Justice</strong> are public-interest environmental lawyers who handle exactly this kind of case.</p>
+    <div class="callout" style="margin-top:20px">
+      <p style="margin:0 0 8px" lang="en"><strong>Where the documents are:</strong> nearly everything is collected at <a href="https://www.whyhopefield.co.za/">whyhopefield.co.za</a>, run by a Hopefield resident.</p>
+      <p style="margin:0 0 8px" lang="af"><strong>Waar die dokumente is:</strong> byna alles is versamel by <a href="https://www.whyhopefield.co.za/">whyhopefield.co.za</a>, bestuur deur 'n Hopefield-inwoner.</p>
+      <p style="margin:0 0 8px" lang="en"><strong>Who is already working on this:</strong> WCEPA and Protect the West Coast have been tracking deadlines and requesting documents.</p>
+      <p style="margin:0 0 8px" lang="af"><strong>Wie werk reeds hieraan:</strong> WCEPA en Protect the West Coast hou reeds sperdatums dop en versoek dokumente.</p>
+      <p style="margin:0" lang="en"><strong>For legal help:</strong> the Centre for Environmental Rights and Natural Justice are public-interest environmental lawyers.</p>
+      <p style="margin:0" lang="af"><strong>Vir regshulp:</strong> die Centre for Environmental Rights en Natural Justice is openbare-belang omgewingsprokureurs.</p>
     </div>
   </section>
 
   <section id="about">
-    <p class="eyebrow">About this briefing</p>
-    <h2 class="sec">Where this comes from, and what it is not</h2>
-    <p>This is a research summary compiled from public sources &mdash; the developer's scoping reports and specialist studies, the written responses from Heritage Western Cape, CapeNature, the Western Cape Department of Agriculture and Air Force Base Langebaanweg, the SIP letter, and investigative journalism by Oxpeckers, Politicsweb, Daily Maverick, GroundUp and local outlets. It is <strong>not legal advice</strong> and not a substitute for the official documents.</p>
-    <p>It is deliberately short. A longer version &mdash; <a href="the-record.html">the detailed record</a> &mdash; sets out what each document says and where they contradict each other, with the <a href="sources.html">sources</a> behind every figure. Before acting on any name, reference number, deadline or legal step, check it against the current official filings, and &mdash; for anything with legal consequences &mdash; a qualified environmental attorney.</p>
-    <p><small>Compiled September 2026 from the public record as it then stood. Corrections and additions are welcome and make the next version better &mdash; see <a href="corrections.html">accuracy &amp; corrections</a> for how to send them.</small></p>
+    <p class="eyebrow" lang="en">About this briefing</p>
+    <p class="eyebrow" lang="af">Oor hierdie oorsig</p>
+    <h2 class="sec" lang="en">Where this comes from, and what it is not</h2>
+    <h2 class="sec" lang="af">Waar dit vandaan kom, en wat dit nie is nie</h2>
+    <p lang="en">Compiled from the developer's own scoping reports and specialist studies, the written responses from Heritage Western Cape, CapeNature, the Agriculture Department and the Air Force, and investigative journalism. <strong>Not legal advice</strong>, and not a substitute for the official documents.</p>
+    <p lang="af">Saamgestel uit die ontwikkelaar se eie bestekverslae en spesialisstudies, die skriftelike antwoorde van Erfenis Wes-Kaap, CapeNature, die Landbou-departement en die Lugmag, en ondersoekende joernalistiek. <strong>Nie regsadvies nie</strong>, en nie 'n plaasvervanger vir die amptelike dokumente nie.</p>
+    <p lang="en">This is deliberately short. For the fully-sourced version &mdash; every figure, every contradiction, with references &mdash; see <a href="the-record.html">the detailed record</a> and the <a href="sources.html">sources</a> behind it. Corrections and additions are welcome; see <a href="corrections.html">accuracy &amp; corrections</a>.</p>
+    <p lang="af">Dit is doelbewus kort. Vir die volledige, verwysde weergawe &mdash; elke syfer, elke teenstrydigheid, met bronne &mdash; sien <a href="the-record.html">die gedetailleerde rekord</a> en die <a href="sources.html">bronne</a> daaragter. Regstellings en byvoegings is welkom; sien <a href="corrections.html">akkuraatheid &amp; regstellings</a>.</p>
   </section>
 
-  <footer>
-    <p class="disc">Prepared to help Hopefield residents engage with the Phelan Green environmental processes on an informed basis. Not affiliated with the developer, the municipality or any political party.</p>
-    <p class="disc" style="margin-top:8px">Site last updated: <span id="siteUpdated">September 2026</span></p>
-  </footer>
-
+</main>
 </div>
-<!-- ============================================================= -->
-<!-- END briefing content                                          -->
-<!-- ============================================================= -->
+
+<footer>
+  <div class="footer-inner">
+    <p class="disc" lang="en">Prepared to help Hopefield residents engage with the Phelan Green environmental processes on an informed basis. Not affiliated with the developer, the municipality or any political party.</p>
+    <p class="disc" lang="af">Saamgestel om Hopefield-inwoners te help om ingelig aan die Phelan Green-omgewingsprosesse deel te neem. Nie verbonde aan die ontwikkelaar, die munisipaliteit of enige politieke party nie.</p>
+    <p class="disc" style="margin-top:8px">
+      <span lang="en">Site last updated: </span><span lang="af">Webwerf laas opgedateer: </span><span id="siteUpdated">September 2026</span>
+    </p>
+    <nav>
+      <a href="index.html" lang="en">Home</a><a href="index.html" lang="af">Tuis</a>
+      <a href="the-record.html" lang="en">Detailed record</a><a href="the-record.html" lang="af">Gedetailleerde rekord</a>
+      <a href="sources.html" lang="en">Sources</a><a href="sources.html" lang="af">Bronne</a>
+      <a href="have-your-say.html" lang="en">Have your say</a><a href="have-your-say.html" lang="af">Laat jou stem hoor</a>
+      <a href="corrections.html" lang="en">Corrections</a><a href="corrections.html" lang="af">Regstellings</a>
+      <a href="privacy.html" lang="en">Privacy</a><a href="privacy.html" lang="af">Privaatheid</a>
+    </nav>
+  </div>
+</footer>
+
 <script src="site.js"></script>
 </body>
 </html>

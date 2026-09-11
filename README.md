@@ -16,7 +16,7 @@ be copied here.
 | File | Purpose |
 |---|---|
 | `index.html` | Landing page -- what this is, the nearest deadline, links |
-| `briefing.html` | The Resident's Briefing (a wrapped copy of the published artefact) |
+| `briefing.html` | The Resident's Briefing -- a short, plain-language summary. Deliberately brief; `the-record.html` carries the full detail |
 | `the-record.html` | The long, fully-sourced companion to the briefing. Public-safe: institutions and documents only, no individuals, no advocacy framing. |
 | `sources.html` | The public documents and reporting behind the briefing, with reference numbers |
 | `have-your-say.html` | The survey (KoboToolbox) + WhatsApp voice-note line |
@@ -26,8 +26,10 @@ be copied here.
 
 Every footer shows **"Site last updated: ..."** -- this is read live from the GitHub API (latest commit to this repo) by `site.js`, so it always reflects the truth and never needs manual updating. It quietly falls back to the static placeholder text in the HTML if the API call fails (e.g. the visitor is offline).
 
-All pages are English + a **draft** Afrikaans translation (toggle, top right).
-Have an Afrikaans speaker check every page before sharing widely.
+Most pages are English + a **draft** Afrikaans translation (toggle, top right):
+`index.html`, `briefing.html`, `have-your-say.html`, `corrections.html`,
+`privacy.html`. `the-record.html` and `sources.html` are still English-only.
+Have an Afrikaans speaker check every translated page before sharing widely.
 
 ## Set-up before launch
 
@@ -62,17 +64,14 @@ Search the pages for `SET-UP NEEDED` and `PASTE_` / `27XXXXXXXXX` / `[ ]`:
 5. **Custom domain later:** buy a domain, add it under Settings -> Pages -> Custom
    domain (this writes a `CNAME` file), and set the DNS records GitHub shows.
 
-## Updating the briefing
+## Editing the briefing
 
-`briefing.html` is a copy of the published Resident's Briefing artefact with a
-small HTML wrapper. To update it: republish the artefact, then replace
-everything between the `BEGIN briefing content` and `END briefing content`
-comments with the new published HTML. The source of record is
-`../AI Musings/Phelan Green/artefacts/residents-briefing.html`.
-
-**Keep** the `<style>` + `<nav class="site-nav">` block that sits just before
-`<header class="mast">` -- that's the "Home / Have your say" bar, and a fresh
-paste of the artefact would drop it.
+As of 13 September 2026, `briefing.html` is edited directly, the same as any
+other page here -- it's no longer a wrapped copy of the claude.ai artefact.
+It was rewritten to use the shared `style.css`/nav/language-toggle system and
+trimmed hard for brevity, after it had grown into a near-duplicate of
+`the-record.html`. If a point needs real elaboration, that belongs in
+`the-record.html`, linked to, not restated here in full.
 
 ## Adding more documents later
 

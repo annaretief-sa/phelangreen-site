@@ -29,7 +29,7 @@ Neutral, factual, and deliberately agnostic — politically, religiously, genera
 | File | Purpose |
 |---|---|
 | `index.html` | Landing page — what this is, the nearest deadline, links to every page |
-| `briefing.html` | The Resident's Briefing — a wrapped copy of the published claude.ai artefact |
+| `briefing.html` | The Resident's Briefing — a short, plain-language summary. Deliberately brief; `the-record.html` carries the full detail |
 | `the-record.html` | The long, fully-sourced companion to the briefing. **Public-safe**: institutions/documents only, no named individuals, no advocacy framing |
 | `sources.html` | The public documents and reporting behind the briefing, with reference numbers — no individual names or editorializing |
 | `have-your-say.html` | The survey (KoboToolbox, embedded) + a WhatsApp voice-note line |
@@ -40,21 +40,22 @@ Neutral, factual, and deliberately agnostic — politically, religiously, genera
 ## Site-wide conventions
 
 - **Identical nav on every page.** A `.topbar`/`.navlinks` bar plus a matching footer `<nav>` repeat on all seven pages, with `aria-current="page"` marking the current page. Adding a page means adding it to *both* the topbar and footer nav blocks on *every existing page*, not just the new one.
-- **Bilingual EN/AF via `site.js`**, not per-page duplication: content is written twice inline (`<span lang="en">…</span><span lang="af">…</span>`), and `body.classList.toggle("af")` + matching CSS (`body:not(.af) [lang="af"]{display:none}`) shows one at a time. The choice persists via `localStorage` (`pg_lang`). All pages are marked with a draft-translation banner (`.draftbar` in `style.css`) until an Afrikaans speaker reviews them — still outstanding as of the last commit.
+- **Bilingual EN/AF via `site.js`**, not per-page duplication: content is written twice inline (`<span lang="en">…</span><span lang="af">…</span>`), and `body.classList.toggle("af")` + matching CSS (`body:not(.af) [lang="af"]{display:none}`) shows one at a time. The choice persists via `localStorage` (`pg_lang`). Bilingual pages are marked with a draft-translation banner (`.draftbar` in `style.css`) until an Afrikaans speaker reviews them — still outstanding as of the last commit. **Not every page is actually bilingual yet**: `index.html`, `briefing.html`, `have-your-say.html`, `corrections.html` and `privacy.html` are; `the-record.html` and `sources.html` are still English-only despite having bilingual nav labels — a real gap, not a formatting choice (see "Known open items").
 - **Live "Site last updated."** Every footer's `#siteUpdated` span is overwritten at load time by `site.js`, which fetches `https://api.github.com/repos/annaretief-sa/phelangreen-site/commits?per_page=1` (unauthenticated, CORS-open) and formats the latest commit's timestamp — no server, no manual date-editing, ever. It silently keeps the static fallback text if the fetch fails (e.g. offline). This means the displayed date is genuinely just "whenever `main` was last pushed," including unrelated typo fixes — that's intentional (transparency), not a bug to "fix" by filtering commits.
 - **ASCII-safe HTML.** All punctuation is HTML entities (`&mdash;`, `&hellip;`, `&eacute;`, etc.), not literal Unicode — this repo exists partly *because* literal em-dashes were rendering as mojibake (`â€"`) on some phone browsers reading the original claude.ai artefacts. Keep new copy entity-escaped. **Confirmed design brief**: the target reader is on a cheap phone with patchy data, not a desktop with a fast connection — this isn't just a historical accident to work around, it's an active constraint. Keep pages light, avoid anything that assumes a strong connection or a modern browser.
 - **Shared design tokens** in `style.css`: a light/dark CSS custom-property palette (`--paper`, `--ink`, `--green`, `--slate`, `--ochre`, etc.) matching the house style used across the private repo's artefacts — reuse these variables rather than hardcoding colours.
 
-## Updating `briefing.html`
+## Editing `briefing.html`
 
-It's a copy of the published Resident's Briefing artefact (source of record: `../AI Musings/Phelan Green/artefacts/residents-briefing.html` in the private repo) with a thin wrapper. To update: republish the artefact, then replace everything between the `BEGIN briefing content` / `END briefing content` comments with the new HTML. **Keep the `<style>` + `<nav class="site-nav">` block right before `<header class="mast">`** — the Home/Have your say bar — a fresh paste from the artefact will drop it.
+As of 13 Sep 2026, `briefing.html` is **no longer a wrapped copy of the claude.ai artefact** — it was rewritten to use the shared `style.css`/nav/toggle system like every other page, and trimmed hard for brevity (it had grown to a near-duplicate of `the-record.html`). Edit it directly, the same way as any other page. There's no more BEGIN/END wrapper markers and no more republish-then-paste workflow — don't look for them. Keep it genuinely brief: if a point needs real elaboration, that elaboration belongs in `the-record.html`, with a link, not restated here in full.
 
 ## Known open items
 
-(Status as of 11 Sep 2026 — check before assuming otherwise.)
+(Status as of 11 Sep 2026, except where an item states its own later date — check before assuming otherwise.)
 - **WhatsApp voice-note line** — not yet live. `have-your-say.html` shows a "coming soon" callout; the real `wa.me/27XXXXXXXXX` markup is sitting in an HTML comment ready to swap in once a number exists. Anna's target: sourced by the end of that weekend (~13 Sep 2026) — ask if it's overdue.
 - **Privacy note** (`privacy.html`) — responsible party and contact (`hopefieldorigins@gmail.com`) are filled in, but the page still carries a "Draft — not yet reviewed by an attorney" banner. No attorney has been found yet as of this writing.
-- **Afrikaans translations** — drafts are live and toggleable, but not yet checked by a native speaker (`.draftbar` banner on every page). No fixed reviewer — likely to be different volunteers over time, or Anna herself if she has time. Don't assume a review is scheduled.
+- **Afrikaans translations** — drafts are live and toggleable on the bilingual pages, but not yet checked by a native speaker (`.draftbar` banner). No fixed reviewer — likely to be different volunteers over time, or Anna herself if she has time. Don't assume a review is scheduled.
+- **`the-record.html` and `sources.html` have no Afrikaans at all** — discovered 13 Sep 2026 while rewriting `briefing.html`. Their nav labels are bilingual (copied from the shared topbar/footer) but the body content is English-only, unlike the other five pages. Not yet raised with Anna as something to fix — flag it if it comes up, don't silently leave residents assuming those pages toggle too.
 
 ## Operational facts
 

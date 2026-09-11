@@ -47,8 +47,8 @@ It's a copy of the published Resident's Briefing artefact (source of record: `..
 
 ## Known open items
 
-(Status as of 13 Sep 2026 — check before assuming otherwise.)
-- **WhatsApp voice-note line** — not yet live. `have-your-say.html` shows a "coming soon" callout; the real `wa.me/27XXXXXXXXX` markup is sitting in an HTML comment ready to swap in once a number exists. Anna's target: sourced by the end of that weekend (i.e. ~14 Sep 2026) — ask if it's overdue.
+(Status as of 11 Sep 2026 — check before assuming otherwise.)
+- **WhatsApp voice-note line** — not yet live. `have-your-say.html` shows a "coming soon" callout; the real `wa.me/27XXXXXXXXX` markup is sitting in an HTML comment ready to swap in once a number exists. Anna's target: sourced by the end of that weekend (~13 Sep 2026) — ask if it's overdue.
 - **Privacy note** (`privacy.html`) — responsible party and contact (`hopefieldorigins@gmail.com`) are filled in, but the page still carries a "Draft — not yet reviewed by an attorney" banner. No attorney has been found yet as of this writing.
 - **Afrikaans translations** — drafts are live and toggleable, but not yet checked by a native speaker (`.draftbar` banner on every page). No fixed reviewer — likely to be different volunteers over time, or Anna herself if she has time. Don't assume a review is scheduled.
 

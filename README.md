@@ -20,8 +20,11 @@ be copied here.
 | `the-record.html` | The long, fully-sourced companion to the briefing. Public-safe: institutions and documents only, no individuals, no advocacy framing. |
 | `sources.html` | The public documents and reporting behind the briefing, with reference numbers |
 | `have-your-say.html` | The survey (KoboToolbox) + WhatsApp voice-note line |
+| `corrections.html` | How to report a mistake or share a document/source the site is missing |
 | `privacy.html` | POPIA privacy note |
 | `style.css`, `site.js` | Shared style and the English/Afrikaans toggle |
+
+Every footer shows **"Site last updated: ..."** -- this is read live from the GitHub API (latest commit to this repo) by `site.js`, so it always reflects the truth and never needs manual updating. It quietly falls back to the static placeholder text in the HTML if the API call fails (e.g. the visitor is offline).
 
 All pages are English + a **draft** Afrikaans translation (toggle, top right).
 Have an Afrikaans speaker check every page before sharing widely.
@@ -68,7 +71,7 @@ comments with the new published HTML. The source of record is
 `../AI Musings/Phelan Green/artefacts/residents-briefing.html`.
 
 **Keep** the `<style>` + `<nav class="site-nav">` block that sits just before
-`<header class="mast">` — that's the "Home / Have your say" bar, and a fresh
+`<header class="mast">` -- that's the "Home / Have your say" bar, and a fresh
 paste of the artefact would drop it.
 
 ## Adding more documents later

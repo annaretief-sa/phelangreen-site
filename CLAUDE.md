@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Keep this file current.** Anna owns its content, but expects it maintained automatically: if a change in a session alters this repo's structure, process, or rules, update this file in that same session — not later, not only when asked.
 
+**Commit CLAUDE.md changes with a real message.** Describe what changed and why, not "update CLAUDE.md" — the git log becomes a dated record of how this repo's structure/process/rules evolved, which has value on its own, separate from CLAUDE.md's current content being accurate.
+
 ## What this repository is
 
 The **public** website for the Hopefield community's response to the proposed Phelan Green development — a static site with no build step, served by GitHub Pages at **hopefieldorigins.co.za** (custom domain via the `CNAME` file). Pushed to `https://github.com/annaretief-sa/phelangreen-site.git` (branch `main`). Pushing to `main` *is* the deploy — GitHub Pages picks it up automatically within a minute or two; there is nothing to build or run locally beyond opening a file in a browser.

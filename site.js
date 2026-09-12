@@ -50,15 +50,12 @@
 
   /* Cloudflare Web Analytics -- privacy-first: no cookies, no fingerprinting,
      aggregate-only visit counts. See privacy.html for what this does and
-     doesn't collect. TOKEN BELOW IS A PLACEHOLDER -- get the real one from
-     the Cloudflare dashboard (Analytics & Logs > Web Analytics > add this
-     site's hostname > copy the token out of the JS snippet it gives you;
-     no DNS/nameserver change needed) and replace it here before this does
-     anything. */
-  var cfToken = "REPLACE_WITH_CLOUDFLARE_BEACON_TOKEN";
+     doesn't collect. Token from the Cloudflare dashboard (Analytics & Logs >
+     Web Analytics), activated 12 Sep 2026. */
+  var cfToken = "a793324c70df435185c3e64dc26adb59";
   if (cfToken.indexOf("REPLACE_WITH") !== 0) {
     var cf = document.createElement("script");
-    cf.defer = true;
+    cf.type = "module";
     cf.src = "https://static.cloudflareinsights.com/beacon.min.js";
     cf.setAttribute("data-cf-beacon", JSON.stringify({ token: cfToken }));
     document.head.appendChild(cf);

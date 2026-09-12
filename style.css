@@ -48,15 +48,15 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:"Libre Franklin",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
   font-size:17px;
-  line-height:1.62;
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-wrap:break-word;
 }
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 
-h1,h2,h3,h4{font-family:"Spectral",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+h1,h2,h3,h4{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.25;text-wrap:balance;margin:0}
 p{margin:0 0 1em}
 a{color:var(--slate);text-underline-offset:2px}
 strong{font-weight:600}
@@ -79,8 +79,16 @@ header.mast{
   font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);
   margin:0 0 16px;
 }
-h1.title{font-size:clamp(2rem,5.2vw,2.8rem);letter-spacing:-.01em;margin:0 0 .35em}
-.standfirst{font-size:1.12rem;color:var(--ink-soft);max-width:56ch;margin:0}
+h1.title{font-size:clamp(1.6rem,3.6vw,2.05rem);letter-spacing:-.005em;margin:0 0 .4em}
+.standfirst{font-size:1.03rem;color:var(--ink-soft);max-width:62ch;margin:0}
+
+/* document metadata strip under the masthead (date, provenance, version) */
+.mast-meta{
+  margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:4px 22px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  letter-spacing:.03em;color:var(--ink-faint);
+}
 
 /* ---- top navigation + language toggle ---- */
 .topbar{
@@ -115,15 +123,32 @@ body:not(.af) .draftbar{display:none}
 
 /* ---- sections & cards ---- */
 main{padding-bottom:20px}
-section{padding:34px 0;border-bottom:1px solid var(--rule)}
+section{padding:28px 0;border-bottom:1px solid var(--rule)}
 section:last-of-type{border-bottom:0}
-h2.sec{font-size:1.55rem;margin:0 0 6px;letter-spacing:-.01em}
-.sec-note{color:var(--ink-soft);margin:0 0 22px;max-width:60ch}
-h3.sub{font-size:1.12rem;margin:24px 0 6px}
+h2.sec{font-size:1.2rem;margin:0 0 6px;letter-spacing:0}
+.sec-note{color:var(--ink-soft);margin:0 0 18px;max-width:62ch;font-size:.97rem}
+h3.sub{font-size:1.03rem;margin:20px 0 5px}
+
+/* fact rows -- a label/value list for information-sheet style sections */
+dl.factlist{margin:14px 0 0;border-top:1px solid var(--rule)}
+dl.factlist > div{
+  display:grid;grid-template-columns:140px 1fr;gap:4px 20px;
+  padding:11px 0;border-bottom:1px solid var(--rule);
+}
+dl.factlist dt{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);
+  font-weight:600;padding-top:3px;
+}
+dl.factlist dd{margin:0;font-size:.97rem}
+@media(max-width:560px){
+  dl.factlist > div{grid-template-columns:1fr;gap:2px}
+  dl.factlist dt{padding-top:0}
+}
 
 .card{
   background:var(--surface);border:1px solid var(--rule-strong);border-radius:6px;
-  padding:20px 22px;box-shadow:var(--shadow);margin:16px 0;
+  padding:18px 20px;box-shadow:var(--shadow);margin:16px 0;
 }
 .card.flag{border-left:4px solid var(--ochre)}
 .card.good{border-left:4px solid var(--green)}
@@ -140,13 +165,13 @@ a.action{
   padding:20px 22px;box-shadow:var(--shadow);
 }
 a.action:hover{border-left-color:var(--ochre);transform:translateY(-1px)}
-a.action .h{font-family:"Spectral",Georgia,serif;font-size:1.3rem;font-weight:600;display:block;margin:0 0 4px}
-a.action .d{color:var(--ink-soft);font-size:.98rem}
+a.action .h{font-family:"Source Serif 4",Georgia,serif;font-size:1.08rem;font-weight:600;display:block;margin:0 0 4px}
+a.action .d{color:var(--ink-soft);font-size:.95rem}
 a.action .arrow{color:var(--green);font-weight:600}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  font-family:"Libre Franklin",sans-serif;font-size:16px;font-weight:600;text-decoration:none;
+  font-family:"Source Serif 4",Georgia,serif;font-size:16px;font-weight:600;text-decoration:none;
   min-height:50px;padding:12px 22px;border-radius:8px;border:1.5px solid var(--green);
   background:var(--green);color:var(--paper);cursor:pointer;
 }
